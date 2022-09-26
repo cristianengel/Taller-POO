@@ -9,6 +9,10 @@ public class Biblioteca {
     ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
 
     public void agregarEjemplar(Ejemplar ejemplar){
-        // TODO: 9/26/22  
+        // TODO: 9/26/22
+    }
+
+    public void removerEjemplar(Ejemplar ejemplar){
+        // TODO: 9/26/22
     }
 }
