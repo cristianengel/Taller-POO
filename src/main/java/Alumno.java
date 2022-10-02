@@ -1,17 +1,30 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Alumno extends Lector{
     ArrayList<String> carreras = new ArrayList<>();
 
-    public void mostrarCarreras() {
-        // TODO: 9/26/22
+    public List<String> mostrarCarreras() throws RuntimeException{
+        if(carreras.size() > 0){
+            return carreras;
+        } else {
+            throw new RuntimeException("Este alumno no tiene ninguna carrera registrada.");
+        }
     }
 
-    public void agregarCarrera(String carrera) {
-        // TODO: 9/26/22
+    public void agregarCarrera(String carrera) throws RuntimeException {
+        if(!carreras.contains(carrera)){
+            carreras.add(carrera);
+        } else {
+            throw new RuntimeException("Ya existe una carrera con el mismo nombre");
+        }
     }
 
-    public void removerCarrera(String carrera) {
-        // TODO: 9/26/22
+    public void removerCarrera(String carrera) throws RuntimeException{
+        if(carreras.contains(carrera)){
+            carreras.remove(carrera);
+        } else {
+            throw new RuntimeException("No existe una carrera con el nombre especificado.");
+        }
     }
 }
