@@ -35,9 +35,9 @@ public class Ejemplar {
         this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
         this.fechaDeAdquisicion = fechaDeAdquisicion;
         this.formaDeAdquisicion = formaDeAdquisicion;
+
     }
 
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ejemplar ejemplar)) return false;
