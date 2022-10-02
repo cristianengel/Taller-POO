@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Biblioteca {
-    ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>();
-    ArrayList<String> listaDeIndices = new ArrayList<>();
-    ArrayList<Lector> listaDeDeudores = new ArrayList<>();
-    ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
-    ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
-    ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
+    private ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>
+    private ArrayList<String> listaDeIndices = new ArrayList<>();
+    private ArrayList<Lector> listaDeDeudores = new ArrayList<>();
+    private ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
+    private ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
+    private ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
+    private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
 
     public void agregarEjemplar(Ejemplar ejemplar){
         if(!listaDeEjemplares.contains(ejemplar)){

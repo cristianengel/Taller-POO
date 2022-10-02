@@ -4,10 +4,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Coleccion extends Obra {
-    String nombre;
+    private String nombre;
 
-    public Coleccion() {
-    }
+    public Coleccion() {}
 
     public Coleccion(String nombre) {
         this.nombre = nombre;
@@ -24,16 +23,16 @@ public class Coleccion extends Obra {
     public String toString() {
         return "Coleccion{" +
                 "nombre='" + nombre + '\'' +
-                ", areaTematica='" + areaTematica + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", subtitulo='" + subtitulo + '\'' +
-                ", primerAutor='" + primerAutor + '\'' +
-                ", segundoAutor='" + segundoAutor + '\'' +
-                ", tercerAutor='" + tercerAutor + '\'' +
-                ", genero='" + genero + '\'' +
-                ", caracteristica='" + caracteristica + '\'' +
-                ", isbn=" + isbn +
-                ", indice='" + indice + '\'' +
+                ", areaTematica='" + getAreaTematica() + '\'' +
+                ", titulo='" + getTitulo() + '\'' +
+                ", subtitulo='" + getSubtitulo() + '\'' +
+                ", primerAutor='" + getPrimerAutor() + '\'' +
+                ", segundoAutor='" + getSegundoAutor() + '\'' +
+                ", tercerAutor='" + getTercerAutor() + '\'' +
+                ", genero='" + getGenero() + '\'' +
+                ", caracteristica='" + getCaracteristica() + '\'' +
+                ", isbn=" + getIsbn() +
+                ", indice='" + getIndice() + '\'' +
                 '}';
     }
 }

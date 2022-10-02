@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Creación de métodos para las clases heredadas de la clase Lector">
-      <change afterPath="$PROJECT_DIR$/src/main/test/Pruebas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Alumno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Biblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Coleccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Coleccion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Docente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Edicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Edicion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Ejemplar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Lector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Lector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Obra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Obra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Prestamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Reserva.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +53,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Isaías/intellij-worspace/Taller-POO",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
