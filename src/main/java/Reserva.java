@@ -25,4 +25,11 @@ public class Reserva {
         return Objects.equals(fechaHoraInicio, reserva.fechaHoraInicio) && Objects.equals(fechaHoraFin, reserva.fechaHoraFin);
     }
 
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "fechaHoraInicio=" + fechaHoraInicio +
+                ", fechaHoraFin=" + fechaHoraFin +
+                '}';
+    }
 }

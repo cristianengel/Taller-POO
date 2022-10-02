@@ -38,4 +38,17 @@ public class Edicion {
         return numeroDeEdicion == edicion.numeroDeEdicion && anio == edicion.anio && volumenes == edicion.volumenes && paginas == edicion.paginas && esColeccion == edicion.esColeccion && Objects.equals(editorial, edicion.editorial) && Objects.equals(paisDeEdicion, edicion.paisDeEdicion) && Objects.equals(idioma, edicion.idioma) && Objects.equals(formato, edicion.formato);
     }
 
+    public String toString() {
+        return "Edicion{" +
+                "editorial='" + editorial + '\'' +
+                ", paisDeEdicion='" + paisDeEdicion + '\'' +
+                ", numeroDeEdicion=" + numeroDeEdicion +
+                ", anio=" + anio +
+                ", volumenes=" + volumenes +
+                ", paginas=" + paginas +
+                ", idioma='" + idioma + '\'' +
+                ", formato='" + formato + '\'' +
+                ", esColeccion=" + esColeccion +
+                '}';
+    }
 }

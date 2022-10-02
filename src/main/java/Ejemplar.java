@@ -44,4 +44,18 @@ public class Ejemplar {
         return codBarra == ejemplar.codBarra && Objects.equals(identUnico, ejemplar.identUnico) && Objects.equals(observaciones, ejemplar.observaciones) && Objects.equals(areaDeReferencia, ejemplar.areaDeReferencia) && Objects.equals(lugarFisico, ejemplar.lugarFisico) && Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) && Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) && Objects.equals(ubicacionFisicaDadoDeBaja, ejemplar.ubicacionFisicaDadoDeBaja) && Objects.equals(fechaDeAdquisicion, ejemplar.fechaDeAdquisicion) && Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion);
     }
 
+    public String toString() {
+        return "Ejemplar{" +
+                "identUnico='" + identUnico + '\'' +
+                ", codBarra=" + codBarra +
+                ", observaciones='" + observaciones + '\'' +
+                ", areaDeReferencia='" + areaDeReferencia + '\'' +
+                ", lugarFisico=" + lugarFisico +
+                ", fechaDadoDeBaja=" + fechaDadoDeBaja +
+                ", motivoDadoDeBaja='" + motivoDadoDeBaja + '\'' +
+                ", ubicacionFisicaDadoDeBaja='" + ubicacionFisicaDadoDeBaja + '\'' +
+                ", fechaDeAdquisicion=" + fechaDeAdquisicion +
+                ", formaDeAdquisicion='" + formaDeAdquisicion + '\'' +
+                '}';
+    }
 }

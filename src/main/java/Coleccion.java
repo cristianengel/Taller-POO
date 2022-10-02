@@ -21,4 +21,19 @@ public class Coleccion extends Obra {
         return nombre.equals(coleccion.nombre);
     }
 
+    public String toString() {
+        return "Coleccion{" +
+                "nombre='" + nombre + '\'' +
+                ", areaTematica='" + areaTematica + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", subtitulo='" + subtitulo + '\'' +
+                ", primerAutor='" + primerAutor + '\'' +
+                ", segundoAutor='" + segundoAutor + '\'' +
+                ", tercerAutor='" + tercerAutor + '\'' +
+                ", genero='" + genero + '\'' +
+                ", caracteristica='" + caracteristica + '\'' +
+                ", isbn=" + isbn +
+                ", indice='" + indice + '\'' +
+                '}';
+    }
 }

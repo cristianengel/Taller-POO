@@ -38,4 +38,15 @@ public class Prestamo {
         return plazo == prestamo.plazo && multa == prestamo.multa && Objects.equals(tipoLectura, prestamo.tipoLectura) && Objects.equals(fechaHoraInicio, prestamo.fechaHoraInicio) && Objects.equals(funcionario, prestamo.funcionario) && Objects.equals(fechaHoraDevolucion, prestamo.fechaHoraDevolucion);
     }
 
+    @Override
+    public String toString() {
+        return "Prestamo{" +
+                "tipoLectura='" + tipoLectura + '\'' +
+                ", fechaHoraInicio=" + fechaHoraInicio +
+                ", funcionario='" + funcionario + '\'' +
+                ", plazo=" + plazo +
+                ", fechaHoraDevolucion=" + fechaHoraDevolucion +
+                ", multa=" + multa +
+                '}';
+    }
 }

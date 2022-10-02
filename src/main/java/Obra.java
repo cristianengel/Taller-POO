@@ -40,4 +40,19 @@ public class Obra {
         return isbn == obra.isbn && Objects.equals(areaTematica, obra.areaTematica) && Objects.equals(titulo, obra.titulo) && Objects.equals(subtitulo, obra.subtitulo) && Objects.equals(primerAutor, obra.primerAutor) && Objects.equals(segundoAutor, obra.segundoAutor) && Objects.equals(tercerAutor, obra.tercerAutor) && Objects.equals(genero, obra.genero) && Objects.equals(caracteristica, obra.caracteristica) && Objects.equals(indice, obra.indice);
     }
 
+    @Override
+    public String toString() {
+        return "Obra{" +
+                "areaTematica='" + areaTematica + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", subtitulo='" + subtitulo + '\'' +
+                ", primerAutor='" + primerAutor + '\'' +
+                ", segundoAutor='" + segundoAutor + '\'' +
+                ", tercerAutor='" + tercerAutor + '\'' +
+                ", genero='" + genero + '\'' +
+                ", caracteristica='" + caracteristica + '\'' +
+                ", isbn=" + isbn +
+                ", indice='" + indice + '\'' +
+                '}';
+    }
 }
