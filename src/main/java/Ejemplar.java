@@ -3,6 +3,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -35,4 +36,12 @@ public class Ejemplar {
         this.fechaDeAdquisicion = fechaDeAdquisicion;
         this.formaDeAdquisicion = formaDeAdquisicion;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ejemplar ejemplar)) return false;
+        return codBarra == ejemplar.codBarra && Objects.equals(identUnico, ejemplar.identUnico) && Objects.equals(observaciones, ejemplar.observaciones) && Objects.equals(areaDeReferencia, ejemplar.areaDeReferencia) && Objects.equals(lugarFisico, ejemplar.lugarFisico) && Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) && Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) && Objects.equals(ubicacionFisicaDadoDeBaja, ejemplar.ubicacionFisicaDadoDeBaja) && Objects.equals(fechaDeAdquisicion, ejemplar.fechaDeAdquisicion) && Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion);
+    }
+
 }
