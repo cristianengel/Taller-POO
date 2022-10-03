@@ -8,23 +8,27 @@ import java.util.Objects;
 @Getter
 @Setter
 public class Prestamo {
-    String tipoLectura;
-    LocalDateTime fechaHoraInicio;
-    String funcionario;
-    int plazo;
-    LocalDateTime fechaHoraDevolucion;
-    int multa;
+    private String tipoLectura;
+    private LocalDateTime fechaHoraInicio;
+    private String funcionario;
+    private int plazo;
+    private LocalDateTime fechaHoraDevolucion;
+    private int multa;
+    private Ejemplar ejemplar; //Relación intermedia entre Ejemplar y Lector
+    private Lector lector; //Relación intermedia entre Ejemplar y Lector
 
     public Prestamo() {
     }
 
-    public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, int plazo, LocalDateTime fechaHoraDevolucion, int multa) {
+    public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, int plazo, LocalDateTime fechaHoraDevolucion, int multa, Ejemplar ejemplar, Lector lector) {
         this.tipoLectura = tipoLectura;
         this.fechaHoraInicio = fechaHoraInicio;
         this.funcionario = funcionario;
         this.plazo = plazo;
         this.fechaHoraDevolucion = fechaHoraDevolucion;
         this.multa = multa;
+        this.ejemplar = ejemplar;
+        this.lector = lector;
     }
 
     public void aplicarMulta() {
@@ -35,7 +39,7 @@ public class Prestamo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Prestamo prestamo)) return false;
-        return plazo == prestamo.plazo && multa == prestamo.multa && Objects.equals(tipoLectura, prestamo.tipoLectura) && Objects.equals(fechaHoraInicio, prestamo.fechaHoraInicio) && Objects.equals(funcionario, prestamo.funcionario) && Objects.equals(fechaHoraDevolucion, prestamo.fechaHoraDevolucion);
+        return plazo == prestamo.plazo && multa == prestamo.multa && tipoLectura.equals(prestamo.tipoLectura) && fechaHoraInicio.equals(prestamo.fechaHoraInicio) && funcionario.equals(prestamo.funcionario) && fechaHoraDevolucion.equals(prestamo.fechaHoraDevolucion) && ejemplar.equals(prestamo.ejemplar) && lector.equals(prestamo.lector);
     }
 
     @Override
@@ -47,6 +51,8 @@ public class Prestamo {
                 ", plazo=" + plazo +
                 ", fechaHoraDevolucion=" + fechaHoraDevolucion +
                 ", multa=" + multa +
+                ", ejemplar=" + ejemplar +
+                ", lector=" + lector +
                 '}';
     }
 }

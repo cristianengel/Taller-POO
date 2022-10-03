@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Docente extends Lector{
-    ArrayList<String> carreras = new ArrayList<>();
-    ArrayList<String> materias = new ArrayList<>();
+    private ArrayList<String> carreras = new ArrayList<>();
+    private ArrayList<String> materias = new ArrayList<>();
 
     public List<String> mostrarCarreras() throws RuntimeException{
         if(carreras.size() > 0){

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alumno extends Lector{
-    ArrayList<String> carreras = new ArrayList<>();
+    private ArrayList<String> carreras = new ArrayList<>();
 
     public List<String> mostrarCarreras() throws RuntimeException{
         if(carreras.size() > 0){
