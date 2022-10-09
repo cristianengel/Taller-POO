@@ -28,6 +28,22 @@ public class Ejemplar {
     public Ejemplar() {
     }
 
+    //Constructor sin reserva ni préstamo
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
+        this.identUnico = identUnico;
+        this.codBarra = codBarra;
+        this.observaciones = observaciones;
+        this.areaDeReferencia = areaDeReferencia;
+        this.lugarFisico = lugarFisico;
+        this.fechaDadoDeBaja = fechaDadoDeBaja;
+        this.motivoDadoDeBaja = motivoDadoDeBaja;
+        this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
+        this.fechaDeAdquisicion = fechaDeAdquisicion;
+        this.formaDeAdquisicion = formaDeAdquisicion;
+        this.obra = obra;
+    }
+
+    //Constructor con reserva
     public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Reserva lectorReserva, Prestamo lectorPrestamo) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
@@ -40,6 +56,21 @@ public class Ejemplar {
         this.formaDeAdquisicion = formaDeAdquisicion;
         this.obra = obra;
         this.lectorReserva = lectorReserva;
+    }
+
+    //Constructor con préstamo
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Prestamo lectorPrestamo) {
+        this.identUnico = identUnico;
+        this.codBarra = codBarra;
+        this.observaciones = observaciones;
+        this.areaDeReferencia = areaDeReferencia;
+        this.lugarFisico = lugarFisico;
+        this.fechaDadoDeBaja = fechaDadoDeBaja;
+        this.motivoDadoDeBaja = motivoDadoDeBaja;
+        this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
+        this.fechaDeAdquisicion = fechaDeAdquisicion;
+        this.formaDeAdquisicion = formaDeAdquisicion;
+        this.obra = obra;
         this.lectorPrestamo = lectorPrestamo;
     }
 
@@ -63,8 +94,6 @@ public class Ejemplar {
                 ", Fecha de adquisición=" + fechaDeAdquisicion +
                 ", Forma de adquisición='" + formaDeAdquisicion + '\'' +
                 ", Obra=" + obra +
-                ", Lector-Reserva=" + lectorReserva +
-                ", Lector-Prestamo=" + lectorPrestamo +
                 '}';
     }
 }
