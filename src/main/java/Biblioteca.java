@@ -66,4 +66,17 @@ public final class Biblioteca {
             throw new RuntimeException("El indice ya se encuentra registrado.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Biblioteca{" +
+                "Ejemplares=" + listaDeEjemplares +
+                ", Índices=" + listaDeIndices +
+                ", Deudores=" + listaDeDeudores +
+                ", Obras solicitadas por alumnos y docentes=" + listaObrasSolicitadasAluDoc +
+                ", Obras solicitadas por el público=" + listaObrasSolicitadasPublico +
+                ", Lectores con multas=" + listaLectoresConMultas +
+                ", Obras=" + obras +
+                '}';
+    }
 }
