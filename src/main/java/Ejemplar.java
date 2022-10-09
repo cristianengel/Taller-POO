@@ -53,18 +53,18 @@ public class Ejemplar {
     @Override
     public String toString() {
         return "Ejemplar{" +
-                "identUnico='" + identUnico + '\'' +
-                ", codBarra=" + codBarra +
-                ", observaciones='" + observaciones + '\'' +
-                ", areaDeReferencia='" + areaDeReferencia + '\'' +
-                ", fechaDadoDeBaja=" + fechaDadoDeBaja +
-                ", motivoDadoDeBaja='" + motivoDadoDeBaja + '\'' +
-                ", ubicacionFisicaDadoDeBaja='" + ubicacionFisicaDadoDeBaja + '\'' +
-                ", fechaDeAdquisicion=" + fechaDeAdquisicion +
-                ", formaDeAdquisicion='" + formaDeAdquisicion + '\'' +
-                ", obra=" + obra +
-                ", lectorReserva=" + lectorReserva +
-                ", lectorPrestamo=" + lectorPrestamo +
+                "Identificador único='" + identUnico + '\'' +
+                ", Código de barra=" + codBarra +
+                ", Observaciones='" + observaciones + '\'' +
+                ", Área de referencia='" + areaDeReferencia + '\'' +
+                ", Fecha de dado de baja=" + fechaDadoDeBaja +
+                ", Motivo de dado de baja='" + motivoDadoDeBaja + '\'' +
+                ", Ubicación física de dado de baja='" + ubicacionFisicaDadoDeBaja + '\'' +
+                ", Fecha de adquisición=" + fechaDeAdquisicion +
+                ", Forma de adquisición='" + formaDeAdquisicion + '\'' +
+                ", Obra=" + obra +
+                ", Lector-Reserva=" + lectorReserva +
+                ", Lector-Prestamo=" + lectorPrestamo +
                 '}';
     }
 }

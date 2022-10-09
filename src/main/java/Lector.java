@@ -54,21 +54,21 @@ public class Lector {
     @Override
     public String toString() {
         return "Lector{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", tipoDoc='" + tipoDoc + '\'' +
-                ", numDoc=" + numDoc +
-                ", correoElec='" + correoElec + '\'' +
-                ", numCel=" + numCel +
-                ", fechaNac=" + fechaNac +
-                ", sexo='" + sexo + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", domicilio='" + domicilio + '\'' +
-                ", codigoPostal=" + codigoPostal +
-                ", departamento='" + departamento + '\'' +
-                ", localidad='" + localidad + '\'' +
-                ", ejemplarReserva=" + ejemplarReserva +
-                ", ejemplarPrestamo=" + ejemplarPrestamo +
+                "Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
+                ", Tipo de documento='" + tipoDoc + '\'' +
+                ", Número de documento=" + numDoc +
+                ", Correo electrónico='" + correoElec + '\'' +
+                ", Número de celular=" + numCel +
+                ", Fecha de nacimiento=" + fechaNac +
+                ", Sexo='" + sexo + '\'' +
+                ", Nacionalidad='" + nacionalidad + '\'' +
+                ", Domicilio='" + domicilio + '\'' +
+                ", Código postal=" + codigoPostal +
+                ", Departamento='" + departamento + '\'' +
+                ", Localidad='" + localidad + '\'' +
+                ", Ejemplar-Reserva=" + ejemplarReserva +
+                ", Ejemplar-Prestamo=" + ejemplarPrestamo +
                 '}';
     }
 }
