@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Biblioteca {
+public final class Biblioteca {
+    private static Biblioteca instance;
     private ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>
     private ArrayList<String> listaDeIndices = new ArrayList<>();
     private ArrayList<Lector> listaDeDeudores = new ArrayList<>();
@@ -10,6 +11,28 @@ public class Biblioteca {
     private ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
     private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
 
+    private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){
+        //No creo que sea necesario este try-catch
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.listaDeEjemplares = listaDeEjemplares;
+        this.listaDeIndices = listaDeIndices;
+        this.listaDeDeudores = listaDeDeudores;
+        this.listaObrasSolicitadasAluDoc = listaObrasSolicitadasAluDoc;
+        this.listaObrasSolicitadasPublico = listaObrasSolicitadasPublico;
+        this.listaLectoresConMultas = listaLectoresConMultas;
+        this.obras = obras;
+    }
+
+    public static Biblioteca getInstance(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras) {
+        if (instance == null) {
+            instance = new Biblioteca(listaDeEjemplares, listaDeIndices, listaDeDeudores, listaObrasSolicitadasAluDoc, listaObrasSolicitadasPublico, listaLectoresConMultas, obras);
+        }
+        return instance;
+    }
     public void agregarEjemplar(Ejemplar ejemplar){
         if(!listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.add(ejemplar);
