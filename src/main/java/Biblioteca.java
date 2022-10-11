@@ -12,12 +12,6 @@ public final class Biblioteca {
     private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
 
     private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){
-        //No creo que sea necesario este try-catch
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         this.listaDeEjemplares = listaDeEjemplares;
         this.listaDeIndices = listaDeIndices;
         this.listaDeDeudores = listaDeDeudores;
@@ -39,7 +33,7 @@ public final class Biblioteca {
         } else {
             throw new RuntimeException("El ejemplar ya se encuentra en la biblioteca.");
         }
-        // TODO: 10/1/22 aca se implementa la funcion agregarIndice()
+        agregarIndice(ejemplar.getObra().getIndice());
     }
 
     public void removerEjemplar(Ejemplar ejemplar){
@@ -48,7 +42,11 @@ public final class Biblioteca {
         } else {
             throw new RuntimeException("El ejemplar no se encuentra en la biblioteca.");
         }
-        // TODO: 10/1/22 se necesita saber si hay mas ejemplares en la biblioteca de la misma obra, para saber si eliminar el indice o dejarlo.
+        // se borran los índices y las obras de la biblioteca cuando no haya ejemplares disponibles.
+        if(cantEjemplaresPorObra(ejemplar.getObra()) == 0) {
+            listaDeIndices.remove(ejemplar.getObra().getIndice());
+            obras.remove(ejemplar.getObra());
+        }
     }
 
     public List<Ejemplar> mostrarEjemplares() {
@@ -78,5 +76,16 @@ public final class Biblioteca {
                 ", Lectores con multas=" + listaLectoresConMultas +
                 ", Obras=" + obras +
                 '}';
+    }
+
+    // chequeo de disponibilidad de ejemplares de la misma obra
+    public int cantEjemplaresPorObra(Obra obra){
+        int cant = 0;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if(listaDeEjemplares.get(i).getObra() == obra) {
+                cant++;
+            }
+        }
+        return cant;
     }
 }
