@@ -1,0 +1,44 @@
+Index: src/main/java/Biblioteca.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\nimport java.util.List;\n\npublic final class Biblioteca {\n    private static Biblioteca instance;\n    private ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>\n    private ArrayList<String> listaDeIndices = new ArrayList<>();\n    private ArrayList<Lector> listaDeDeudores = new ArrayList<>();\n    private ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();\n    private ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();\n    private ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();\n    private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra\n\n    private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){\n        //No creo que sea necesario este try-catch\n        try {\n            Thread.sleep(1000);\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        }\n        this.listaDeEjemplares = listaDeEjemplares;\n        this.listaDeIndices = listaDeIndices;\n        this.listaDeDeudores = listaDeDeudores;\n        this.listaObrasSolicitadasAluDoc = listaObrasSolicitadasAluDoc;\n        this.listaObrasSolicitadasPublico = listaObrasSolicitadasPublico;\n        this.listaLectoresConMultas = listaLectoresConMultas;\n        this.obras = obras;\n    }\n\n    public static Biblioteca getInstance(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras) {\n        if (instance == null) {\n            instance = new Biblioteca(listaDeEjemplares, listaDeIndices, listaDeDeudores, listaObrasSolicitadasAluDoc, listaObrasSolicitadasPublico, listaLectoresConMultas, obras);\n        }\n        return instance;\n    }\n    public void agregarEjemplar(Ejemplar ejemplar){\n        if(!listaDeEjemplares.contains(ejemplar)){\n            listaDeEjemplares.add(ejemplar);\n        } else {\n            throw new RuntimeException(\"El ejemplar ya se encuentra en la biblioteca.\");\n        }\n        // TODO: 10/1/22 aca se implementa la funcion agregarIndice()\n    }\n\n    public void removerEjemplar(Ejemplar ejemplar){\n        if(listaDeEjemplares.contains(ejemplar)){\n            listaDeEjemplares.remove(ejemplar);\n        } else {\n            throw new RuntimeException(\"El ejemplar no se encuentra en la biblioteca.\");\n        }\n        // TODO: 10/1/22 se necesita saber si hay mas ejemplares en la biblioteca de la misma obra, para saber si eliminar el indice o dejarlo.\n    }\n\n    public List<Ejemplar> mostrarEjemplares() {\n        if(listaDeEjemplares.size() > 0) {\n            return listaDeEjemplares;\n        } else {\n            throw new RuntimeException(\"No hay ejemplares registrados.\");\n        }\n    }\n\n    public void agregarIndice(String indice) throws RuntimeException {\n        if(!listaDeIndices.contains(indice)){\n            listaDeIndices.add(indice);\n        } else {\n            throw new RuntimeException(\"El indice ya se encuentra registrado.\");\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Biblioteca.java b/src/main/java/Biblioteca.java
+--- a/src/main/java/Biblioteca.java	(revision f9a5a2885703e55fbbb8c129374d463917ce6255)
++++ b/src/main/java/Biblioteca.java	(date 1665493677540)
+@@ -12,12 +12,6 @@
+     private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+ 
+     private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){
+-        //No creo que sea necesario este try-catch
+-        try {
+-            Thread.sleep(1000);
+-        } catch (InterruptedException e) {
+-            e.printStackTrace();
+-        }
+         this.listaDeEjemplares = listaDeEjemplares;
+         this.listaDeIndices = listaDeIndices;
+         this.listaDeDeudores = listaDeDeudores;
+@@ -39,7 +33,10 @@
+         } else {
+             throw new RuntimeException("El ejemplar ya se encuentra en la biblioteca.");
+         }
+-        // TODO: 10/1/22 aca se implementa la funcion agregarIndice()
++        // se guarda el índice dentro de la lista de índices
++        if(!listaDeIndices.contains(ejemplar.getObra().getIndice())) {
++            listaDeIndices.add(ejemplar.getObra().getIndice());
++        }
+     }
+ 
+     public void removerEjemplar(Ejemplar ejemplar){
+@@ -48,7 +45,7 @@
+         } else {
+             throw new RuntimeException("El ejemplar no se encuentra en la biblioteca.");
+         }
+-        // TODO: 10/1/22 se necesita saber si hay mas ejemplares en la biblioteca de la misma obra, para saber si eliminar el indice o dejarlo.
++        // si no existe ningun otro ejemplar de una cierta obra, 
+     }
+ 
+     public List<Ejemplar> mostrarEjemplares() {

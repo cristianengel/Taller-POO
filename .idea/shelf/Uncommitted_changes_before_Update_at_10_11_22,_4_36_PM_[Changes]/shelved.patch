@@ -1,0 +1,79 @@
+Index: src/main/java/Biblioteca.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.ArrayList;\nimport java.util.List;\n\npublic final class Biblioteca {\n    private static Biblioteca instance;\n    private ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>\n    private ArrayList<String> listaDeIndices = new ArrayList<>();\n    private ArrayList<Lector> listaDeDeudores = new ArrayList<>();\n    private ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();\n    private ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();\n    private ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();\n    private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra\n\n    private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){\n        //No creo que sea necesario este try-catch\n        try {\n            Thread.sleep(1000);\n        } catch (InterruptedException e) {\n            e.printStackTrace();\n        }\n        this.listaDeEjemplares = listaDeEjemplares;\n        this.listaDeIndices = listaDeIndices;\n        this.listaDeDeudores = listaDeDeudores;\n        this.listaObrasSolicitadasAluDoc = listaObrasSolicitadasAluDoc;\n        this.listaObrasSolicitadasPublico = listaObrasSolicitadasPublico;\n        this.listaLectoresConMultas = listaLectoresConMultas;\n        this.obras = obras;\n    }\n\n    public static Biblioteca getInstance(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras) {\n        if (instance == null) {\n            instance = new Biblioteca(listaDeEjemplares, listaDeIndices, listaDeDeudores, listaObrasSolicitadasAluDoc, listaObrasSolicitadasPublico, listaLectoresConMultas, obras);\n        }\n        return instance;\n    }\n    public void agregarEjemplar(Ejemplar ejemplar){\n        if(!listaDeEjemplares.contains(ejemplar)){\n            listaDeEjemplares.add(ejemplar);\n        } else {\n            throw new RuntimeException(\"El ejemplar ya se encuentra en la biblioteca.\");\n        }\n        // TODO: 10/1/22 aca se implementa la funcion agregarIndice()\n    }\n\n    public void removerEjemplar(Ejemplar ejemplar){\n        if(listaDeEjemplares.contains(ejemplar)){\n            listaDeEjemplares.remove(ejemplar);\n        } else {\n            throw new RuntimeException(\"El ejemplar no se encuentra en la biblioteca.\");\n        }\n        // TODO: 10/1/22 se necesita saber si hay mas ejemplares en la biblioteca de la misma obra, para saber si eliminar el indice o dejarlo.\n    }\n\n    public List<Ejemplar> mostrarEjemplares() {\n        if(listaDeEjemplares.size() > 0) {\n            return listaDeEjemplares;\n        } else {\n            throw new RuntimeException(\"No hay ejemplares registrados.\");\n        }\n    }\n\n    public void agregarIndice(String indice) throws RuntimeException {\n        if(!listaDeIndices.contains(indice)){\n            listaDeIndices.add(indice);\n        } else {\n            throw new RuntimeException(\"El indice ya se encuentra registrado.\");\n        }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Biblioteca.java b/src/main/java/Biblioteca.java
+--- a/src/main/java/Biblioteca.java	(revision f9a5a2885703e55fbbb8c129374d463917ce6255)
++++ b/src/main/java/Biblioteca.java	(date 1665516949607)
+@@ -12,12 +12,6 @@
+     private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+ 
+     private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){
+-        //No creo que sea necesario este try-catch
+-        try {
+-            Thread.sleep(1000);
+-        } catch (InterruptedException e) {
+-            e.printStackTrace();
+-        }
+         this.listaDeEjemplares = listaDeEjemplares;
+         this.listaDeIndices = listaDeIndices;
+         this.listaDeDeudores = listaDeDeudores;
+@@ -39,7 +33,7 @@
+         } else {
+             throw new RuntimeException("El ejemplar ya se encuentra en la biblioteca.");
+         }
+-        // TODO: 10/1/22 aca se implementa la funcion agregarIndice()
++        agregarIndice(ejemplar.getObra().getIndice());
+     }
+ 
+     public void removerEjemplar(Ejemplar ejemplar){
+@@ -48,7 +42,11 @@
+         } else {
+             throw new RuntimeException("El ejemplar no se encuentra en la biblioteca.");
+         }
+-        // TODO: 10/1/22 se necesita saber si hay mas ejemplares en la biblioteca de la misma obra, para saber si eliminar el indice o dejarlo.
++        // se borran los índices y las obras de la biblioteca cuando no haya ejemplares disponibles.
++        if(cantEjemplaresPorObra(ejemplar.getObra()) == 0) {
++            listaDeIndices.remove(ejemplar.getObra().getIndice());
++            obras.remove(ejemplar.getObra());
++        }
+     }
+ 
+     public List<Ejemplar> mostrarEjemplares() {
+@@ -66,4 +64,15 @@
+             throw new RuntimeException("El indice ya se encuentra registrado.");
+         }
+     }
++
++    // chequeo de disponibilidad de ejemplares de la misma obra
++    public int cantEjemplaresPorObra(Obra obra){
++        int cant = 0;
++        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
++            if(listaDeEjemplares.get(i).getObra() == obra) {
++                cant++;
++            }
++        }
++        return cant;
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"730cb658-8af3-4743-81ed-f3044f0ba373\" name=\"Changes\" comment=\"Creación de métodos para las clases heredadas de la clase Lector\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Biblioteca.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Biblioteca.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"cristian &lt;cristianengel1411@gmail.com&gt;\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2FJyxNqyUE8IBtAvPAkNxsEVtpK\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Isaías/intellij-worspace/Taller-POO&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"730cb658-8af3-4743-81ed-f3044f0ba373\" name=\"Changes\" comment=\"\" />\n      <created>1664224728205</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1664224728205</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Creacion de los atributos de la clase Biblioteca\">\n      <created>1664227570587</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664227570587</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Creacion del metodo removerEjemplar\">\n      <created>1664228571426</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664228571426</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Agregación del método equals()\">\n      <created>1664676336001</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664676336001</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Agregación del método toString()\">\n      <created>1664676497149</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664676497149</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Creación de métodos para las clases heredadas de la clase Lector\">\n      <created>1664677619904</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664677619904</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"6\" />\n    <servers />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Creacion de los atributos de la clase Biblioteca\" />\n    <MESSAGE value=\"Creacion del metodo removerEjemplar\" />\n    <MESSAGE value=\"Agregación del método equals()\" />\n    <MESSAGE value=\"Agregación del método toString()\" />\n    <MESSAGE value=\"Creación de métodos para las clases heredadas de la clase Lector\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Creación de métodos para las clases heredadas de la clase Lector\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f9a5a2885703e55fbbb8c129374d463917ce6255)
++++ b/.idea/workspace.xml	(date 1665516950394)
+@@ -5,7 +5,6 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Creación de métodos para las clases heredadas de la clase Lector">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Biblioteca.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
