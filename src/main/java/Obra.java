@@ -48,17 +48,17 @@ public class Obra {
     @Override
     public String toString() {
         return "Obra{" +
-                "areaTematica='" + areaTematica + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", subtitulo='" + subtitulo + '\'' +
-                ", primerAutor='" + primerAutor + '\'' +
-                ", segundoAutor='" + segundoAutor + '\'' +
-                ", tercerAutor='" + tercerAutor + '\'' +
-                ", genero='" + genero + '\'' +
-                ", caracteristica='" + caracteristica + '\'' +
-                ", isbn=" + isbn +
-                ", indice='" + indice + '\'' +
-                ", biblioteca=" + biblioteca +
+                "Área temática='" + areaTematica + '\'' +
+                ", Título='" + titulo + '\'' +
+                ", Subtítulo='" + subtitulo + '\'' +
+                ", Primer autor='" + primerAutor + '\'' +
+                ", Segundo autor='" + segundoAutor + '\'' +
+                ", Tercer autor='" + tercerAutor + '\'' +
+                ", Género='" + genero + '\'' +
+                ", Característica='" + caracteristica + '\'' +
+                ", ISBN=" + isbn +
+                ", Índice='" + indice + '\'' +
+                ", Biblioteca=" + biblioteca +
                 '}';
     }
 }

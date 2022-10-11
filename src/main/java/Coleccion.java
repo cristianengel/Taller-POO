@@ -22,17 +22,17 @@ public class Coleccion extends Obra {
 
     public String toString() {
         return "Coleccion{" +
-                "nombre='" + nombre + '\'' +
-                ", areaTematica='" + getAreaTematica() + '\'' +
-                ", titulo='" + getTitulo() + '\'' +
-                ", subtitulo='" + getSubtitulo() + '\'' +
-                ", primerAutor='" + getPrimerAutor() + '\'' +
-                ", segundoAutor='" + getSegundoAutor() + '\'' +
-                ", tercerAutor='" + getTercerAutor() + '\'' +
-                ", genero='" + getGenero() + '\'' +
-                ", caracteristica='" + getCaracteristica() + '\'' +
-                ", isbn=" + getIsbn() +
-                ", indice='" + getIndice() + '\'' +
+                "Nombre='" + nombre + '\'' +
+                ", Área temática='" + getAreaTematica() + '\'' +
+                ", Título='" + getTitulo() + '\'' +
+                ", Subtítulo='" + getSubtitulo() + '\'' +
+                ", Primer autor='" + getPrimerAutor() + '\'' +
+                ", Segundo autor='" + getSegundoAutor() + '\'' +
+                ", Tercer autor='" + getTercerAutor() + '\'' +
+                ", Género='" + getGenero() + '\'' +
+                ", Característica='" + getCaracteristica() + '\'' +
+                ", ISBN=" + getIsbn() +
+                ", Índice='" + getIndice() + '\'' +
                 '}';
     }
 }

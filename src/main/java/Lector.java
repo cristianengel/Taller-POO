@@ -26,6 +26,24 @@ public class Lector {
     public Lector() {
     }
 
+    //Constructor sin reserva ni préstamo
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoDoc = tipoDoc;
+        this.numDoc = numDoc;
+        this.correoElec = correoElec;
+        this.numCel = numCel;
+        this.fechaNac = fechaNac;
+        this.sexo = sexo;
+        this.nacionalidad = nacionalidad;
+        this.domicilio = domicilio;
+        this.codigoPostal = codigoPostal;
+        this.departamento = departamento;
+        this.localidad = localidad;
+    }
+
+    //Constructor con reserva
     public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Reserva ejemplarReserva, Prestamo ejemplarPrestamo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -41,6 +59,23 @@ public class Lector {
         this.departamento = departamento;
         this.localidad = localidad;
         this.ejemplarReserva = ejemplarReserva;
+    }
+
+    //Constructor con préstamo
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Prestamo ejemplarPrestamo) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.tipoDoc = tipoDoc;
+        this.numDoc = numDoc;
+        this.correoElec = correoElec;
+        this.numCel = numCel;
+        this.fechaNac = fechaNac;
+        this.sexo = sexo;
+        this.nacionalidad = nacionalidad;
+        this.domicilio = domicilio;
+        this.codigoPostal = codigoPostal;
+        this.departamento = departamento;
+        this.localidad = localidad;
         this.ejemplarPrestamo = ejemplarPrestamo;
     }
 
@@ -54,21 +89,21 @@ public class Lector {
     @Override
     public String toString() {
         return "Lector{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", tipoDoc='" + tipoDoc + '\'' +
-                ", numDoc=" + numDoc +
-                ", correoElec='" + correoElec + '\'' +
-                ", numCel=" + numCel +
-                ", fechaNac=" + fechaNac +
-                ", sexo='" + sexo + '\'' +
-                ", nacionalidad='" + nacionalidad + '\'' +
-                ", domicilio='" + domicilio + '\'' +
-                ", codigoPostal=" + codigoPostal +
-                ", departamento='" + departamento + '\'' +
-                ", localidad='" + localidad + '\'' +
-                ", ejemplarReserva=" + ejemplarReserva +
-                ", ejemplarPrestamo=" + ejemplarPrestamo +
+                "Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
+                ", Tipo de documento='" + tipoDoc + '\'' +
+                ", Número de documento=" + numDoc +
+                ", Correo electrónico='" + correoElec + '\'' +
+                ", Número de celular=" + numCel +
+                ", Fecha de nacimiento=" + fechaNac +
+                ", Sexo='" + sexo + '\'' +
+                ", Nacionalidad='" + nacionalidad + '\'' +
+                ", Domicilio='" + domicilio + '\'' +
+                ", Código postal=" + codigoPostal +
+                ", Departamento='" + departamento + '\'' +
+                ", Localidad='" + localidad + '\'' +
+                ", Ejemplar-Reserva=" + ejemplarReserva +
+                ", Ejemplar-Prestamo=" + ejemplarPrestamo +
                 '}';
     }
 }

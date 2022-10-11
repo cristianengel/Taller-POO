@@ -41,17 +41,17 @@ public class Edicion {
 
     @Override
     public String toString() {
-        return "Edicion{" +
-                "editorial='" + editorial + '\'' +
-                ", paisDeEdicion='" + paisDeEdicion + '\'' +
-                ", numeroDeEdicion=" + numeroDeEdicion +
-                ", anio=" + anio +
-                ", volumenes=" + volumenes +
-                ", paginas=" + paginas +
-                ", idioma='" + idioma + '\'' +
-                ", formato='" + formato + '\'' +
-                ", esColeccion=" + esColeccion +
-                ", obra=" + obra +
+        return "Edición{" +
+                "Editorial='" + editorial + '\'' +
+                ", País de edición='" + paisDeEdicion + '\'' +
+                ", Número de edición=" + numeroDeEdicion +
+                ", Año=" + anio +
+                ", Volumenes=" + volumenes +
+                ", Páginas=" + paginas +
+                ", Idioma='" + idioma + '\'' +
+                ", Formato='" + formato + '\'' +
+                ", ¿Es colección?=" + esColeccion +
+                ", Obra=" + obra +
                 '}';
     }
 }

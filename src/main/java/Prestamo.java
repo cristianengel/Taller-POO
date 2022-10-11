@@ -45,14 +45,14 @@ public class Prestamo {
     @Override
     public String toString() {
         return "Prestamo{" +
-                "tipoLectura='" + tipoLectura + '\'' +
-                ", fechaHoraInicio=" + fechaHoraInicio +
-                ", funcionario='" + funcionario + '\'' +
-                ", plazo=" + plazo +
-                ", fechaHoraDevolucion=" + fechaHoraDevolucion +
-                ", multa=" + multa +
-                ", ejemplar=" + ejemplar +
-                ", lector=" + lector +
+                "Tipo de lectura='" + tipoLectura + '\'' +
+                ", Fecha y hora de inicio del préstamo=" + fechaHoraInicio +
+                ", Funcionario='" + funcionario + '\'' +
+                ", Plazo=" + plazo +
+                ", Fecha y hora de devolución=" + fechaHoraDevolucion +
+                ", Multa=" + multa +
+                ", Ejemplar=" + ejemplar +
+                ", Lector=" + lector +
                 '}';
     }
 }
