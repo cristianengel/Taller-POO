@@ -1,29 +1,22 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public final class Biblioteca {
     private static Biblioteca instance;
-    private ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>
-    private ArrayList<String> listaDeIndices = new ArrayList<>();
-    private ArrayList<Lector> listaDeDeudores = new ArrayList<>();
-    private ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
-    private ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
-    private ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
-    private ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+    private final ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>
+    private final ArrayList<String> listaDeIndices = new ArrayList<>();
+    private final ArrayList<Lector> listaDeDeudores = new ArrayList<>();
+    private final ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
+    private final ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
+    private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
+    private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
 
-    private Biblioteca(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras){
-        this.listaDeEjemplares = listaDeEjemplares;
-        this.listaDeIndices = listaDeIndices;
-        this.listaDeDeudores = listaDeDeudores;
-        this.listaObrasSolicitadasAluDoc = listaObrasSolicitadasAluDoc;
-        this.listaObrasSolicitadasPublico = listaObrasSolicitadasPublico;
-        this.listaLectoresConMultas = listaLectoresConMultas;
-        this.obras = obras;
-    }
+    private Biblioteca(){}
 
-    public static Biblioteca getInstance(ArrayList<Ejemplar> listaDeEjemplares, ArrayList<String> listaDeIndices, ArrayList<Lector> listaDeDeudores, ArrayList<Obra> listaObrasSolicitadasAluDoc, ArrayList<Obra> listaObrasSolicitadasPublico, ArrayList<Lector> listaLectoresConMultas, ArrayList<Obra> obras) {
+    public static Biblioteca getInstance() {
         if (instance == null) {
-            instance = new Biblioteca(listaDeEjemplares, listaDeIndices, listaDeDeudores, listaObrasSolicitadasAluDoc, listaObrasSolicitadasPublico, listaLectoresConMultas, obras);
+            instance = new Biblioteca();
         }
         return instance;
     }
@@ -58,6 +51,7 @@ public final class Biblioteca {
     }
 
     public void agregarIndice(String indice) throws RuntimeException {
+        if (Objects.equals(indice, "")) throw new RuntimeException("Índice inválido.");
         if(!listaDeIndices.contains(indice)){
             listaDeIndices.add(indice);
         } else {
