@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.MostrarLista">
+  <grid id="27dc6" binding="mostrarListaPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="a171a" class="javax.swing.JList" binding="listaMostrada">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <foreground color="-4473925"/>
+          <inheritsPopupMenu value="false"/>
+          <model>
+            <item value="ekfhgjer}"/>
+            <item value="wewertw"/>
+            <item value="wretrewtr"/>
+            <item value="erwterterg"/>
+            <item value="ergergtetrg"/>
+            <item value="etrg4ertg4f4er"/>
+            <item value="treggrteg"/>
+            <item value="egtrege4rtg"/>
+            <item value="tgetgetrg"/>
+            <item value="ertgter4ger4tg"/>
+            <item value="qwgtreater"/>
+            <item value="trehgrhthr"/>
+          </model>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

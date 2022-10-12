@@ -1,9 +1,9 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Getter
 @Setter
@@ -16,9 +16,6 @@ public class Prestamo {
     private int multa;
     private Ejemplar ejemplar; //Relación intermedia entre Ejemplar y Lector
     private Lector lector; //Relación intermedia entre Ejemplar y Lector
-
-    public Prestamo() {
-    }
 
     public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, int plazo, LocalDateTime fechaHoraDevolucion, int multa, Ejemplar ejemplar, Lector lector) {
         this.tipoLectura = tipoLectura;
@@ -44,15 +41,15 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo{" +
+        return "MainClasses.Prestamo{" +
                 "Tipo de lectura='" + tipoLectura + '\'' +
                 ", Fecha y hora de inicio del préstamo=" + fechaHoraInicio +
                 ", Funcionario='" + funcionario + '\'' +
                 ", Plazo=" + plazo +
                 ", Fecha y hora de devolución=" + fechaHoraDevolucion +
                 ", Multa=" + multa +
-                ", Ejemplar=" + ejemplar +
-                ", Lector=" + lector +
+                ", MainClasses.Ejemplar=" + ejemplar +
+                ", MainClasses.Lector=" + lector +
                 '}';
     }
 }

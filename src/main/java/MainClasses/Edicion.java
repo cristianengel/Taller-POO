@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +18,6 @@ public class Edicion {
     private String formato;
     private boolean esColeccion;
     private Obra obra; //Relación con la clase Obra
-
-    public Edicion() {}
 
     public Edicion(String editorial, String paisDeEdicion, int numeroDeEdicion, int anio, int volumenes, int paginas, String idioma, String formato, boolean esColeccion, Obra obra) {
         this.editorial = editorial;
@@ -51,7 +51,7 @@ public class Edicion {
                 ", Idioma='" + idioma + '\'' +
                 ", Formato='" + formato + '\'' +
                 ", ¿Es colección?=" + esColeccion +
-                ", Obra=" + obra +
+                ", MainClasses.Obra=" + obra +
                 '}';
     }
 }

@@ -1,16 +1,23 @@
+package MainClasses;
+
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Biblioteca {
+@Getter
+@Setter
+public class Biblioteca {
     private static Biblioteca instance;
-    private final ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <Obra>
+    private final ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece <MainClasses.Obra>
     private final ArrayList<String> listaDeIndices = new ArrayList<>();
     private final ArrayList<Lector> listaDeDeudores = new ArrayList<>();
     private final ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
     private final ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
     private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
-    private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+    private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase MainClasses.Obra
 
     private Biblioteca(){}
 
@@ -54,8 +61,6 @@ public final class Biblioteca {
         if (Objects.equals(indice, "")) throw new RuntimeException("Índice inválido.");
         if(!listaDeIndices.contains(indice)){
             listaDeIndices.add(indice);
-        } else {
-            throw new RuntimeException("El indice ya se encuentra registrado.");
         }
     }
 
