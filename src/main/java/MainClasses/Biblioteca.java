@@ -64,6 +64,23 @@ public class Biblioteca {
         }
     }
 
+    public void removerIndice(String indice) throws RuntimeException {
+        if (Objects.equals(indice, "")) throw new RuntimeException("Índice inválido.");
+        if(listaDeIndices.contains(indice)){
+            listaDeIndices.remove(indice);
+        } else {
+            throw new RuntimeException("El indice no se encuentra en la biblioteca.");
+        }
+    }
+
+    public List<String> mostrarIndices(){
+        if(listaDeIndices.size() > 0) {
+            return listaDeIndices;
+        } else {
+            throw new RuntimeException("No hay índices registrados.");
+        }
+    }
+
     @Override
     public String toString() {
         return "Biblioteca{" +
@@ -77,7 +94,7 @@ public class Biblioteca {
                 '}';
     }
 
-    // chequeo de disponibilidad de ejemplares de la misma obra
+    // Chequeo de disponibilidad de ejemplares de la misma obra
     public int cantEjemplaresPorObra(Obra obra){
         int cant = 0;
         for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
