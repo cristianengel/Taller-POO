@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,9 +22,6 @@ public class Obra {
     private Biblioteca biblioteca; //Relación con la clase Biblioteca
     private ArrayList<Edicion> ediciones = new ArrayList<>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<>(); //relación con la clase Ejemplar
-
-    public Obra() {
-    }
 
     public Obra(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, int isbn, String indice, Biblioteca biblioteca) {
         this.areaTematica = areaTematica;
@@ -58,7 +57,7 @@ public class Obra {
                 ", Característica='" + caracteristica + '\'' +
                 ", ISBN=" + isbn +
                 ", Índice='" + indice + '\'' +
-                ", Biblioteca=" + biblioteca +
+                ", MainClasses.Biblioteca=" + biblioteca +
                 '}';
     }
 }

@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,9 +26,6 @@ public class Ejemplar {
 
     private Reserva lectorReserva; //Relación con las clases Reserva y Lector
     private Prestamo lectorPrestamo; //Relación con las clases Prestamo y Lector
-
-    public Ejemplar() {
-    }
 
     //Constructor sin reserva ni préstamo
     public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
@@ -93,7 +92,7 @@ public class Ejemplar {
                 ", Ubicación física de dado de baja='" + ubicacionFisicaDadoDeBaja + '\'' +
                 ", Fecha de adquisición=" + fechaDeAdquisicion +
                 ", Forma de adquisición='" + formaDeAdquisicion + '\'' +
-                ", Obra=" + obra +
+                ", MainClasses.Obra=" + obra +
                 '}';
     }
 }

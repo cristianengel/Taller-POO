@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,8 +13,6 @@ public class Reserva {
     private LocalDateTime fechaHoraFin;
     private Ejemplar ejemplar; //Relación intermedia entre Lector y Ejemplar
     private Lector lector; //Relación intermedia entre Lector y Ejemplar
-
-    public Reserva() {}
 
     public Reserva(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin, Ejemplar ejemplar, Lector lector) {
         this.fechaHoraInicio = fechaHoraInicio;
@@ -30,11 +30,11 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" +
+        return "MainClasses.Reserva{" +
                 "Fecha y hora del inicio de la reserva=" + fechaHoraInicio +
                 ", Fecha y hora del fin de la reserva=" + fechaHoraFin +
-                ", Ejemplar=" + ejemplar +
-                ", Lector=" + lector +
+                ", MainClasses.Ejemplar=" + ejemplar +
+                ", MainClasses.Lector=" + lector +
                 '}';
     }
 }

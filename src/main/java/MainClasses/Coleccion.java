@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -6,9 +8,8 @@ import lombok.Setter;
 public class Coleccion extends Obra {
     private String nombre;
 
-    public Coleccion() {}
-
-    public Coleccion(String nombre) {
+    public Coleccion(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, int isbn, String indice, Biblioteca biblioteca, String nombre) {
+        super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor, tercerAutor, genero, caracteristica, isbn, indice, biblioteca);
         this.nombre = nombre;
     }
 
@@ -21,7 +22,7 @@ public class Coleccion extends Obra {
     }
 
     public String toString() {
-        return "Coleccion{" +
+        return "MainClasses.Coleccion{" +
                 "Nombre='" + nombre + '\'' +
                 ", Área temática='" + getAreaTematica() + '\'' +
                 ", Título='" + getTitulo() + '\'' +

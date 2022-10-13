@@ -1,0 +1,116 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"730cb658-8af3-4743-81ed-f3044f0ba373\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_22__4_36_PM__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_22__4_36_PM__Changes_.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Biblioteca.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Biblioteca.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"PREVIOUS_COMMIT_AUTHORS\">\n      <list>\n        <option value=\"cristian &lt;cristianengel1411@gmail.com&gt;\" />\n        <option value=\"cis\" />\n      </list>\n    </option>\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2FJyxNqyUE8IBtAvPAkNxsEVtpK\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Isaías/intellij-worspace/Taller-POO&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"730cb658-8af3-4743-81ed-f3044f0ba373\" name=\"Changes\" comment=\"\" />\n      <created>1664224728205</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1664224728205</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Creacion de los atributos de la clase Biblioteca\">\n      <created>1664227570587</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664227570587</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"Creacion del metodo removerEjemplar\">\n      <created>1664228571426</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664228571426</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Agregación del método equals()\">\n      <created>1664676336001</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664676336001</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Agregación del método toString()\">\n      <created>1664676497149</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664676497149</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Creación de métodos para las clases heredadas de la clase Lector\">\n      <created>1664677619904</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1664677619904</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Se agregaron métodos de actualización de listas en la clase Biblioteca\">\n      <created>1665517412222</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665517412222</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Se agregaron métodos de actualización de listas en la clase Biblioteca\">\n      <created>1665517489378</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1665517489378</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"8\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"origin/DesarrolloIsaias\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"Creacion de los atributos de la clase Biblioteca\" />\n    <MESSAGE value=\"Creacion del metodo removerEjemplar\" />\n    <MESSAGE value=\"Agregación del método equals()\" />\n    <MESSAGE value=\"Agregación del método toString()\" />\n    <MESSAGE value=\"Creación de métodos para las clases heredadas de la clase Lector\" />\n    <MESSAGE value=\"Se agregaron métodos de actualización de listas en la clase Biblioteca\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Se agregaron métodos de actualización de listas en la clase Biblioteca\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 835ce0c00593cd48d44bfee5bbb598323a1f7766)
++++ b/.idea/workspace.xml	(date 1665631510982)
+@@ -4,11 +4,29 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_22__4_36_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_11_22__4_36_PM__Changes_.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
++    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Se agregaron métodos de actualización de listas en la clase Biblioteca">
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/FirstScreen.form" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/FirstScreen.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Listados.form" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Listados.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/MainScreen.form" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/MainScreen.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/MostrarLista.form" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/MostrarLista.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/ScreenManager.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/test/Main.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Biblioteca.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Coleccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Coleccion.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Edicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Edicion.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Lector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Obra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Obra.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Prestamo.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Publico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Reserva.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,10 +53,16 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/StringConcatHelper.java" root0="SKIP_INSPECTION" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+   </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectId" id="2FJyxNqyUE8IBtAvPAkNxsEVtpK" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <ConfirmationsSetting value="2" id="Add" />
+@@ -47,18 +71,19 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Isaías/intellij-worspace/Taller-POO&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "last_opened_file_path": "C:/Users/Isaías/intellij-worspace/Taller-POO",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0",
++    "settings.editor.selected.configurable": "Errors"
+   }
+-}</component>
++}]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -144,6 +169,7 @@
+     </option>
+   </component>
+   <component name="VcsManagerConfiguration">
++    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+     <MESSAGE value="Creacion de los atributos de la clase Biblioteca" />
+     <MESSAGE value="Creacion del metodo removerEjemplar" />
+     <MESSAGE value="Agregación del método equals()" />
+@@ -152,4 +178,14 @@
+     <MESSAGE value="Se agregaron métodos de actualización de listas en la clase Biblioteca" />
+     <option name="LAST_COMMIT_MESSAGE" value="Se agregaron métodos de actualización de listas en la clase Biblioteca" />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.lang.StackOverflowError" package="java.lang" />
++          <option name="timeStamp" value="1" />
++        </breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file

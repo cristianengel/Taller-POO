@@ -1,3 +1,5 @@
+package MainClasses;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,11 +22,8 @@ public class Lector {
     private int codigoPostal;
     private String departamento;
     private String localidad;
-    private Reserva ejemplarReserva; //Relación con las clases Reserva y Ejemplar
-    private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
-
-    public Lector() {
-    }
+    private Reserva ejemplarReserva; //Relación con las clases MainClasses.Reserva y MainClasses.Ejemplar
+    private Prestamo ejemplarPrestamo; //Relación con las clases MainClasses.Prestamo y MainClasses.Ejemplar
 
     //Constructor sin reserva ni préstamo
     public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
@@ -88,7 +87,7 @@ public class Lector {
 
     @Override
     public String toString() {
-        return "Lector{" +
+        return "MainClasses.Lector{" +
                 "Nombre='" + nombre + '\'' +
                 ", Apellido='" + apellido + '\'' +
                 ", Tipo de documento='" + tipoDoc + '\'' +
@@ -102,8 +101,8 @@ public class Lector {
                 ", Código postal=" + codigoPostal +
                 ", Departamento='" + departamento + '\'' +
                 ", Localidad='" + localidad + '\'' +
-                ", Ejemplar-Reserva=" + ejemplarReserva +
-                ", Ejemplar-Prestamo=" + ejemplarPrestamo +
+                ", MainClasses.Ejemplar-MainClasses.Reserva=" + ejemplarReserva +
+                ", MainClasses.Ejemplar-MainClasses.Prestamo=" + ejemplarPrestamo +
                 '}';
     }
 }
