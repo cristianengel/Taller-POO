@@ -13,7 +13,7 @@ public class ScreenManager {
         return new Listados();
     }
 
-    public static MostrarLista createMostrarListaScreen() {
-        return new MostrarLista();
+    public static MostrarLista createMostrarListaScreen(String item) {
+        return new MostrarLista(item);
     }
 }
