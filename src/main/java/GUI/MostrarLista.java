@@ -11,12 +11,11 @@ public class MostrarLista extends JFrame{
     public MostrarLista() {
         Biblioteca b = Biblioteca.getInstance();
 
-        //Debes crear un DefaultListModel
-        /*DefaultListModel lista = new DefaultListModel();
+        DefaultListModel lista = new DefaultListModel();
         for(int i = 0;i < b.getListaDeEjemplares().toArray().length;i++) {
-            lista.addElement(b.getListaDeEjemplares().get(i));
+            lista.addElement(b.mostrarEjemplares().get(i));
         }
-        listaMostrada.setModel(lista);*/
+        listaMostrada.setModel(lista);
 
         setContentPane(mostrarListaPanel);
         setTitle("Gestor de préstamos");

@@ -90,9 +90,9 @@ public class Ejemplar {
                 ", Fecha de dado de baja=" + fechaDadoDeBaja +
                 ", Motivo de dado de baja='" + motivoDadoDeBaja + '\'' +
                 ", Ubicación física de dado de baja='" + ubicacionFisicaDadoDeBaja + '\'' +
-                ", Fecha de adquisición=" + fechaDeAdquisicion +
+                ", Fecha de adquisición=" + fechaDeAdquisicion + '\'' +
                 ", Forma de adquisición='" + formaDeAdquisicion + '\'' +
-                ", MainClasses.Obra=" + obra +
+                ", Obra=" + obra +
                 '}';
     }
 }
