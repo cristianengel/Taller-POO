@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Listados extends JFrame{
-    private JComboBox comboBox1;
+    private JComboBox<String> comboBox1;
     private JPanel listadosPanel;
     private JButton nextButton;
 
@@ -25,7 +25,15 @@ public class Listados extends JFrame{
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ScreenManager.createMostrarListaScreen();
+                if(comboBox1.getSelectedItem() == "Ejemplares") {
+                    ScreenManager.createMostrarListaScreen("Ejemplares");
+                } else if (comboBox1.getSelectedItem() == "Índices") {
+                    ScreenManager.createMostrarListaScreen("Índices");
+                } else if (comboBox1.getSelectedItem() == "Deudores") {
+                    ScreenManager.createMostrarListaScreen("Deudores");
+                } else if (comboBox1.getSelectedItem() == "Obras") {
+                    ScreenManager.createMostrarListaScreen("Obras");
+                }
                 dispose();
             }
         });
