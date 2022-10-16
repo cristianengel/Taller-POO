@@ -18,6 +18,8 @@ public class Biblioteca {
     private final ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
     private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
     private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+    public ArrayList<String> loginData = new ArrayList<>(); // Datos de inicio de sesión, guarda nombre de usuario y DNI del bibliotecario
+
 
     private Biblioteca(){}
 

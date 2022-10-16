@@ -18,7 +18,7 @@ public class Ejemplar {
 
     private LocalDate fechaDadoDeBaja;
     private String motivoDadoDeBaja;
-    private String ubicacionFisicaDadoDeBaja;
+    private ArrayList<String> ubicacionFisicaDadoDeBaja = new ArrayList<>();
 
     private LocalDate fechaDeAdquisicion;
     private String formaDeAdquisicion;
@@ -28,7 +28,7 @@ public class Ejemplar {
     private Prestamo lectorPrestamo; //Relación con las clases Prestamo y Lector
 
     //Constructor sin reserva ni préstamo
-    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
         this.observaciones = observaciones;
@@ -43,7 +43,7 @@ public class Ejemplar {
     }
 
     //Constructor con reserva
-    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Reserva lectorReserva, Prestamo lectorPrestamo) {
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Reserva lectorReserva, Prestamo lectorPrestamo) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
         this.observaciones = observaciones;
@@ -58,7 +58,7 @@ public class Ejemplar {
     }
 
     //Constructor con préstamo
-    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, String ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Prestamo lectorPrestamo) {
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Prestamo lectorPrestamo) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
         this.observaciones = observaciones;
