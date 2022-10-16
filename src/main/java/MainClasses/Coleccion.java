@@ -9,7 +9,7 @@ public class Coleccion extends Obra {
     private String nombre;
 
     public Coleccion(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, int isbn, String indice, Biblioteca biblioteca, String nombre) {
-        super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor, tercerAutor, genero, caracteristica, isbn, indice, biblioteca);
+        super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor, tercerAutor, genero, caracteristica, isbn, indice);
         this.nombre = nombre;
     }
 
