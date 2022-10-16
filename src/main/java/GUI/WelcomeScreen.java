@@ -1,27 +1,25 @@
 package GUI;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
+import test.*;
 
-public class FirstScreen extends JFrame {
-    private JPanel firstPanel;
+public class WelcomeScreen extends JFrame {
+    private JPanel mainPanel;
     private JButton ingresarButton;
 
-    public FirstScreen() {
-        setContentPane(firstPanel);
+    public WelcomeScreen() {
+        setContentPane(mainPanel);
         setTitle("Gestor de Préstamos");
+        setSize(450,300);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getFullScreenWindow();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ScreenManager.createMainScreen();
-                dispose();
+                Main.mainMenu();
             }
         });
     }
