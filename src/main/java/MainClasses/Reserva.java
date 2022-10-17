@@ -30,11 +30,11 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "MainClasses.Reserva{" +
+        return "Reserva{" +
                 "Fecha y hora del inicio de la reserva=" + fechaHoraInicio +
                 ", Fecha y hora del fin de la reserva=" + fechaHoraFin +
-                ", MainClasses.Ejemplar=" + ejemplar +
-                ", MainClasses.Lector=" + lector +
+                ", Ejemplar=" + ejemplar +
+                ", Lector=" + lector +
                 '}';
     }
 }

@@ -22,8 +22,10 @@ public class Lector {
     private int codigoPostal;
     private String departamento;
     private String localidad;
-    private Reserva ejemplarReserva; //Relación con las clases MainClasses.Reserva y MainClasses.Ejemplar
-    private Prestamo ejemplarPrestamo; //Relación con las clases MainClasses.Prestamo y MainClasses.Ejemplar
+    private Reserva ejemplarReserva; //Relación con las clases Reserva y Ejemplar
+    private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
+    private int valorAcumuladoEnMultas = 0;
+    private int multasAplicadas = 1;
 
     //Constructor sin reserva ni préstamo
     public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
@@ -87,7 +89,7 @@ public class Lector {
 
     @Override
     public String toString() {
-        return "MainClasses.Lector{" +
+        return "Lector{" +
                 "Nombre='" + nombre + '\'' +
                 ", Apellido='" + apellido + '\'' +
                 ", Tipo de documento='" + tipoDoc + '\'' +
@@ -101,8 +103,10 @@ public class Lector {
                 ", Código postal=" + codigoPostal +
                 ", Departamento='" + departamento + '\'' +
                 ", Localidad='" + localidad + '\'' +
-                ", MainClasses.Ejemplar-MainClasses.Reserva=" + ejemplarReserva +
-                ", MainClasses.Ejemplar-MainClasses.Prestamo=" + ejemplarPrestamo +
+                ", Reserva=" + ejemplarReserva + '\'' +
+                ", Prestamo=" + ejemplarPrestamo + '\'' +
+                ", Debe en multas=" + valorAcumuladoEnMultas + '\'' +
+                ", Cantidad de multas acumuladas=" + multasAplicadas +
                 '}';
     }
 }
