@@ -31,9 +31,10 @@
         </constraints>
         <properties>
           <background color="-16744193"/>
-          <borderPainted value="false"/>
+          <borderPainted value="true"/>
           <focusPainted value="false"/>
-          <font name="Roboto Light"/>
+          <font name="Roboto Light" size="20"/>
+          <foreground color="-1"/>
           <text value="Ver Listados"/>
         </properties>
       </component>
@@ -43,9 +44,10 @@
         </constraints>
         <properties>
           <background color="-16744193"/>
-          <borderPainted value="false"/>
+          <borderPainted value="true"/>
           <focusPainted value="false"/>
-          <font name="Roboto Light"/>
+          <font name="Roboto Light" size="20"/>
+          <foreground color="-1"/>
           <text value="Operaciones con Ejemplares"/>
         </properties>
       </component>
@@ -55,9 +57,10 @@
         </constraints>
         <properties>
           <background color="-16744193"/>
-          <borderPainted value="false"/>
+          <borderPainted value="true"/>
           <focusPainted value="false"/>
-          <font name="Roboto Light"/>
+          <font name="Roboto Light" size="20"/>
+          <foreground color="-1"/>
           <text value="Operaciones con Índices"/>
         </properties>
       </component>
@@ -67,9 +70,10 @@
         </constraints>
         <properties>
           <background color="-16744193"/>
-          <borderPainted value="false"/>
+          <borderPainted value="true"/>
           <focusPainted value="false"/>
-          <font name="Roboto Light"/>
+          <font name="Roboto Light" size="20"/>
+          <foreground color="-1"/>
           <text value="Préstamos y Reservas"/>
         </properties>
       </component>

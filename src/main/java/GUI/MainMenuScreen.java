@@ -21,6 +21,7 @@ public class MainMenuScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 OperacionesConEjemplares oce = new OperacionesConEjemplares();
+                dispose();
             }
         });
     }

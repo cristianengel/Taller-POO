@@ -20,6 +20,7 @@ public class WelcomeScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Main.mainMenu();
+                dispose();
             }
         });
     }

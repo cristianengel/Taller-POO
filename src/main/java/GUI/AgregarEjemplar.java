@@ -28,6 +28,7 @@ public class AgregarEjemplar extends JFrame{
     private JButton agregarButton;
     private JPanel agregarEjemplarPanel;
     private JComboBox comboBox1;
+    private JButton atrasButton;
 
     public AgregarEjemplar() {
         comboBox1.addItem("Compra por Internet");
@@ -49,6 +50,13 @@ public class AgregarEjemplar extends JFrame{
             }
         });
 
+        atrasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                OperacionesConEjemplares oce = new OperacionesConEjemplares();
+                dispose();
+            }
+        });
     }
 
     /**
