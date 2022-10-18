@@ -26,6 +26,14 @@ public class Ejemplar {
     private Reserva lectorReserva; //Relación con las clases Reserva y Lector
     private Prestamo lectorPrestamo; //Relación con las clases Prestamo y Lector
 
+    //Constructor sin lugarFisico, fechaDadoDeBaja, motivoDadoDeBaja, ubicacionFisicaDadoDeBaja, fechaDeAdquisicion, formaDeAdquisicion
+    public Ejemplar(String identUnico, int codBarra, String observaciones, Obra obra) {
+        this.identUnico = identUnico;
+        this.codBarra = codBarra;
+        this.observaciones = observaciones;
+        this.obra = obra;
+    }
+
     //Constructor sin reserva ni préstamo
     public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
