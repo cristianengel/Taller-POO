@@ -3,10 +3,9 @@ package test;
 import GUI.AgregarEjemplar;
 import GUI.MainMenuScreen;
 import GUI.WelcomeScreen;
-import MainClasses.Biblioteca;
-import MainClasses.Ejemplar;
-import MainClasses.Obra;
+import MainClasses.*;
 
+import javax.security.auth.callback.LanguageCallback;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -31,6 +30,10 @@ public class Main {
         biblioteca.agregarEjemplar(principiosSistemasDeInformacion1);
         biblioteca.agregarEjemplar(bibliaJava1);
         biblioteca.agregarEjemplar(sistemasAdSistemasInf1);
+
+        Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", 3454652000, LocalDate.of(27,3,1995), "Masculino", "Argentina", "Los Valles 540", 3200, "", "Concordia");
+        Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", 3454987467, LocalDate.of(5,6, 2003), "Masculino", "Argentina", "Quintana 5", 3200, "3b", "Concordia");
+        Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", 3454020663, LocalDate.of(19,11,2000), "Masculino", "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
 
         WelcomeScreen ws = new WelcomeScreen();
     }
