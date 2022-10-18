@@ -14,7 +14,7 @@ public class Lector {
     private String tipoDoc;
     private int numDoc;
     private String correoElec;
-    private int numCel;
+    private String numCel;
     private LocalDate fechaNac;
     private String sexo;
     private String nacionalidad;
@@ -27,8 +27,7 @@ public class Lector {
     private int valorAcumuladoEnMultas = 0;
     private int multasAplicadas = 1;
 
-    //Constructor sin reserva ni préstamo
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDoc = tipoDoc;
@@ -42,42 +41,6 @@ public class Lector {
         this.codigoPostal = codigoPostal;
         this.departamento = departamento;
         this.localidad = localidad;
-    }
-
-    //Constructor con reserva
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Reserva ejemplarReserva, Prestamo ejemplarPrestamo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.tipoDoc = tipoDoc;
-        this.numDoc = numDoc;
-        this.correoElec = correoElec;
-        this.numCel = numCel;
-        this.fechaNac = fechaNac;
-        this.sexo = sexo;
-        this.nacionalidad = nacionalidad;
-        this.domicilio = domicilio;
-        this.codigoPostal = codigoPostal;
-        this.departamento = departamento;
-        this.localidad = localidad;
-        this.ejemplarReserva = ejemplarReserva;
-    }
-
-    //Constructor con préstamo
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, int numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Prestamo ejemplarPrestamo) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.tipoDoc = tipoDoc;
-        this.numDoc = numDoc;
-        this.correoElec = correoElec;
-        this.numCel = numCel;
-        this.fechaNac = fechaNac;
-        this.sexo = sexo;
-        this.nacionalidad = nacionalidad;
-        this.domicilio = domicilio;
-        this.codigoPostal = codigoPostal;
-        this.departamento = departamento;
-        this.localidad = localidad;
-        this.ejemplarPrestamo = ejemplarPrestamo;
     }
 
     @Override

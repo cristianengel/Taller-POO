@@ -15,7 +15,6 @@ public class AgregarEjemplar extends JFrame{
     private JTextField estanteria;
     private JTextField estante;
     private JTextField observaciones;
-    private JTextField formaAdquisicion;
     private JTextField areaTematica;
     private JTextField titulo;
     private JTextField subtitulo;
@@ -28,8 +27,13 @@ public class AgregarEjemplar extends JFrame{
     private JTextArea indice;
     private JButton agregarButton;
     private JPanel agregarEjemplarPanel;
+    private JComboBox comboBox1;
 
     public AgregarEjemplar() {
+        comboBox1.addItem("Compra por Internet");
+        comboBox1.addItem("Compra a Biblioteca");
+        comboBox1.addItem("Compra Particular");
+        comboBox1.addItem("Otros");
         setContentPane(agregarEjemplarPanel);
         setTitle("Gestor de Préstamos");
         setSize(450,300);

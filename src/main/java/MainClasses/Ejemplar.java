@@ -13,7 +13,7 @@ public class Ejemplar {
     private String identUnico;
     private int codBarra;
     private String observaciones;
-    private ArrayList<String> lugarFisico = new ArrayList<>();
+    private ArrayList<String> lugarFisico; // Pasillo, Estantería, Estante
 
     private LocalDate fechaDadoDeBaja;
     private String motivoDadoDeBaja;
@@ -22,59 +22,20 @@ public class Ejemplar {
     private LocalDate fechaDeAdquisicion;
     private String formaDeAdquisicion;
     private Obra obra; //Relación con la clase Obra
+    private Edicion edicion;
 
     private Reserva lectorReserva; //Relación con las clases Reserva y Lector
     private Prestamo lectorPrestamo; //Relación con las clases Prestamo y Lector
 
-    //Constructor sin lugarFisico, fechaDadoDeBaja, motivoDadoDeBaja, ubicacionFisicaDadoDeBaja, fechaDeAdquisicion, formaDeAdquisicion
-    public Ejemplar(String identUnico, int codBarra, String observaciones, Obra obra) {
-        this.identUnico = identUnico;
-        this.codBarra = codBarra;
-        this.observaciones = observaciones;
-        this.obra = obra;
-    }
-
-    //Constructor sin reserva ni préstamo
-    public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
+    //Constructor sin fechaDadoDeBaja, motivoDadoDeBaja, ubicacionFisicaDadoDeBaja
+    public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
         this.lugarFisico = lugarFisico;
-        this.fechaDadoDeBaja = fechaDadoDeBaja;
-        this.motivoDadoDeBaja = motivoDadoDeBaja;
-        this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
-        this.fechaDeAdquisicion = fechaDeAdquisicion;
-        this.formaDeAdquisicion = formaDeAdquisicion;
         this.observaciones = observaciones;
-        this.obra = obra;
-    }
-
-    //Constructor con reserva
-    public Ejemplar(String identUnico, int codBarra, String observaciones, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Reserva lectorReserva, Prestamo lectorPrestamo) {
-        this.identUnico = identUnico;
-        this.codBarra = codBarra;
-        this.observaciones = observaciones;
-        this.fechaDadoDeBaja = fechaDadoDeBaja;
-        this.motivoDadoDeBaja = motivoDadoDeBaja;
-        this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
         this.fechaDeAdquisicion = fechaDeAdquisicion;
         this.formaDeAdquisicion = formaDeAdquisicion;
         this.obra = obra;
-        this.lectorReserva = lectorReserva;
-    }
-
-    //Constructor con préstamo
-    public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Prestamo lectorPrestamo) {
-        this.identUnico = identUnico;
-        this.codBarra = codBarra;
-        this.observaciones = observaciones;
-        this.lugarFisico = lugarFisico;
-        this.fechaDadoDeBaja = fechaDadoDeBaja;
-        this.motivoDadoDeBaja = motivoDadoDeBaja;
-        this.ubicacionFisicaDadoDeBaja = ubicacionFisicaDadoDeBaja;
-        this.fechaDeAdquisicion = fechaDeAdquisicion;
-        this.formaDeAdquisicion = formaDeAdquisicion;
-        this.obra = obra;
-        this.lectorPrestamo = lectorPrestamo;
     }
 
     @Override
