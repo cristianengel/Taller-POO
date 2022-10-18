@@ -9,6 +9,7 @@ public class MainMenuScreen extends JFrame {
     private JButton opEjButton;
     private JButton opInButton;
     private JButton prestamosButton;
+    private JButton salirButton;
 
     public MainMenuScreen(){
         setContentPane(mainMenuPanel);
@@ -21,6 +22,19 @@ public class MainMenuScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 OperacionesConEjemplares oce = new OperacionesConEjemplares();
+                dispose();
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
+        listadosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                EleccionListadoAMostrar elam = new EleccionListadoAMostrar();
                 dispose();
             }
         });
