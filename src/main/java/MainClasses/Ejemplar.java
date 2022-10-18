@@ -42,6 +42,15 @@ public class Ejemplar {
         this.obra = obra;
     }
 
+    //Constructor sin Fecha de dado de baja, Motivo dado de baja, ubicacionFisicaDadoDeBaja, fechaDeAdquisicion, formaDeAdquisicion, lectorReserva
+    public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, Obra obra) {
+        this.identUnico = identUnico;
+        this.codBarra = codBarra;
+        this.observaciones = observaciones;
+        this.areaDeReferencia = areaDeReferencia;
+        this.obra = obra;
+    }
+
     //Constructor con reserva
     public Ejemplar(String identUnico, int codBarra, String observaciones, String areaDeReferencia, LocalDate fechaDadoDeBaja, String motivoDadoDeBaja, ArrayList<String> ubicacionFisicaDadoDeBaja, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra, Reserva lectorReserva, Prestamo lectorPrestamo) {
         this.identUnico = identUnico;
