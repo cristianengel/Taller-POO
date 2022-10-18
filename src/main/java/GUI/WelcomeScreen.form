@@ -32,7 +32,9 @@
         </constraints>
         <properties>
           <background color="-16744193"/>
-          <borderPainted value="false"/>
+          <borderPainted value="true"/>
+          <focusPainted value="false"/>
+          <font name="Roboto Light" size="20"/>
           <foreground color="-1"/>
           <text value="Ingresar"/>
         </properties>
