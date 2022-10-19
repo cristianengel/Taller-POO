@@ -7,7 +7,7 @@ public class MainMenuScreen extends JFrame {
     private JPanel mainMenuPanel;
     private JButton listadosButton;
     private JButton opEjButton;
-    private JButton opInButton;
+    private JButton indicesButton;
     private JButton prestamosButton;
     private JButton salirButton;
 
@@ -35,6 +35,13 @@ public class MainMenuScreen extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 EleccionListadoAMostrar elam = new EleccionListadoAMostrar();
+                dispose();
+            }
+        });
+        indicesButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AgregarPalabrasClave apc = new AgregarPalabrasClave();
                 dispose();
             }
         });

@@ -103,14 +103,6 @@ public class Biblioteca {
             throw new RuntimeException("No hay obras registradas.");
         }
     }
-    
-    public void solicitarPrestamo() {
-        // TODO: 10/16/22  
-    }
-    
-    public void reservar() {
-        // TODO: 10/16/22  
-    }
 
     @Override
     public String toString() {

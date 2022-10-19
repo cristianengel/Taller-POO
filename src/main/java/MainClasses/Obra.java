@@ -18,8 +18,10 @@ public class Obra {
     private String genero;
     private String caracteristica;
     private String indice;
-    //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
+    //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición TODO
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
+    private static int vecesSolicitadaAluDoc = 0;
+    private static int vecesSolicitadaPublico = 0;
 
     public Obra(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, String indice) {
         this.areaTematica = areaTematica;

@@ -20,7 +20,7 @@ public class ListaMostrada extends JFrame{
                 throw new RuntimeException("La lista está vacía");
             }
             for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-                listModel.addElement(b.getListaDeEjemplares().get(i).stringSimplificado());
+                listModel.addElement(b.getListaDeEjemplares().get(i).toString());
             }
 
         } else if(listaElegida == "Indices") {
