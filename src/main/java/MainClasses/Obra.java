@@ -42,16 +42,15 @@ public class Obra {
 
     @Override
     public String toString() {
-        return "Obra{" +
-                "Área temática='" + areaTematica + '\'' +
-                ", Título='" + titulo + '\'' +
-                ", Subtítulo='" + subtitulo + '\'' +
-                ", Primer autor='" + primerAutor + '\'' +
-                ", Segundo autor='" + segundoAutor + '\'' +
-                ", Tercer autor='" + tercerAutor + '\'' +
-                ", Género='" + genero + '\'' +
-                ", Característica='" + caracteristica + '\'' +
-                ", Índice='" + indice + '\'' +
-                '}';
+        return "🔹Obra: " + "\n" +
+                "   -Área temática='" + areaTematica + "\n" +
+                "   -Título=" + titulo + "\n" +
+                "   -Subtítulo=" + subtitulo + "\n" +
+                "   -Primer autor=" + primerAutor + "\n" +
+                "   -Segundo autor=" + segundoAutor + "\n" +
+                "   -Tercer autor=" + tercerAutor + "\n" +
+                "   -Género=" + genero + "\n" +
+                "   -Característica=" + caracteristica + "\n" +
+                "   -Índice=" + indice + "\n";
     }
 }

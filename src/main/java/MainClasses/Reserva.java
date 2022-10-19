@@ -30,11 +30,10 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" +
-                "Fecha y hora del inicio de la reserva=" + fechaHoraInicio +
-                ", Fecha y hora del fin de la reserva=" + fechaHoraFin +
-                ", Ejemplar=" + ejemplar +
-                ", Lector=" + lector +
-                '}';
+        return "🔹Reserva: " + "\n" +
+                "   -Fecha y hora del inicio de la reserva=" + fechaHoraInicio + "\n" +
+                "   -Fecha y hora del fin de la reserva=" + fechaHoraFin + "\n" +
+                "   -Ejemplar=" + ejemplar + "\n" +
+                "   -Lector=" + lector;
     }
 }
