@@ -16,7 +16,9 @@ public class Prestamo {
     private Ejemplar ejemplar; //Relación con Ejemplar
     private Lector lector; //Relación con Lector
 
-    public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector) {
+    public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector) throws RuntimeException {
+        //Si la fecha del inicio del prestamo anterior a la fecha con multas -> No se realiza el préstamo
+        if (fechaHoraInicio.isBefore(fechaHoraInicio.plusDays(lector.getMultas())) == true) throw new RuntimeException("El lector aún tiene multas.");
         this.tipoLectura = tipoLectura;
         this.fechaHoraInicio = fechaHoraInicio;
         this.funcionario = funcionario;
@@ -46,14 +48,13 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo{" +
-                "Tipo de lectura='" + tipoLectura + '\'' +
-                ", Fecha y hora de inicio del préstamo=" + fechaHoraInicio +
-                ", Funcionario que lo presó='" + funcionario + '\'' +
-                ", Plazo=" + plazo +
-                ", Fecha y hora de devolución=" + fechaHoraDevolucion +
-                ", Ejemplar=" + ejemplar +
-                ", Lector=" + lector +
-                '}';
+        return "🔹Prestamo:" + "\n" +
+                "   -Tipo de lectura=" + tipoLectura + "\n" +
+                "   -Fecha y hora de inicio del préstamo=" + fechaHoraInicio + "\n" +
+                "   -Funcionario que lo presó=" + funcionario + "\n" +
+                "   -Plazo=" + plazo + "\n" +
+                "   -Fecha y hora de devolución=" + fechaHoraDevolucion + "\n" +
+                "   -Ejemplar=" + ejemplar + "\n" +
+                "   -Lector=" + lector;
     }
 }
