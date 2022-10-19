@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -43,11 +42,12 @@ public class Lector {
         this.localidad = localidad;
     }
 
-    public void setMultas(int multas) {
-        this.multas += multas;
-    }
-
-    public void puedeReservarOLevantar(LocalDateTime fecha) {
+    /**
+     * Al atributo multas se le suma la cantidad de días que no puede reservar o levantar un ejemplar
+     * @param dias
+     */
+    public void setMultas(int dias) {
+        this.multas += dias;
     }
 
     @Override
@@ -59,23 +59,22 @@ public class Lector {
 
     @Override
     public String toString() {
-        return "Lector{" +
-                "Nombre='" + nombre + '\'' +
-                ", Apellido='" + apellido + '\'' +
-                ", Tipo de documento='" + tipoDoc + '\'' +
-                ", Número de documento=" + numDoc +
-                ", Correo electrónico='" + correoElec + '\'' +
-                ", Número de celular=" + numCel +
-                ", Fecha de nacimiento=" + fechaNac +
-                ", Sexo='" + sexo + '\'' +
-                ", Nacionalidad='" + nacionalidad + '\'' +
-                ", Domicilio='" + domicilio + '\'' +
-                ", Código postal=" + codigoPostal +
-                ", Departamento='" + departamento + '\'' +
-                ", Localidad='" + localidad + '\'' +
-                ", Reserva=" + ejemplarReserva + '\'' +
-                ", Prestamo=" + ejemplarPrestamo + '\'' +
-                ", Cantidad de multas=" + multas +
-                '}';
+        return "🔹Lector:" + "\n" +
+                "Nombre=" + nombre + "\n" +
+                "   -Apellido=" + apellido + "\n" +
+                "   -Tipo de documento=" + tipoDoc + "\n" +
+                "   -Número de documento=" + numDoc + "\n" +
+                "   -Correo electrónico=" + correoElec + "\n" +
+                "   -Número de celular=" + numCel + "\n" +
+                "   -Fecha de nacimiento=" + fechaNac + "\n" +
+                "   -Sexo=" + sexo + "\n" +
+                "   -Nacionalidad=" + nacionalidad + "\n" +
+                "   -Domicilio=" + domicilio + "\n" +
+                "   -Código postal=" + codigoPostal + "\n" +
+                "   -Departamento=" + departamento + "\n" +
+                "   -Localidad=" + localidad + "\n" +
+                "   -Reserva=" + ejemplarReserva + "\n" +
+                "   -Prestamo=" + ejemplarPrestamo + "\n" +
+                "   -Cantidad de multas=" + multas;
     }
 }

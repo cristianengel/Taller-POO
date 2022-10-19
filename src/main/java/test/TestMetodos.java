@@ -3,6 +3,7 @@ package test;
 import MainClasses.*;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -28,7 +29,7 @@ public class TestMetodos {
         Ejemplar bibliaJava1 = new Ejemplar("rebarnu", 9817442, " La biblia de Java 2 está diseñado para mostrarle toda la historia del lenguaje de programación Java, contiene no sólo toda la sintaxis de Java, desde la declaración de variables hasta temas de orientación a objetos avanzada, sino también el lenguaje Java en el mundo real. Se cubrirán temas como permisos de acceso a applets, uso del visulizador de Java, creación de conexiones cliente / servidor sobre Internet, creación de Java Beans, conexión de bases de datos, multithread y Java Swing, la nueva y revolucionaria interfaz para la programación de clases Java. ", new ArrayList<String>(Arrays.asList("21", "1", "3")), LocalDate.of(2021, 12, 2), "Compra por Internet", bibliaDeJava);
         Ejemplar sistemasAdSistemasInf1 = new Ejemplar("kQbfGG", 2451442, "", new ArrayList<String>(Arrays.asList("3", "23", "43")), LocalDate.of(2021, 6, 20), "Compra a biblioteca X",  sistemasAdSistemasInf);
 
-        // Métodos de prueba
+        // Método agregar ejemplar de prueba
         biblioteca.agregarEjemplar(principito1);
         biblioteca.agregarEjemplar(principe1);
         biblioteca.agregarEjemplar(principiosSistemasDeInformacion1);
@@ -39,5 +40,11 @@ public class TestMetodos {
         Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), "Masculino", "Argentina", "Los Valles 540", 3200, "", "Concordia");
         Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), "Masculino", "Argentina", "Quintana 5", 3200, "3b", "Concordia");
         Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), "Masculino", "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
+
+        // Creación de un prestamo y su devolución
+        Prestamo p = new Prestamo("Para domincilio", LocalDateTime.of(2002,10,15,14,34, 5), "Roberto", principe1, marcos);
+        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,19,14,34, 5), principe1, marcos,"Roberto");
+
+        System.out.println(d.controlFechaDevolucion());
     }
 }
