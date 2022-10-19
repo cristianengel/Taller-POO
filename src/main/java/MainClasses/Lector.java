@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -24,8 +25,7 @@ public class Lector {
     private String localidad;
     private Reserva ejemplarReserva; //Relación con las clases Reserva y Ejemplar
     private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
-    private int valorAcumuladoEnMultas = 0;
-    private int multasAplicadas = 1;
+    private int multas;
 
     public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
         this.nombre = nombre;
@@ -41,6 +41,13 @@ public class Lector {
         this.codigoPostal = codigoPostal;
         this.departamento = departamento;
         this.localidad = localidad;
+    }
+
+    public void setMultas(int multas) {
+        this.multas += multas;
+    }
+
+    public void puedeReservarOLevantar(LocalDateTime fecha) {
     }
 
     @Override
@@ -68,8 +75,7 @@ public class Lector {
                 ", Localidad='" + localidad + '\'' +
                 ", Reserva=" + ejemplarReserva + '\'' +
                 ", Prestamo=" + ejemplarPrestamo + '\'' +
-                ", Debe en multas=" + valorAcumuladoEnMultas + '\'' +
-                ", Cantidad de multas acumuladas=" + multasAplicadas +
+                ", Cantidad de multas=" + multas +
                 '}';
     }
 }
