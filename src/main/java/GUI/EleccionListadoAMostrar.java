@@ -1,17 +1,15 @@
 package GUI;
 
-import test.Main;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EleccionListadoAMostrar extends JFrame{
     private JButton ejemplaresButton;
-    private JButton índicesButton;
+    private JButton indicesButton;
     private JButton deudoresButton;
     private JButton obrasSolicitadasPorAlumnosButton;
-    private JButton obrasSolicitadasPorPúblicoButton;
+    private JButton obrasSolicitadasPorPublicoButton;
     private JButton lectoresConMultasButton;
     private JButton obrasButton;
     private JPanel eleccionListadoAMostrarPanel;
@@ -24,6 +22,13 @@ public class EleccionListadoAMostrar extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+        atrasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainMenuScreen mm = new MainMenuScreen();
+                dispose();
+            }
+        });
         ejemplaresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,10 +36,45 @@ public class EleccionListadoAMostrar extends JFrame{
                 dispose();
             }
         });
-        atrasButton.addActionListener(new ActionListener() {
+        indicesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainMenuScreen mm = new MainMenuScreen();
+                ListaMostrada listaMostrada = new ListaMostrada("Indices");
+                dispose();
+            }
+        });
+        deudoresButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaMostrada listaMostrada = new ListaMostrada("Deudores");
+                dispose();
+            }
+        });
+        obrasSolicitadasPorAlumnosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaMostrada listaMostrada = new ListaMostrada("Alumnos y Docentes");
+                dispose();
+            }
+        });
+        obrasSolicitadasPorPublicoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaMostrada listaMostrada = new ListaMostrada("Publico");
+                dispose();
+            }
+        });
+        lectoresConMultasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaMostrada listaMostrada = new ListaMostrada("Lectores con Multas");
+                dispose();
+            }
+        });
+        obrasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaMostrada listaMostrada = new ListaMostrada("Obras");
                 dispose();
             }
         });
