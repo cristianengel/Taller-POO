@@ -19,7 +19,7 @@ public class WelcomeScreen extends JFrame {
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Main.mainMenu();
+                MainMenuScreen mm = new MainMenuScreen();
                 dispose();
             }
         });
