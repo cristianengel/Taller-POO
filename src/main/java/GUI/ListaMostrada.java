@@ -15,8 +15,65 @@ public class ListaMostrada extends JFrame{
     public ListaMostrada(String listaElegida) {
         DefaultListModel listModel = new DefaultListModel();
         if(listaElegida == "Ejemplares") {
+            if(b.getListaDeEjemplares().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
             for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
                 listModel.addElement(b.getListaDeEjemplares().get(i).stringSimplificado());
+            }
+
+        } else if(listaElegida == "Indices") {
+            if(b.getListaDeIndices().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getListaDeIndices().get(i).toString());
+            }
+
+        } else if(listaElegida == "Deudores") {
+            if(b.getListaDeDeudores().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getListaDeDeudores().get(i).toString());
+            }
+
+        } else if(listaElegida == "Alumnos y Docentes") {
+            if(b.getListaObrasSolicitadasAluDoc().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getListaObrasSolicitadasAluDoc().get(i).toString());
+            }
+        } else if(listaElegida == "Publico") {
+            if(b.getListaObrasSolicitadasPublico().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getListaObrasSolicitadasPublico().get(i).toString());
+            }
+
+        } else if(listaElegida == "Lectores con Multas") {
+            if (b.getListaLectoresConMultas().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for (int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getListaLectoresConMultas().get(i).toString());
+            }
+
+        } else if(listaElegida == "Obras") {
+            if(b.getObras().size() == 0) {
+                JOptionPane.showMessageDialog(null, "La lista está vacía.");
+                throw new RuntimeException("La lista está vacía");
+            }
+            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                listModel.addElement(b.getObras().get(i).toString());
             }
         }
         list1.setModel(listModel);
