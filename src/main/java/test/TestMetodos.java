@@ -1,14 +1,16 @@
 package test;
 
-import GUI.MainMenuScreen;
-import GUI.WelcomeScreen;
 import MainClasses.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Main {
+/**
+ * Clase para probar todos los métodos hechos
+ */
+
+public class TestMetodos {
     public static void main(String[] args) {
         Biblioteca biblioteca = Biblioteca.getInstance();
 
@@ -37,7 +39,5 @@ public class Main {
         Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), "Masculino", "Argentina", "Los Valles 540", 3200, "", "Concordia");
         Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), "Masculino", "Argentina", "Quintana 5", 3200, "3b", "Concordia");
         Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), "Masculino", "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
-
-        WelcomeScreen ws = new WelcomeScreen();
     }
 }
