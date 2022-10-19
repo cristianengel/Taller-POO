@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class EleccionListadoAMostrar extends JFrame{
     private JButton ejemplaresButton;
-    private JButton indicesButton;
     private JButton deudoresButton;
     private JButton obrasSolicitadasPorAlumnosButton;
     private JButton obrasSolicitadasPorPublicoButton;
@@ -33,13 +32,6 @@ public class EleccionListadoAMostrar extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 ListaMostrada listaMostrada = new ListaMostrada("Ejemplares");
-                dispose();
-            }
-        });
-        indicesButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ListaMostrada listaMostrada = new ListaMostrada("Indices");
                 dispose();
             }
         });
