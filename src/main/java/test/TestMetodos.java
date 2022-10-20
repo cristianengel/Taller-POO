@@ -6,6 +6,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import Enum.TipoLectura;
+import Enum.TipoSexo;
+
 
 /**
  * Clase para probar todos los métodos hechos
@@ -37,12 +40,12 @@ public class TestMetodos {
         biblioteca.agregarEjemplar(sistemasAdSistemasInf1);
 
         // Creacion de Lectores de prueba
-        Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), "Masculino", "Argentina", "Los Valles 540", 3200, "", "Concordia");
-        Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), "Masculino", "Argentina", "Quintana 5", 3200, "3b", "Concordia");
-        Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), "Masculino", "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
+        Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), TipoSexo.MASCULINO, "Argentina", "Los Valles 540", 3200, "", "Concordia");
+        Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), TipoSexo.FEMENINO, "Argentina", "Quintana 5", 3200, "3b", "Concordia");
+        Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), TipoSexo.OTRO, "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
 
         // Creación de un prestamo y su devolución
-        Prestamo p = new Prestamo("Para domincilio", LocalDateTime.of(2002,10,15,14,34, 5), "Roberto", principe1, marcos);
+        Prestamo p = new Prestamo(TipoLectura.DOMICILIO, LocalDateTime.of(2002,10,15,14,34, 5), "Roberto", principe1, marcos);
         Devolucion d = new Devolucion(LocalDateTime.of(2002,10,19,14,34, 5), principe1, marcos,"Roberto");
 
         System.out.println(d.controlFechaDevolucion());

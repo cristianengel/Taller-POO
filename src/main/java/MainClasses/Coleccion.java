@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Coleccion extends Obra {
@@ -27,18 +30,17 @@ public class Coleccion extends Obra {
     }
 
     public String toString() {
-        return "Coleccion{" +
-                "Nombre='" + nombre + '\'' +
-                ", Área temática='" + getAreaTematica() + '\'' +
-                ", Título='" + getTitulo() + '\'' +
-                ", Subtítulo='" + getSubtitulo() + '\'' +
-                ", Primer autor='" + getPrimerAutor() + '\'' +
-                ", Segundo autor='" + getSegundoAutor() + '\'' +
-                ", Tercer autor='" + getTercerAutor() + '\'' +
-                ", Género='" + getGenero() + '\'' +
-                ", Característica='" + getCaracteristica() + '\'' +
-                ", ISBN=" + isbn + '\'' +
-                ", Índice='" + getIndice() + '\'' +
-                '}';
+        return "-Coleccion: " +
+                "   -Nombre='" + nombre + "\n" +
+                "   -Área temática='" + getAreaTematica() + "\n" +
+                "   -Título=" + getTitulo() + "\n" +
+                "   -Subtítulo=" + getSubtitulo() + "\n" +
+                "   -Primer autor=" + getPrimerAutor() + "\n" +
+                "   -Segundo autor=" + getSegundoAutor() + "\n" +
+                "   -Tercer autor=" + getTercerAutor() + "\n" +
+                "   -Género=" + getGenero() + "\n" +
+                "   -Característica=" + getCaracteristica() + "\n" +
+                "   -ISBN=" + isbn + "\n" +
+                "   -Índice=" + getIndice() + "\n";
     }
 }
