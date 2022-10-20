@@ -12,7 +12,17 @@ public enum TipoObra {
     REVISTA("Revista"),
     ENSAYO("Ensayo"),
     TESIS("Tesis"),
-    MANUAL("Manual");
+    MANUAL("Manual"),
+    BOLETIN("Boletín"),
+    COLLECION("Colleción"),
+    COMPENDIO("Compendio"),
+    DIARIO("Diario"),
+    DICCIONARIO("Diccionario"),
+    DOCUMENTAL("Documental"),
+    ENCICLOPEDIA("Enciclopedia"),
+    INVESTIGACION("Investigación"),
+    MONOGRAFIA("Monografía"),
+    PUBLICACION_MENSUAL("Publicación mensual");
 
     private String tipo;
 
