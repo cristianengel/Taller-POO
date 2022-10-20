@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Biblioteca {
@@ -114,18 +117,17 @@ public class Biblioteca {
 
     @Override
     public String toString() {
-        return "Biblioteca{" +
-                "Ejemplares=" + listaDeEjemplares +
-                ", Índices=" + listaDeIndices +
-                ", Deudores=" + listaDeDeudores +
-                ", Obras solicitadas por alumnos y docentes=" + listaObrasSolicitadasAluDoc +
-                ", Obras solicitadas por el público=" + listaObrasSolicitadasPublico +
-                ", Lectores con multas=" + listaLectoresConMultas +
-                ", Obras=" + obras +
-                '}';
+        return "-Biblioteca: " + "\n" +
+                "   -Ejemplares=" + listaDeEjemplares + "\n" +
+                "   -Índices=" + listaDeIndices + "\n" +
+                "   -Deudores=" + listaDeDeudores + "\n" +
+                "   -Obras solicitadas por alumnos y docentes=" + listaObrasSolicitadasAluDoc + "\n" +
+                "   -Obras solicitadas por el público=" + listaObrasSolicitadasPublico + "\n" +
+                "   -Lectores con multas=" + listaLectoresConMultas + "\n" +
+                "   -Obras=" + obras;
     }
-    // Chequeo de disponibilidad de ejemplares de la misma obra
 
+    // Chequeo de disponibilidad de ejemplares de la misma obra
     public int cantEjemplaresPorObra(Obra obra){
         int cant = 0;
         for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {

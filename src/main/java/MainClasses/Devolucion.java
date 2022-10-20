@@ -1,9 +1,17 @@
 package MainClasses;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import static java.time.temporal.ChronoUnit.DAYS;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
+@Getter
+@Setter
 public class Devolucion {
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto
     private String funcionario; //Quien recibe el ejemplar
@@ -46,7 +54,7 @@ public class Devolucion {
 
     @Override
     public String toString() {
-        return "🔹Devolucion:" + "\n" +
+        return "-Devolucion:" + "\n" +
                 "   -Fecha de la devolución=" + fechaHoraDevolucion + "\n" +
                 "   -Funcionario=" + funcionario + "\n" +
                 "   -Préstamo=" + prestamo + "\n" +
