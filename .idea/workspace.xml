@@ -4,21 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Se agrega un espacio.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enum/TipoAreaTematica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Enum/TipoAreaTematica.java" afterDir="false" />
+    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Varias implementaciones&#10;&#10;- Métodos de control varios&#10;- Métodos de actualizacion de ArrayLists">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Enum/Profesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Devolucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Devolucion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Obra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Obra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Prestamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Reserva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Reserva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -36,6 +45,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-18.0.2.1/lib/src.zip!/java.base/java/lang/StringConcatHelper.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,13 +73,19 @@
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;155&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;352&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Isaías/intellij-worspace/Taller-POO&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/cristian/Desktop/Taller de Borgo/Taller-POO&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/test" />
+      <recent name="$PROJECT_DIR$/src/main/java/GUI" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -147,12 +165,12 @@
       <option name="project" value="LOCAL" />
       <updated>1665667945763</updated>
     </task>
-    <task id="LOCAL-00011" summary="Creación de la clase Devolucion.&#10;Aplicación de multas a lectores, debo mejorarlo.&#10;Cambié algunos atributos.&#10;Empecé a colocar documentación.">
-      <created>1666147030218</created>
+    <task id="LOCAL-00011" summary="Modificaciones y correcciones&#10;&#10;- Se corrigió un error que arrojaba NullPointerException&#10;- Se agregó la enumeración Condicion&#10;- Se agregaron algunos métodos de los préstamos&#10;- Otros ligeros cambios">
+      <created>1666265717998</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1666147030219</updated>
+      <updated>1666265717998</updated>
     </task>
     <option name="localTasksCounter" value="12" />
     <servers />
@@ -177,11 +195,6 @@
             </State>
           </value>
         </entry>
-        <entry key="ad7d324a-ed2a-4772-b98b-e8e0d546bde8">
-          <value>
-            <State />
-          </value>
-        </entry>
       </map>
     </option>
   </component>
@@ -196,10 +209,8 @@
     <MESSAGE value="Se corrigieron conflictos" />
     <MESSAGE value="Muy pequeñas correcciones" />
     <MESSAGE value="Correcciones a las clases Coleccion y Obra, para solucionar un error" />
-    <MESSAGE value="Creación de la clase Devolucion.&#10;Aplicación de multas a lectores, debo mejorarlo.&#10;Cambié algunos atributos.&#10;Empecé a colocar documentación." />
-    <MESSAGE value="Creación de las clases Enum.&#10;Cambios en los toString.&#10;Cambios en los constructores y variables ya que se crearon las clases Enum.&#10;Y demás modificaciones." />
-    <MESSAGE value="Se agrega un espacio." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega un espacio." />
+    <MESSAGE value="Modificaciones y correcciones&#10;&#10;- Se corrigió un error que arrojaba NullPointerException&#10;- Se agregó la enumeración Condicion&#10;- Se agregaron algunos métodos de los préstamos&#10;- Otros ligeros cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificaciones y correcciones&#10;&#10;- Se corrigió un error que arrojaba NullPointerException&#10;- Se agregó la enumeración Condicion&#10;- Se agregaron algunos métodos de los préstamos&#10;- Otros ligeros cambios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -208,7 +219,20 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Taller_POO$TestMetodos.ic" NAME="TestMetodos Coverage Results" MODIFIED="1666264504178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>test.*</FILTER>
+    </SUITE>
   </component>
 </project>

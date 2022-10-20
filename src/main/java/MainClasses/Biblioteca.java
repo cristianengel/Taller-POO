@@ -12,9 +12,14 @@ import java.util.Objects;
  */
 @Getter
 @Setter
+
+/**
+ * La clase Biblioteca propone un lugar donde se registran los datos referidos a
+ * los ejemplares, las obras, los deudores, los lectores y los índices
+ */
 public class Biblioteca {
     private static Biblioteca instance;
-    private final ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>(); //En el UML aparece Obra
+    private final ArrayList<Ejemplar> listaDeEjemplares = new ArrayList<>();
     private final ArrayList<String> listaDeIndices = new ArrayList<>();
     private final ArrayList<Lector> listaDeDeudores = new ArrayList<>();
     private final ArrayList<Obra> listaObrasSolicitadasAluDoc = new ArrayList<>();
@@ -24,13 +29,27 @@ public class Biblioteca {
 
     private Biblioteca(){}
 
+    /**
+     * Método de instancia única.
+     * Restringe la creación de objetos de tipo Biblioteca a un único objeto
+     * @return La instancia de tipo Biblioteca
+     */
     public static Biblioteca getInstance() {
         if (instance == null) {
             instance = new Biblioteca();
         }
         return instance;
     }
+
+    /**
+     * Agrega a la lista de ejemplares el ejemplar. Una vez agregado el ejemplar,
+     * agrega el índice del ejemplar correspondiente a su obra a la
+     * lista de índices y agrega la obra correspondiente al ejemplar a
+     * la lista de obras.
+     * @param ejemplar
+     */
     public void agregarEjemplar(Ejemplar ejemplar){
+        /* Si el el objeto de tipo Ejemplar no se encuentra en la lista de ejemplares */
         if(!listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.add(ejemplar);
         } else {
