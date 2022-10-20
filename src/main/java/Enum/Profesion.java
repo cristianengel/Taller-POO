@@ -2,20 +2,19 @@ package Enum;
 
 import lombok.Getter;
 
-
-
 @Getter
+
+/**
+ * La clase Profesion propone distinguir la profesión del lector
+ */
 public enum Profesion {
-    /**
-     * Enumeración para distinguir la profesión del lector
-     */
     ALUMNO("Alumno"),
     DOCENTE("Docente"),
-    PUBLICO("Publico");
+    PUBLICO("Público");
 
     private String profesion;
 
-    Profesion(String profesion) {
+    private Profesion(String profesion) {
         this.profesion = profesion;
     }
 }

@@ -20,7 +20,7 @@ public class Lector {
     private String correoElec;
     private String numCel;
     private LocalDate fechaNac;
-    private TipoSexo sexo;
+    private Sexo sexo;
     private String nacionalidad;
     private String domicilio;
     private int codigoPostal;
@@ -31,7 +31,7 @@ public class Lector {
     private int multas;
     private Profesion profesion;
 
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Profesion profesion) {
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, Sexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Profesion profesion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDoc = tipoDoc;

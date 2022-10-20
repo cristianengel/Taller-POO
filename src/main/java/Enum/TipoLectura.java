@@ -1,17 +1,17 @@
 package Enum;
 
-/**
- * Clase en la cuál se proponen los tipos de lectura que se pueden realizan al momento de realizar un préstamo
- */
+import lombok.Getter;
 
+@Getter
+
+/**
+ * Clase en la cuál se proponen los tipos de lectura que se pueden realizan
+ * al momento de realizar un préstamo
+ */
 public enum TipoLectura {
-    /**
-     * Tipo de lectura a domicilio al solicitar el préstamo de un ejemplar
-     */
+    /* Tipo de lectura a domicilio al solicitar el préstamo de un ejemplar */
     DOMICILIO("Domicilio"),
-    /**
-     * Tipo de lectura en sala al solicitar el préstamo de un ejemplar
-     */
+    /* Tipo de lectura en sala al solicitar el préstamo de un ejemplar */
     SALA("Sala");
 
     private final String tipo;
@@ -22,13 +22,5 @@ public enum TipoLectura {
      */
     private TipoLectura(String tipo) {
         this.tipo = tipo;
-    }
-
-    /**
-     * Devuelve un String del tipo de préstamo que se realizó
-     * @return String
-     */
-    public String getTipo() {
-        return tipo;
     }
 }
