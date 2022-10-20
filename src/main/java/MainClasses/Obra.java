@@ -6,9 +6,6 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
 public class Obra {
@@ -45,7 +42,7 @@ public class Obra {
 
     @Override
     public String toString() {
-        return "-Obra: " + "\n" +
+        return "🔹Obra: " + "\n" +
                 "   -Área temática='" + areaTematica + "\n" +
                 "   -Título=" + titulo + "\n" +
                 "   -Subtítulo=" + subtitulo + "\n" +

@@ -47,15 +47,6 @@ public class AgregarEjemplar extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-        agregarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int codBarra = generarCodBarra(7);
-                String identUnico = generarIdentUnico(7);
-                // TODO: 10/18/22  
-            }
-        });
-
         atrasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -68,6 +59,7 @@ public class AgregarEjemplar extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 b.agregarEjemplar(new Ejemplar(generarIdentUnico(7), generarCodBarra(7), observaciones.getText(), new ArrayList<String>(Arrays.asList(pasillo.toString(), estanteria.toString(), estante.toString())), LocalDate.now(), Objects.requireNonNull(comboBox1.getSelectedItem()).toString(), new Obra(areaTematica.getText(), titulo.getText(), subtitulo.getText(), primerAutor.getText(), segundoAutor.getText(), tercerAutor.getText(), genero.getText(), caracteristica.getText(), indice.getText())));
                 MainMenuScreen mm = new MainMenuScreen();
+                dispose();
             }
         });
     }

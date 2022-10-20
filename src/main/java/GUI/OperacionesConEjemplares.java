@@ -27,6 +27,13 @@ public class OperacionesConEjemplares extends JFrame {
             }
 
         });
+        eliminarEjemplarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaEjemplaresAEliminar leae = new ListaEjemplaresAEliminar();
+                dispose();
+            }
+        });
         atrasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

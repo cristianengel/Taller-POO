@@ -35,11 +35,10 @@ public class Devolucion {
 
     public int controlFechaDevolucion() {
         //Si la fecha y hora a la que se devuelve el ejemplar es posterior a la hora y fecha que tenía que devolverse da true
-        if (this.fechaHoraDevolucion.isAfter(prestamo.getFechaHoraDevolucion()) == true) { //Esto aún no funciona
+        if (this.fechaHoraDevolucion.isAfter(prestamo.getFechaHoraDevolucion())) { //Esto aún no funciona
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
-            int dias = (int) DAYS.between(f1, f2);
-            return dias;
+            return (int) DAYS.between(f1, f2);
         }
         return 0;
     }
