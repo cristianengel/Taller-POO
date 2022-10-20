@@ -3,9 +3,12 @@ package MainClasses;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import Enum.*;
 
 /**
  * Creación de los getters y setters mediante la importaación de lombok
@@ -26,6 +29,8 @@ public class Biblioteca {
     private final ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
     private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
     private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
+    private final ArrayList<Prestamo> prestamosEnCurso = new ArrayList<>(); // Lista de préstamos
+    private final ArrayList<Reserva> reservas = new ArrayList<>(); // Lista de reservas
 
     private Biblioteca(){}
 
@@ -126,6 +131,21 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Registra el retiro de un ejemplar reservado y modifica los registros de préstamosEnCurso y reservas
+     */
+    public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario) {
+        if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
+            LocalDateTime.now().isBefore(reserva.getFechaHoraFin())) {
+            reserva.getEjemplar().setCondicion(Condicion.PRESTADO);
+            Prestamo prestamo = new Prestamo(tipoLectura, LocalDateTime.now(), funcionario, reserva.getEjemplar(), reserva.getLector(), true);
+            reservas.remove(reserva);
+            prestamosEnCurso.add(prestamo);
+        } else {
+            throw new RuntimeException("El ejemplar no está reservado actualmente");
+        }
+    }
+
     @Override
     public String toString() {
         return "-Biblioteca: " + "\n" +
@@ -138,7 +158,11 @@ public class Biblioteca {
                 "   -Obras=" + obras;
     }
 
-    // Chequeo de disponibilidad de ejemplares de la misma obra
+    /**
+     * Chequea disponibilidad de ejemplares con la obra pasada por parámetro
+     * @param obra
+     * @return
+     */
     public int cantEjemplaresPorObra(Obra obra){
         int cant = 0;
         for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
