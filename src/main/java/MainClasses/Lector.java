@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import Enum.TipoSexo;
+import Enum.*;
 
 /**
  * Creación de los getters y setters mediante la importaación de lombok
@@ -29,8 +29,9 @@ public class Lector {
     private Reserva ejemplarReserva; //Relación con las clases Reserva y Ejemplar
     private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
     private int multas;
+    private Profesion profesion;
 
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Profesion profesion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDoc = tipoDoc;
@@ -44,6 +45,7 @@ public class Lector {
         this.codigoPostal = codigoPostal;
         this.departamento = departamento;
         this.localidad = localidad;
+        this.profesion = profesion;
     }
 
     /**

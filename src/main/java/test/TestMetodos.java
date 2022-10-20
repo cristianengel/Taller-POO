@@ -1,5 +1,6 @@
 package test;
 
+import GUI.WelcomeScreen;
 import MainClasses.*;
 
 import java.time.LocalDate;
@@ -45,9 +46,13 @@ public class TestMetodos {
         Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), TipoSexo.OTRO, "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
 
         // Creación de un prestamo y su devolución
-        Prestamo p = new Prestamo(TipoLectura.DOMICILIO, LocalDateTime.of(2002,10,15,14,34, 5), "Roberto", principe1, marcos);
-        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,19,14,34, 5), principe1, marcos,"Roberto");
+        Reserva r = new Reserva(LocalDateTime.now(), LocalDateTime.of(2022, 10, 20, 14,34), principe1, cristian);
+        biblioteca.registrarRetiroConReserva(r, TipoLectura.DOMICILIO, "Roberto");
+        Prestamo p = new Prestamo(TipoLectura.DOMICILIO, LocalDateTime.of(2002,10,15,14,34), "Roberto", principe1, marcos, false);
+        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34), principe1, marcos,"Roberto", p);
 
-        System.out.println(d.controlFechaDevolucion());
+        System.out.println(biblioteca.getPrestamosEnCurso());
+
+        WelcomeScreen ws = new WelcomeScreen();
     }
 }
