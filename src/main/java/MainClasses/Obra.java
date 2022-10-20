@@ -44,7 +44,7 @@ public class Obra {
 
     @Override
     public String toString() {
-        return "🔹Obra: " + "\n" +
+        return "Obra: " + "\n" +
                 "   -Área temática='" + areaTematica + "\n" +
                 "   -Título=" + titulo + "\n" +
                 "   -Subtítulo=" + subtitulo + "\n" +
@@ -54,5 +54,9 @@ public class Obra {
                 "   -Género=" + genero + "\n" +
                 "   -Característica=" + caracteristica + "\n" +
                 "   -Índice=" + indice + "\n";
+    }
+
+    public String stringSimplificado() {
+        return "Área: " + areaTematica + " || " + "Título: " + titulo;
     }
 }

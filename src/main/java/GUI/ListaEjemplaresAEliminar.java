@@ -21,7 +21,7 @@ public class ListaEjemplaresAEliminar extends JFrame{
             throw new RuntimeException("La lista está vacía");
         }
         for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-            listModel.addElement(b.getListaDeEjemplares().get(i).toString());
+            listModel.addElement(b.getListaDeEjemplares().get(i).stringSimplificado());
         }
         list1.setModel(listModel);
         setContentPane(listaEjemplaresAEliminarPanel);
