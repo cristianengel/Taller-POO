@@ -5,18 +5,24 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
+
+/**
+ * La clase Coleccion plantea un tipo de obra.
+ * Esta clase contiene un grupo de obras.
+ */
 public class Coleccion extends Obra {
     private String nombre;
     private int isbn;
     private ArrayList<Obra> obras;
 
-    public Coleccion(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, int isbn, String indice, Biblioteca biblioteca, String nombre) {
-        super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor, tercerAutor, genero, caracteristica, indice);
+    public Coleccion(String areaTematica, String titulo, String subtitulo,
+                     String primerAutor, String segundoAutor, String tercerAutor,
+                     String genero, String caracteristica, int isbn, String indice,
+                     Biblioteca biblioteca, String nombre) {
+        super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor,
+                tercerAutor, genero, caracteristica, indice);
         this.nombre = nombre;
         this.isbn = isbn;
     }

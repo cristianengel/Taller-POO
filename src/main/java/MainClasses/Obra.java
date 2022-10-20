@@ -9,6 +9,11 @@ import Enum.*;
 
 @Getter
 @Setter
+
+/**
+ * La clase Obra propone los datos de las obras existentes en la
+ * biblioteca
+ */
 public class Obra {
     private String areaTematica;
     private String titulo;
@@ -24,7 +29,9 @@ public class Obra {
     //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
 
-    public Obra(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, String indice) {
+    public Obra(String areaTematica, String titulo, String subtitulo,
+                String primerAutor, String segundoAutor, String tercerAutor,
+                String genero, String caracteristica, String indice) {
         this.areaTematica = areaTematica;
         this.titulo = titulo;
         this.subtitulo = subtitulo;
@@ -52,7 +59,15 @@ public class Obra {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Obra obra)) return false;
-        return  Objects.equals(areaTematica, obra.areaTematica) && Objects.equals(titulo, obra.titulo) && Objects.equals(subtitulo, obra.subtitulo) && Objects.equals(primerAutor, obra.primerAutor) && Objects.equals(segundoAutor, obra.segundoAutor) && Objects.equals(tercerAutor, obra.tercerAutor) && Objects.equals(genero, obra.genero) && Objects.equals(caracteristica, obra.caracteristica) && Objects.equals(indice, obra.indice);
+        return  Objects.equals(areaTematica, obra.areaTematica) &&
+                Objects.equals(titulo, obra.titulo) &&
+                Objects.equals(subtitulo, obra.subtitulo) &&
+                Objects.equals(primerAutor, obra.primerAutor) &&
+                Objects.equals(segundoAutor, obra.segundoAutor) &&
+                Objects.equals(tercerAutor, obra.tercerAutor) &&
+                Objects.equals(genero, obra.genero) &&
+                Objects.equals(caracteristica, obra.caracteristica) &&
+                Objects.equals(indice, obra.indice);
     }
 
     @Override

@@ -138,7 +138,8 @@ public class Biblioteca {
         if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
             LocalDateTime.now().isBefore(reserva.getFechaHoraFin())) {
             reserva.getEjemplar().setCondicion(Condicion.PRESTADO);
-            Prestamo prestamo = new Prestamo(tipoLectura, LocalDateTime.now(), funcionario, reserva.getEjemplar(), reserva.getLector(), true);
+            Prestamo prestamo = new Prestamo(tipoLectura, LocalDateTime.now(), funcionario,
+                    reserva.getEjemplar(), reserva.getLector(), true);
             reservas.remove(reserva);
             prestamosEnCurso.add(prestamo);
         } else {
