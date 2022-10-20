@@ -6,11 +6,13 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
+
+/**
+ * La clase Reserva ofrece lo necesario para realizar las reservas
+ * de los ejemplares
+ */
 public class Reserva {
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
@@ -30,7 +32,10 @@ public class Reserva {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Reserva reserva)) return false;
-        return Objects.equals(fechaHoraInicio, reserva.fechaHoraInicio) && Objects.equals(fechaHoraFin, reserva.fechaHoraFin) && Objects.equals(ejemplar, reserva.ejemplar) && Objects.equals(lector, reserva.lector);
+        return Objects.equals(fechaHoraInicio, reserva.fechaHoraInicio) &&
+                Objects.equals(fechaHoraFin, reserva.fechaHoraFin) &&
+                Objects.equals(ejemplar, reserva.ejemplar) &&
+                Objects.equals(lector, reserva.lector);
     }
 
     @Override

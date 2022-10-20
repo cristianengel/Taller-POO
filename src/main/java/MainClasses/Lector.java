@@ -7,11 +7,13 @@ import java.time.LocalDate;
 import java.util.Objects;
 import Enum.*;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
+
+/**
+ * La clase Lector plantea toda la información necesaria de los lectores
+ * que solicitan un préstamo de un ejemplar
+ */
 public class Lector {
     private String nombre;
     private String apellido;
@@ -20,7 +22,7 @@ public class Lector {
     private String correoElec;
     private String numCel;
     private LocalDate fechaNac;
-    private TipoSexo sexo;
+    private Sexo sexo;
     private String nacionalidad;
     private String domicilio;
     private int codigoPostal;
@@ -31,7 +33,10 @@ public class Lector {
     private int multas;
     private Profesion profesion;
 
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad, Profesion profesion) {
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc,
+                  String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
+                  String nacionalidad, String domicilio, int codigoPostal,
+                  String departamento, String localidad, Profesion profesion) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDoc = tipoDoc;
@@ -65,7 +70,20 @@ public class Lector {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Lector lector)) return false;
-        return numDoc == lector.numDoc && numCel == lector.numCel && codigoPostal == lector.codigoPostal && Objects.equals(nombre, lector.nombre) && Objects.equals(apellido, lector.apellido) && Objects.equals(tipoDoc, lector.tipoDoc) && Objects.equals(correoElec, lector.correoElec) && Objects.equals(fechaNac, lector.fechaNac) && Objects.equals(sexo, lector.sexo) && Objects.equals(nacionalidad, lector.nacionalidad) && Objects.equals(domicilio, lector.domicilio) && Objects.equals(departamento, lector.departamento) && Objects.equals(localidad, lector.localidad) && Objects.equals(ejemplarReserva, lector.ejemplarReserva) && Objects.equals(ejemplarPrestamo, lector.ejemplarPrestamo);
+        return numDoc == lector.numDoc && numCel == lector.numCel &&
+                codigoPostal == lector.codigoPostal &&
+                Objects.equals(nombre, lector.nombre) &&
+                Objects.equals(apellido, lector.apellido) &&
+                Objects.equals(tipoDoc, lector.tipoDoc) &&
+                Objects.equals(correoElec, lector.correoElec) &&
+                Objects.equals(fechaNac, lector.fechaNac) &&
+                Objects.equals(sexo, lector.sexo) &&
+                Objects.equals(nacionalidad, lector.nacionalidad) &&
+                Objects.equals(domicilio, lector.domicilio) &&
+                Objects.equals(departamento, lector.departamento) &&
+                Objects.equals(localidad, lector.localidad) &&
+                Objects.equals(ejemplarReserva, lector.ejemplarReserva) &&
+                Objects.equals(ejemplarPrestamo, lector.ejemplarPrestamo);
     }
 
     @Override

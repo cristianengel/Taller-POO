@@ -5,12 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 import Enum.*;
 
-
+/**
+ * La clase Alumno propone un tipo de lector
+ */
 public class Alumno extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
 
-    public Alumno(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
-        super(nombre, apellido, tipoDoc, numDoc, correoElec, numCel, fechaNac, sexo, nacionalidad, domicilio, codigoPostal, departamento, localidad, Profesion.ALUMNO);
+    public Alumno(String nombre, String apellido, String tipoDoc, int numDoc,
+                  String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
+                  String nacionalidad, String domicilio, int codigoPostal,
+                  String departamento, String localidad) {
+        super(nombre, apellido, tipoDoc, numDoc, correoElec, numCel, fechaNac, sexo,
+                nacionalidad, domicilio, codigoPostal, departamento, localidad, Profesion.ALUMNO);
     }
 
     public List<String> mostrarCarreras() throws RuntimeException{

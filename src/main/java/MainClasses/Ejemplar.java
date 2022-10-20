@@ -8,32 +8,33 @@ import java.util.ArrayList;
 import java.util.Objects;
 import Enum.Condicion;
 
-/**
- * Creación de los getters y setters mediante la importación de lombok
- */
 @Getter
 @Setter
+
+/**
+ * La clase Ejemplar ofrece la información requerida para realizar
+ * las operaciones con los ejemplares
+ */
 public class Ejemplar {
     private String identUnico;
     private int codBarra;
     private String observaciones;
     private ArrayList<String> lugarFisico; // Pasillo, Estantería, Estante
-
     private LocalDate fechaDadoDeBaja;
     private String motivoDadoDeBaja;
     private ArrayList<String> ubicacionFisicaDadoDeBaja = new ArrayList<>();
-
     private LocalDate fechaDeAdquisicion;
     private String formaDeAdquisicion;
     private Obra obra; //Relación con la clase Obra
     private Edicion edicion;
-
     private Reserva reserva; //Relación con las clases Reserva y Lector
     private Prestamo prestamo; //Relación con las clases Prestamo y Lector
     private Condicion condicion; // Condición del ejemplar (Disponible / Prestado / Reservado)
     private int vecesSolicitado = 0;
 
-    public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
+    public Ejemplar(String identUnico, int codBarra, String observaciones,
+                    ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion,
+                    String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
         this.codBarra = codBarra;
         this.lugarFisico = lugarFisico;
@@ -48,7 +49,17 @@ public class Ejemplar {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ejemplar ejemplar)) return false;
-        return codBarra == ejemplar.codBarra && Objects.equals(identUnico, ejemplar.identUnico) && Objects.equals(observaciones, ejemplar.observaciones) &&  Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) && Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) && Objects.equals(ubicacionFisicaDadoDeBaja, ejemplar.ubicacionFisicaDadoDeBaja) && Objects.equals(fechaDeAdquisicion, ejemplar.fechaDeAdquisicion) && Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion) && Objects.equals(obra, ejemplar.obra) && Objects.equals(reserva, ejemplar.reserva) && Objects.equals(prestamo, ejemplar.prestamo);
+        return codBarra == ejemplar.codBarra &&
+                Objects.equals(identUnico, ejemplar.identUnico) &&
+                Objects.equals(observaciones, ejemplar.observaciones) &&
+                Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) &&
+                Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) &&
+                Objects.equals(ubicacionFisicaDadoDeBaja, ejemplar.ubicacionFisicaDadoDeBaja) &&
+                Objects.equals(fechaDeAdquisicion, ejemplar.fechaDeAdquisicion) &&
+                Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion) &&
+                Objects.equals(obra, ejemplar.obra) &&
+                Objects.equals(reserva, ejemplar.reserva) &&
+                Objects.equals(prestamo, ejemplar.prestamo);
     }
 
     /**

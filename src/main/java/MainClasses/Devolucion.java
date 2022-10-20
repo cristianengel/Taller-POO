@@ -7,14 +7,16 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import static java.time.temporal.ChronoUnit.DAYS;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
+
+/**
+ * La clase Devolucion propone la acción de devolución de un ejemplar
+ * y todo lo que conlleva
+ */
 public class Devolucion {
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto
-    private String funcionario; //Quien recibe el ejemplar
+    private String funcionario; //Bibliotecario que recibe el ejemplar
     private Prestamo prestamo; //Relación con la clase Prestamo
     private Lector lector; //Relación con la clase Lector
     private Ejemplar ejemplar; //Relación con la clase Ejemplar
@@ -29,7 +31,8 @@ public class Devolucion {
      * @param funcionario
      * @param prestamo
      */
-    public Devolucion(LocalDateTime fechaHoraDevolucion, Ejemplar ejemplar, Lector lector, String funcionario, Prestamo prestamo) {
+    public Devolucion(LocalDateTime fechaHoraDevolucion, Ejemplar ejemplar, Lector lector,
+                      String funcionario, Prestamo prestamo) {
         this.fechaHoraDevolucion = fechaHoraDevolucion;
         this.ejemplar = ejemplar;
         this.lector = lector;
@@ -42,11 +45,13 @@ public class Devolucion {
     }
 
     /**
-     * Retorna los dias que se atrasó el lector en devolver un ejemplar, retorna 0 si lo entregó dentro del plazo
+     * Retorna los dias que se atrasó el lector en devolver un ejemplar,
+     * retorna 0 si lo entregó dentro del plazo
      * @return dias
      */
     public int controlFechaDevolucion() {
-        //Si la fecha y hora a la que se devuelve el ejemplar es posterior a la hora y fecha que tenía que devolverse da true
+        /* Si la fecha y hora a la que se devuelve el ejemplar es posterior
+        a la hora y fecha que tenía que devolverse da true */
         if (this.fechaHoraDevolucion.isAfter(this.prestamo.getFechaHoraDevolucion())) {
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
