@@ -1,8 +1,11 @@
 package Enum;
 
+import lombok.Getter;
+
 /**
  * Clase Enum para diferenciar tres tipos de identidad de genero
  */
+@Getter
 public enum TipoSexo {
     /**
      * Sexo masculino
@@ -20,18 +23,10 @@ public enum TipoSexo {
     private String sexo;
 
     /**
-     * Constructor privado, para que solamente se creen objetos del tipo mencionados aquí
+     *
      * @param sexo
      */
     TipoSexo(String sexo) {
         this.sexo = sexo;
-    }
-
-    /**
-     * Devuelve un String del tipo de sexo seleccionado
-     * @return String
-     */
-    public String getGenero() {
-        return sexo;
     }
 }

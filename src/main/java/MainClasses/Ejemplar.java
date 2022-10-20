@@ -6,9 +6,10 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
+import Enum.Condicion;
 
 /**
- * Creación de los getters y setters mediante la importaación de lombok
+ * Creación de los getters y setters mediante la importación de lombok
  */
 @Getter
 @Setter
@@ -29,6 +30,8 @@ public class Ejemplar {
 
     private Reserva reserva; //Relación con las clases Reserva y Lector
     private Prestamo prestamo; //Relación con las clases Prestamo y Lector
+    private Condicion condicion; // Condición del ejemplar (Disponible / Prestado / Reservado)
+    private int vecesSolicitado = 0;
 
     public Ejemplar(String identUnico, int codBarra, String observaciones, ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion, String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
@@ -38,6 +41,7 @@ public class Ejemplar {
         this.fechaDeAdquisicion = fechaDeAdquisicion;
         this.formaDeAdquisicion = formaDeAdquisicion;
         this.obra = obra;
+        this.condicion = Condicion.DISPONIBLE;
     }
 
     @Override
@@ -47,16 +51,23 @@ public class Ejemplar {
         return codBarra == ejemplar.codBarra && Objects.equals(identUnico, ejemplar.identUnico) && Objects.equals(observaciones, ejemplar.observaciones) &&  Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) && Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) && Objects.equals(ubicacionFisicaDadoDeBaja, ejemplar.ubicacionFisicaDadoDeBaja) && Objects.equals(fechaDeAdquisicion, ejemplar.fechaDeAdquisicion) && Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion) && Objects.equals(obra, ejemplar.obra) && Objects.equals(reserva, ejemplar.reserva) && Objects.equals(prestamo, ejemplar.prestamo);
     }
 
+    /**
+     * Agrega al contador de veces solicitado
+     */
+    public void agregarSolicitud() {
+        this.vecesSolicitado += 1;
+    }
+
     @Override
     public String toString() {
         return "-Ejemplar: " + "\n" +
                 "   -Identificador único=" + identUnico + "\n" +
                 "   -Código de barra=" + codBarra + "\n" +
                 "   -Observaciones=" + observaciones + "\n" +
-                "   -Fecha de dado de baja=" + fechaDadoDeBaja + "\n" +
-                "   -Motivo de dado de baja=" + motivoDadoDeBaja + "\n" +
                 "   -Ubicación física de dado de baja=" + ubicacionFisicaDadoDeBaja + "\n" +
                 "   -Fecha de adquisición=" + fechaDeAdquisicion + "\n" +
+                "   -Fecha de dado de baja=" + fechaDadoDeBaja + "\n" +
+                "   -Motivo de dado de baja=" + motivoDadoDeBaja + "\n" +
                 "   -Forma de adquisición=" + formaDeAdquisicion + "\n" + obra;
     }
 

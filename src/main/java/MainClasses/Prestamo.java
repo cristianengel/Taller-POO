@@ -30,6 +30,9 @@ public class Prestamo {
         this.fechaHoraDevolucion = fechaHoraInicio.plusDays(plazo); //A la fecha de devolución se le agrega la fecha de inicio del préstamo más el plazo (días)
         this.ejemplar = ejemplar;
         this.lector = lector;
+
+        this.ejemplar.agregarSolicitud();
+        contadorEjemplarSolicitado(ejemplar);
     }
 
     /**
@@ -42,9 +45,12 @@ public class Prestamo {
         }
     }
 
-    //Metodo para contar las veces que el ejemplar fue pedido
-    public void contadorEjemplarSolicitado() {
-
+    /**
+     *
+     * @param ejemplar
+     */
+    public void contadorEjemplarSolicitado(Ejemplar ejemplar) {
+        // TODO: 10/20/22
     }
 
     @Override
