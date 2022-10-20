@@ -73,7 +73,7 @@ public class ListaMostrada extends JFrame{
                 throw new RuntimeException("La lista está vacía");
             }
             for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-                listModel.addElement(b.getObras().get(i).toString());
+                listModel.addElement(b.getObras().get(i).stringSimplificado());
             }
         }
         list1.setModel(listModel);

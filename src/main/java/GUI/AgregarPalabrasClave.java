@@ -43,8 +43,10 @@ public class AgregarPalabrasClave extends JFrame {
         });
 
         eliminarSeleccionadaButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(list1.getSelectedValue() == null || listModel.isEmpty()) return;
                 listModel.removeElementAt(list1.getSelectedIndex());
             }
         });
