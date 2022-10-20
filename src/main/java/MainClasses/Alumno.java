@@ -3,11 +3,13 @@ package MainClasses;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import Enum.TipoSexo;
+
 
 public class Alumno extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
 
-    public Alumno(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
+    public Alumno(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
         super(nombre, apellido, tipoDoc, numDoc, correoElec, numCel, fechaNac, sexo, nacionalidad, domicilio, codigoPostal, departamento, localidad);
     }
 

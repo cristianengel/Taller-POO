@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Ejemplar {
@@ -46,7 +49,7 @@ public class Ejemplar {
 
     @Override
     public String toString() {
-        return "🔹Ejemplar: " + "\n" +
+        return "-Ejemplar: " + "\n" +
                 "   -Identificador único=" + identUnico + "\n" +
                 "   -Código de barra=" + codBarra + "\n" +
                 "   -Observaciones=" + observaciones + "\n" +

@@ -18,10 +18,8 @@ public class Obra {
     private String genero;
     private String caracteristica;
     private String indice;
-    //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición TODO
+    //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
-    private static int vecesSolicitadaAluDoc = 0;
-    private static int vecesSolicitadaPublico = 0;
 
     public Obra(String areaTematica, String titulo, String subtitulo, String primerAutor, String segundoAutor, String tercerAutor, String genero, String caracteristica, String indice) {
         this.areaTematica = areaTematica;
@@ -44,7 +42,7 @@ public class Obra {
 
     @Override
     public String toString() {
-        return "Obra: " + "\n" +
+        return "🔹Obra: " + "\n" +
                 "   -Área temática='" + areaTematica + "\n" +
                 "   -Título=" + titulo + "\n" +
                 "   -Subtítulo=" + subtitulo + "\n" +
@@ -54,9 +52,5 @@ public class Obra {
                 "   -Género=" + genero + "\n" +
                 "   -Característica=" + caracteristica + "\n" +
                 "   -Índice=" + indice + "\n";
-    }
-
-    public String stringSimplificado() {
-        return "Área: " + areaTematica + " || " + "Título: " + titulo;
     }
 }

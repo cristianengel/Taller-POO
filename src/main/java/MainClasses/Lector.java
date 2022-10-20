@@ -5,7 +5,11 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import Enum.TipoSexo;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Lector {
@@ -16,7 +20,7 @@ public class Lector {
     private String correoElec;
     private String numCel;
     private LocalDate fechaNac;
-    private String sexo;
+    private TipoSexo sexo;
     private String nacionalidad;
     private String domicilio;
     private int codigoPostal;
@@ -26,7 +30,7 @@ public class Lector {
     private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
     private int multas;
 
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, String sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
+    public Lector(String nombre, String apellido, String tipoDoc, int numDoc, String correoElec, String numCel, LocalDate fechaNac, TipoSexo sexo, String nacionalidad, String domicilio, int codigoPostal, String departamento, String localidad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDoc = tipoDoc;
@@ -50,6 +54,11 @@ public class Lector {
         this.multas += dias;
     }
 
+    /**
+     * Método que devuelve un true o false si dos objetos son iguales
+     * @param o de tipo Objeto
+     * @return boolean
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,8 +68,8 @@ public class Lector {
 
     @Override
     public String toString() {
-        return "🔹Lector:" + "\n" +
-                "Nombre=" + nombre + "\n" +
+        return "-Lector:" + "\n" +
+                "   -Nombre=" + nombre + "\n" +
                 "   -Apellido=" + apellido + "\n" +
                 "   -Tipo de documento=" + tipoDoc + "\n" +
                 "   -Número de documento=" + numDoc + "\n" +

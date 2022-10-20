@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import java.util.Objects;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Edicion {
@@ -43,18 +46,17 @@ public class Edicion {
 
     @Override
     public String toString() {
-        return "Edición{" +
-                "Editorial='" + editorial + '\'' +
-                ", País de edición='" + paisDeEdicion + '\'' +
-                ", Número de edición=" + numeroDeEdicion +
-                ", Año=" + anio +
-                ", Volumenes=" + volumenes +
-                ", Páginas=" + paginas +
-                ", Idioma='" + idioma + '\'' +
-                ", Formato='" + formato + '\'' +
-                ", ¿Es colección?=" + esColeccion +
-                ", ISBN=" + isbn +
-                ", Obra=" + obra +
-                '}';
+        return "-Edición{" +
+                "   -Editorial=" + editorial + "\n" +
+                "   -País de edición=" + paisDeEdicion + "\n" +
+                "   -Número de edición=" + numeroDeEdicion + "\n" +
+                "   -Año=" + anio + "\n" +
+                "   -Volumenes=" + volumenes + "\n" +
+                "   -Páginas=" + paginas + "\n" +
+                "   -Idioma=" + idioma + "\n" +
+                "   -Formato=" + formato + "\n" +
+                "   -¿Es colección?=" + esColeccion + "\n" +
+                "   -ISBN=" + isbn + "\n" +
+                "   -Obra=" + obra;
     }
 }

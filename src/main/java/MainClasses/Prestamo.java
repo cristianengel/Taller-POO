@@ -4,11 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import Enum.TipoLectura;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Prestamo {
-    private String tipoLectura; //Lectura en sala o a domicilio
+    private TipoLectura tipoLectura; //Lectura en sala o a domicilio
     private LocalDateTime fechaHoraInicio;
     private String funcionario; //Quien prestó el ejemplar
     private int plazo;
@@ -16,7 +20,7 @@ public class Prestamo {
     private Ejemplar ejemplar; //Relación con Ejemplar
     private Lector lector; //Relación con Lector
 
-    public Prestamo(String tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector) throws RuntimeException {
+    public Prestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector) throws RuntimeException {
         //Si la fecha del inicio del prestamo anterior a la fecha con multas -> No se realiza el préstamo
         if (fechaHoraInicio.isBefore(fechaHoraInicio.plusDays(lector.getMultas()))) throw new RuntimeException("El lector aún tiene multas.");
         this.tipoLectura = tipoLectura;
@@ -30,13 +34,17 @@ public class Prestamo {
 
     /**
      * Método con el cuál podemos cambiar el plazo de devolución (extender o acorta el plazo)
-     *
      * @param dias
      */
     public void cambiarPlazoDelPrestamo(int dias) {
-        if (this.tipoLectura == "Para domicilio") {
+        if (this.tipoLectura == TipoLectura.DOMICILIO) {
             this.plazo = dias;
         }
+    }
+
+    //Metodo para contar las veces que el ejemplar fue pedido
+    public void contadorEjemplarSolicitado() {
+
     }
 
     @Override
@@ -48,7 +56,7 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "🔹Prestamo:" + "\n" +
+        return "-Prestamo:" + "\n" +
                 "   -Tipo de lectura=" + tipoLectura + "\n" +
                 "   -Fecha y hora de inicio del préstamo=" + fechaHoraInicio + "\n" +
                 "   -Funcionario que lo presó=" + funcionario + "\n" +

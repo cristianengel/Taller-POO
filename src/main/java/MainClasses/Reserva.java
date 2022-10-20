@@ -6,6 +6,9 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * Creación de los getters y setters mediante la importaación de lombok
+ */
 @Getter
 @Setter
 public class Reserva {
@@ -30,7 +33,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "🔹Reserva: " + "\n" +
+        return "-Reserva: " + "\n" +
                 "   -Fecha y hora del inicio de la reserva=" + fechaHoraInicio + "\n" +
                 "   -Fecha y hora del fin de la reserva=" + fechaHoraFin + "\n" +
                 "   -Ejemplar=" + ejemplar + "\n" +
