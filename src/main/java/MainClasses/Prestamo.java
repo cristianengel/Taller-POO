@@ -4,14 +4,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import Enum.TipoLectura;
+import Enum.*;
 
 /**
+ * Clase para gestión de los préstamos
  * Creación de los getters y setters mediante la importaación de lombok
  */
 @Getter
 @Setter
 public class Prestamo {
+    Biblioteca b = Biblioteca.getInstance();
     private TipoLectura tipoLectura; //Lectura en sala o a domicilio
     private LocalDateTime fechaHoraInicio;
     private String funcionario; //Quien prestó el ejemplar
@@ -20,7 +22,7 @@ public class Prestamo {
     private Ejemplar ejemplar; //Relación con Ejemplar
     private Lector lector; //Relación con Lector
 
-    public Prestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector) throws RuntimeException {
+    public Prestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio, String funcionario, Ejemplar ejemplar, Lector lector, boolean desdeReserva) throws RuntimeException {
         //Si la fecha del inicio del prestamo anterior a la fecha con multas -> No se realiza el préstamo
         if (fechaHoraInicio.isBefore(fechaHoraInicio.plusDays(lector.getMultas()))) throw new RuntimeException("El lector aún tiene multas.");
         this.tipoLectura = tipoLectura;
@@ -31,8 +33,11 @@ public class Prestamo {
         this.ejemplar = ejemplar;
         this.lector = lector;
 
+        if(!desdeReserva) {
+            this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
+        }
         this.ejemplar.agregarSolicitud();
-        contadorEjemplarSolicitado(ejemplar);
+
     }
 
     /**
@@ -43,14 +48,6 @@ public class Prestamo {
         if (this.tipoLectura == TipoLectura.DOMICILIO) {
             this.plazo = dias;
         }
-    }
-
-    /**
-     *
-     * @param ejemplar
-     */
-    public void contadorEjemplarSolicitado(Ejemplar ejemplar) {
-        // TODO: 10/20/22
     }
 
     @Override

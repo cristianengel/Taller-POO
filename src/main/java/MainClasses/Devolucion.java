@@ -37,7 +37,7 @@ public class Devolucion {
         this.prestamo = prestamo;
         this.diasAtrasados = controlFechaDevolucion();
         if(this.diasAtrasados > 0){
-            aplicarMulta(200 * this.diasAtrasados);
+            aplicarMulta(this.diasAtrasados);
         }
     }
 

@@ -22,6 +22,8 @@ public class Reserva {
         this.fechaHoraFin = fechaHoraFin;
         this.ejemplar = ejemplar;
         this.lector = lector;
+
+        this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
     }
 
     @Override

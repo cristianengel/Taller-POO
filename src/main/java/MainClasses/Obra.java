@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import Enum.*;
 
 @Getter
 @Setter
@@ -18,6 +19,8 @@ public class Obra {
     private String genero;
     private String caracteristica;
     private String indice;
+    private int vecesSolicitadaAluDoc = 0;
+    private int vecesSolicitadaPublico = 0;
     //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
 
@@ -31,6 +34,18 @@ public class Obra {
         this.genero = genero;
         this.caracteristica = caracteristica;
         this.indice = indice;
+    }
+
+    /**
+     * Agrega una solicitud a uno de los contadores de solicitudes
+     * @param profesion
+     */
+    public void agregarSolicitud(Profesion profesion) {
+        if(Objects.equals(profesion, Profesion.ALUMNO) || Objects.equals(profesion, Profesion.DOCENTE)) {
+            this.vecesSolicitadaAluDoc += 1;
+        } else if (Objects.equals(profesion, Profesion.PUBLICO)) {
+            this.vecesSolicitadaPublico += 1;
+        }
     }
 
     @Override
