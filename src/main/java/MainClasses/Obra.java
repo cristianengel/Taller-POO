@@ -11,8 +11,8 @@ import Enum.*;
 @Setter
 
 /**
- * La clase Obra propone los datos de las obras existentes en la
- * biblioteca
+ * La clase Obra expone los datos de las obras existentes en la
+ * biblioteca.
  */
 public class Obra {
     private String areaTematica;
@@ -29,6 +29,18 @@ public class Obra {
     //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
 
+    /**
+     * Constructor de la clase Obra.
+     * @param areaTematica
+     * @param titulo
+     * @param subtitulo
+     * @param primerAutor
+     * @param segundoAutor
+     * @param tercerAutor
+     * @param genero
+     * @param caracteristica
+     * @param indice
+     */
     public Obra(String areaTematica, String titulo, String subtitulo,
                 String primerAutor, String segundoAutor, String tercerAutor,
                 String genero, String caracteristica, String indice) {
@@ -44,7 +56,7 @@ public class Obra {
     }
 
     /**
-     * Agrega una solicitud a uno de los contadores de solicitudes
+     * agregarSolicitud agrega una solicitud a uno de los contadores de solicitudes.
      * @param profesion
      */
     public void agregarSolicitud(Profesion profesion) {
@@ -55,6 +67,10 @@ public class Obra {
         }
     }
 
+    /**
+     * equals verifica si son objetos de tipo Obra son iguales.
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

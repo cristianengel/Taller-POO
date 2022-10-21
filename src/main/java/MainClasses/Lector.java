@@ -11,8 +11,8 @@ import Enum.*;
 @Setter
 
 /**
- * La clase Lector plantea toda la información necesaria de los lectores
- * que solicitan un préstamo de un ejemplar
+ * La clase Lector expone toda la información necesaria de los lectores
+ * que solicitan un préstamo de un ejemplar.
  */
 public class Lector {
     private String nombre;
@@ -33,6 +33,23 @@ public class Lector {
     private int multas;
     private Profesion profesion;
 
+    /**
+     * Constructor de la clase Lector.
+     * @param nombre
+     * @param apellido
+     * @param tipoDoc
+     * @param numDoc
+     * @param correoElec
+     * @param numCel
+     * @param fechaNac
+     * @param sexo
+     * @param nacionalidad
+     * @param domicilio
+     * @param codigoPostal
+     * @param departamento
+     * @param localidad
+     * @param profesion
+     */
     public Lector(String nombre, String apellido, String tipoDoc, int numDoc,
                   String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                   String nacionalidad, String domicilio, int codigoPostal,
@@ -54,7 +71,8 @@ public class Lector {
     }
 
     /**
-     * Al atributo multas se le suma la cantidad de días que no puede reservar o levantar un ejemplar
+     * setMultas hace que al atributo multas se le suma la cantidad de
+     * días que no puede reservar o levantar un ejemplar el objeto de tipo Lector.
      * @param dias
      */
     public void setMultas(int dias) {
@@ -62,9 +80,8 @@ public class Lector {
     }
 
     /**
-     * Método que devuelve un true o false si dos objetos son iguales
-     * @param o de tipo Objeto
-     * @return boolean
+     * equals que devuelve un true o false si dos objetos de tipo Lector son iguales.
+     * @param o
      */
     @Override
     public boolean equals(Object o) {
