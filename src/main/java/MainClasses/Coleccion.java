@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @Setter
 
 /**
- * La clase Coleccion plantea un tipo de obra.
+ * La clase Coleccion se plantea un tipo de obra.
  * Esta clase contiene un grupo de obras.
  */
 public class Coleccion extends Obra {
@@ -17,6 +17,21 @@ public class Coleccion extends Obra {
     private int isbn;
     private ArrayList<Obra> obras;
 
+    /**
+     * Constructor de la clase Coleccion
+     * @param areaTematica
+     * @param titulo
+     * @param subtitulo
+     * @param primerAutor
+     * @param segundoAutor
+     * @param tercerAutor
+     * @param genero
+     * @param caracteristica
+     * @param isbn
+     * @param indice
+     * @param biblioteca
+     * @param nombre
+     */
     public Coleccion(String areaTematica, String titulo, String subtitulo,
                      String primerAutor, String segundoAutor, String tercerAutor,
                      String genero, String caracteristica, int isbn, String indice,
@@ -27,6 +42,10 @@ public class Coleccion extends Obra {
         this.isbn = isbn;
     }
 
+    /**
+     * Compara si dos objetos de tipo Coleccion son iguales
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
