@@ -11,8 +11,7 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Setter
 
 /**
- * La clase Devolucion propone la acción de devolución de un ejemplar
- * y todo lo que conlleva
+ * La clase Devolucion propone la acción de devolución de un ejemplar y todo lo que conlleva
  */
 public class Devolucion {
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto
@@ -24,7 +23,7 @@ public class Devolucion {
 
     /**
      * Constructor de la clase Devolucion, incluye la aplicación de la multa al lector en caso
-     * de que entregue un ejemplar fuera de término. (200 pesos por dia atrasado)
+     * de que entregue un ejemplar fuera de término.
      * @param fechaHoraDevolucion
      * @param ejemplar
      * @param lector
@@ -45,13 +44,13 @@ public class Devolucion {
     }
 
     /**
-     * Retorna los dias que se atrasó el lector en devolver un ejemplar,
-     * retorna 0 si lo entregó dentro del plazo
+     * Retorna los dias que se atrasó el lector en devolver un ejemplar.
+     * Retorna 0 si lo entregó dentro del plazo.
      * @return dias
      */
     public int controlFechaDevolucion() {
         /* Si la fecha y hora a la que se devuelve el ejemplar es posterior
-        a la hora y fecha que tenía que devolverse da true */
+        a la hora y fecha que tenía que devolverse */
         if (this.fechaHoraDevolucion.isAfter(this.prestamo.getFechaHoraDevolucion())) {
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
