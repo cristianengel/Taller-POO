@@ -49,6 +49,10 @@ public class Reserva {
                 Objects.equals(lector, reserva.lector);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Reserva.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Reserva: " + "\n" +

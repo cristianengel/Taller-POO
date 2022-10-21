@@ -92,6 +92,10 @@ public class Ejemplar {
         return "ID: " + identUnico + "  ||  " + "Título: " + obra.getTitulo();
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Ejemplar.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Ejemplar: " + "\n" +

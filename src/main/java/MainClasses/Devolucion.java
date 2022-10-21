@@ -67,6 +67,10 @@ public class Devolucion {
         this.lector.setMultas(multa);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Devolucion.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Devolucion:" + "\n" +

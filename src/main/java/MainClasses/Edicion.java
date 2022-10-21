@@ -75,6 +75,10 @@ public class Edicion {
                 Objects.equals(obra, edicion.obra);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Edicion.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Edición{" +

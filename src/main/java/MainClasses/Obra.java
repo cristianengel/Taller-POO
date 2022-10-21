@@ -86,6 +86,10 @@ public class Obra {
                 Objects.equals(indice, obra.indice);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Obra.
+     * @return
+     */
     @Override
     public String toString() {
         return "🔹Obra: " + "\n" +

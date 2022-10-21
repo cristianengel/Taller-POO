@@ -196,6 +196,10 @@ public class Biblioteca {
         return cant;
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Biblioteca.
+     * @return String
+     */
     @Override
     public String toString() {
         return "-Biblioteca: " + "\n" +

@@ -54,6 +54,10 @@ public class Coleccion extends Obra {
         return nombre.equals(coleccion.nombre);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Coleccion.
+     * @return
+     */
     public String toString() {
         return "-Coleccion: " +
                 "   -Nombre='" + nombre + "\n" +

@@ -82,6 +82,10 @@ public class Prestamo {
                 lector.equals(prestamo.lector);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Prestamo.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Prestamo:" + "\n" +

@@ -103,6 +103,10 @@ public class Lector {
                 Objects.equals(ejemplarPrestamo, lector.ejemplarPrestamo);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Lector.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Lector:" + "\n" +
