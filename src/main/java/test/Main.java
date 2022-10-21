@@ -1,13 +1,13 @@
 package test;
 
+import Enum.Sexo;
+import Enum.TipoDocumento;
 import GUI.WelcomeScreen;
 import MainClasses.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import Enum.Sexo;
 
 public class Main {
     public static void main(String[] args) {
@@ -35,9 +35,9 @@ public class Main {
         biblioteca.agregarEjemplar(sistemasAdSistemasInf1);
 
         // Creacion de Lectores de prueba
-        Docente isaias = new Docente("Isaias", "Reniero", "DNI", 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), Sexo.OTRO, "Argentina", "Los Valles 540", 3200, "", "Concordia");
-        Alumno cristian = new Alumno("Cristian", "Engel", "DNI", 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), Sexo.FEMENINO, "Argentina", "Quintana 5", 3200, "3b", "Concordia");
-        Publico marcos = new Publico("Marcos", "Barboza", "DNI", 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), Sexo.MASCULINO, "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
+        Docente isaias = new Docente("Isaias", "Reniero", TipoDocumento.DNI, 15489630, "isa@gmail.com", "3454652000", LocalDate.of(1995,3,27), Sexo.OTRO, "Argentina", "Los Valles 540", 3200, "", "Concordia");
+        Alumno cristian = new Alumno("Cristian", "Engel", TipoDocumento.DNI, 87426555, "cris@gmail.com", "3454987467", LocalDate.of(2003,6, 5), Sexo.FEMENINO, "Argentina", "Quintana 5", 3200, "3b", "Concordia");
+        Publico marcos = new Publico("Marcos", "Barboza", TipoDocumento.DNI, 65984111, "marquitos@gmail.com", "3454020663", LocalDate.of(2000,11,19), Sexo.MASCULINO, "Bolivia", "Rocamora 789", 3200, "7", "Concordia");
 
 
         WelcomeScreen ws = new WelcomeScreen();

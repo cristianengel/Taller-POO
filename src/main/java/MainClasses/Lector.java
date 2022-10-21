@@ -1,11 +1,13 @@
 package MainClasses;
 
+import Enum.Profesion;
+import Enum.Sexo;
+import Enum.TipoDocumento;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import Enum.*;
 
 @Getter
 @Setter
@@ -17,7 +19,7 @@ import Enum.*;
 public class Lector {
     private String nombre;
     private String apellido;
-    private String tipoDoc;
+    private TipoDocumento tipoDoc;
     private int numDoc;
     private String correoElec;
     private String numCel;
@@ -33,7 +35,7 @@ public class Lector {
     private int multas;
     private Profesion profesion;
 
-    public Lector(String nombre, String apellido, String tipoDoc, int numDoc,
+    public Lector(String nombre, String apellido, TipoDocumento tipoDoc, int numDoc,
                   String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                   String nacionalidad, String domicilio, int codigoPostal,
                   String departamento, String localidad, Profesion profesion) {

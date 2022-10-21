@@ -1,14 +1,14 @@
 package MainClasses;
 
+import Enum.Condicion;
+import Enum.TipoLectura;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import Enum.*;
 
 /**
  * Creación de los getters y setters mediante la importaación de lombok
@@ -145,6 +145,23 @@ public class Biblioteca {
         } else {
             throw new RuntimeException("El ejemplar no está reservado actualmente");
         }
+    }
+
+    public Prestamo solicitarPrestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio,
+                                  String funcionario, Ejemplar ejemplar, Lector lector,
+                                  boolean desdeReserva) {
+        return new Prestamo(tipoLectura, fechaHoraInicio, funcionario,
+                ejemplar, lector, desdeReserva);
+    }
+
+    public Reserva reservar(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin,
+                            Ejemplar ejemplar, Lector lector) {
+        return new Reserva(fechaHoraInicio, fechaHoraFin, ejemplar, lector);
+    }
+
+    public Devolucion devolver(LocalDateTime fechaHoraDevolucion, Ejemplar ejemplar, Lector lector,
+                               String funcionario, Prestamo prestamo) {
+        return new Devolucion(fechaHoraDevolucion, ejemplar, lector, funcionario, prestamo);
     }
 
     @Override

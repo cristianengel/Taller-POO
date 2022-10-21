@@ -1,9 +1,12 @@
 package MainClasses;
 
+import Enum.Profesion;
+import Enum.Sexo;
+import Enum.TipoDocumento;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import Enum.*;
 
 /**
  * La clase Alumno propone un tipo de lector
@@ -11,7 +14,7 @@ import Enum.*;
 public class Alumno extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
 
-    public Alumno(String nombre, String apellido, String tipoDoc, int numDoc,
+    public Alumno(String nombre, String apellido, TipoDocumento tipoDoc, int numDoc,
                   String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                   String nacionalidad, String domicilio, int codigoPostal,
                   String departamento, String localidad) {

@@ -1,12 +1,12 @@
 package MainClasses;
 
+import Enum.Condicion;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Objects;
-import Enum.Condicion;
 
 @Getter
 @Setter
@@ -59,7 +59,8 @@ public class Ejemplar {
                 Objects.equals(formaDeAdquisicion, ejemplar.formaDeAdquisicion) &&
                 Objects.equals(obra, ejemplar.obra) &&
                 Objects.equals(reserva, ejemplar.reserva) &&
-                Objects.equals(prestamo, ejemplar.prestamo);
+                Objects.equals(prestamo, ejemplar.prestamo) &&
+                Objects.equals(condicion, ejemplar.condicion);
     }
 
     /**
