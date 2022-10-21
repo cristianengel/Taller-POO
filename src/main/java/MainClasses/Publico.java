@@ -4,9 +4,26 @@ import java.time.LocalDate;
 import Enum.*;
 
 /**
- * La clase Publico propone un tipo de lector
+ * La clase Publico propone un tipo de lector.
  */
 public class Publico extends Lector{
+
+    /**
+     * Constructor de la clase Publico.
+     * @param nombre
+     * @param apellido
+     * @param tipoDoc
+     * @param numDoc
+     * @param correoElec
+     * @param numCel
+     * @param fechaNac
+     * @param sexo
+     * @param nacionalidad
+     * @param domicilio
+     * @param codigoPostal
+     * @param departamento
+     * @param localidad
+     */
     public Publico(String nombre, String apellido, String tipoDoc, int numDoc,
                    String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                    String nacionalidad, String domicilio, int codigoPostal,

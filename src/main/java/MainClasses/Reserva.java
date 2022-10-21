@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  * La clase Reserva ofrece lo necesario para realizar las reservas
- * de los ejemplares
+ * de los ejemplares.
  */
 public class Reserva {
     private LocalDateTime fechaHoraInicio;
@@ -19,6 +19,13 @@ public class Reserva {
     private Ejemplar ejemplar; //Relación intermedia entre Lector y Ejemplar
     private Lector lector; //Relación intermedia entre Lector y Ejemplar
 
+    /**
+     * Constructor de la clase Reserva.
+     * @param fechaHoraInicio
+     * @param fechaHoraFin
+     * @param ejemplar
+     * @param lector
+     */
     public Reserva(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin, Ejemplar ejemplar, Lector lector) {
         this.fechaHoraInicio = fechaHoraInicio;
         this.fechaHoraFin = fechaHoraFin;
@@ -28,6 +35,10 @@ public class Reserva {
         this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
     }
 
+    /**
+     * equals verifica si son objetos de tipo Reserva son iguales.
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,6 +49,10 @@ public class Reserva {
                 Objects.equals(lector, reserva.lector);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Reserva.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Reserva: " + "\n" +

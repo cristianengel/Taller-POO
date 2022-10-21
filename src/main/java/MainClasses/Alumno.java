@@ -6,11 +6,27 @@ import java.util.List;
 import Enum.*;
 
 /**
- * La clase Alumno propone un tipo de lector
+ * La clase Alumno propone un tipo de lector.
  */
 public class Alumno extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
 
+    /**
+     * Constructor de la clase Alumno.
+     * @param nombre
+     * @param apellido
+     * @param tipoDoc
+     * @param numDoc
+     * @param correoElec
+     * @param numCel
+     * @param fechaNac
+     * @param sexo
+     * @param nacionalidad
+     * @param domicilio
+     * @param codigoPostal
+     * @param departamento
+     * @param localidad
+     */
     public Alumno(String nombre, String apellido, String tipoDoc, int numDoc,
                   String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                   String nacionalidad, String domicilio, int codigoPostal,
@@ -19,6 +35,11 @@ public class Alumno extends Lector{
                 nacionalidad, domicilio, codigoPostal, departamento, localidad, Profesion.ALUMNO);
     }
 
+    /**
+     * mostrarCarreras muestra las carreras que cursa el objeto de tipo Alumno.
+     * @return carreras
+     * @throws RuntimeException
+     */
     public List<String> mostrarCarreras() throws RuntimeException{
         if(carreras.size() > 0){
             return carreras;
@@ -27,6 +48,11 @@ public class Alumno extends Lector{
         }
     }
 
+    /**
+     * agregarCarrera agrega a la lista de carreras la carrera pasada por parámetro.
+     * @param carrera
+     * @throws RuntimeException
+     */
     public void agregarCarrera(String carrera) throws RuntimeException {
         if(!carreras.contains(carrera)){
             carreras.add(carrera);
@@ -35,6 +61,11 @@ public class Alumno extends Lector{
         }
     }
 
+    /**
+     * removerCarrera elimina de la lista de carreras la carrera pasada por parámtro.
+     * @param carrera
+     * @throws RuntimeException
+     */
     public void removerCarrera(String carrera) throws RuntimeException{
         if(carreras.contains(carrera)){
             carreras.remove(carrera);

@@ -13,13 +13,13 @@ import Enum.Condicion;
 
 /**
  * La clase Ejemplar ofrece la información requerida para realizar
- * las operaciones con los ejemplares
+ * las operaciones con los ejemplares.
  */
 public class Ejemplar {
     private String identUnico;
     private int codBarra;
     private String observaciones;
-    private ArrayList<String> lugarFisico; // Pasillo, Estantería, Estante
+    private ArrayList<String> lugarFisico; // Ubicación (Pasillo, Estantería, Estante)
     private LocalDate fechaDadoDeBaja;
     private String motivoDadoDeBaja;
     private ArrayList<String> ubicacionFisicaDadoDeBaja = new ArrayList<>();
@@ -29,9 +29,19 @@ public class Ejemplar {
     private Edicion edicion;
     private Reserva reserva; //Relación con las clases Reserva y Lector
     private Prestamo prestamo; //Relación con las clases Prestamo y Lector
-    private Condicion condicion; // Condición del ejemplar (Disponible / Prestado / Reservado)
+    private Condicion condicion; //Condición del ejemplar (Disponible / Prestado / Reservado)
     private int vecesSolicitado = 0;
 
+    /**
+     * Constructor de la clase Ejemplar.
+     * @param identUnico
+     * @param codBarra
+     * @param observaciones
+     * @param lugarFisico
+     * @param fechaDeAdquisicion
+     * @param formaDeAdquisicion
+     * @param obra
+     */
     public Ejemplar(String identUnico, int codBarra, String observaciones,
                     ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion,
                     String formaDeAdquisicion, Obra obra) {
@@ -45,6 +55,10 @@ public class Ejemplar {
         this.condicion = Condicion.DISPONIBLE;
     }
 
+    /**
+     * equals verifica si son objetos de tipo Ejemplar son iguales.
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -63,12 +77,25 @@ public class Ejemplar {
     }
 
     /**
-     * Agrega al contador de veces solicitado
+     * agregarSolicitud agrega al contador de vecesSolicitado las veces
+     * que se solicitó un ejemplar.
      */
     public void agregarSolicitud() {
         this.vecesSolicitado += 1;
     }
 
+    /**
+     * stringSimplificado retorna un String con la información reducida de un ejemplar.
+     * @return string
+     */
+    public String stringSimplificado() {
+        return "ID: " + identUnico + "  ||  " + "Título: " + obra.getTitulo();
+    }
+
+    /**
+     * toString devuelve una cadena que representa la instancia de Ejemplar.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Ejemplar: " + "\n" +
@@ -80,9 +107,5 @@ public class Ejemplar {
                 "   -Fecha de dado de baja=" + fechaDadoDeBaja + "\n" +
                 "   -Motivo de dado de baja=" + motivoDadoDeBaja + "\n" +
                 "   -Forma de adquisición=" + formaDeAdquisicion + "\n" + obra;
-    }
-
-    public String stringSimplificado() {
-        return "ID: " + identUnico + "  ||  " + "Título: " + obra.getTitulo();
     }
 }

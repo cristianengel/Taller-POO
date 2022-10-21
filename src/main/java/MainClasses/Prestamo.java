@@ -10,7 +10,7 @@ import Enum.*;
 @Setter
 
 /**
- * Clase para gestión de los préstamos
+ * Clase para gestión de los préstamos.
  */
 public class Prestamo {
     Biblioteca b = Biblioteca.getInstance();
@@ -22,6 +22,16 @@ public class Prestamo {
     private Ejemplar ejemplar; //Relación con Ejemplar
     private Lector lector; //Relación con Lector
 
+    /**
+     * Constructor de la clase Prestamo
+     * @param tipoLectura
+     * @param fechaHoraInicio
+     * @param funcionario
+     * @param ejemplar
+     * @param lector
+     * @param desdeReserva
+     * @throws RuntimeException
+     */
     public Prestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio,
                     String funcionario, Ejemplar ejemplar, Lector lector,
                     boolean desdeReserva) throws RuntimeException {
@@ -45,7 +55,8 @@ public class Prestamo {
     }
 
     /**
-     * Método con el cuál podemos cambiar el plazo de devolución (extender o acorta el plazo)
+     * cambiarPlazoDelPrestamo cambie el plazo de una devolución
+     * (extender o acorta el plazo)
      * @param dias
      */
     public void cambiarPlazoDelPrestamo(int dias) {
@@ -54,6 +65,10 @@ public class Prestamo {
         }
     }
 
+    /**
+     * equals verifica si son objetos de tipo Prestamo son iguales.
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,6 +82,10 @@ public class Prestamo {
                 lector.equals(prestamo.lector);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Prestamo.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Prestamo:" + "\n" +

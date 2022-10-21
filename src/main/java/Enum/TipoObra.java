@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 
 /**
- * La clase TipoObra propone los tipos de obras que pueden existir
+ * La clase TipoObra propone los tipos de obras que pueden existir.
  */
 public enum TipoObra {
     LIBRO("Libro"),
@@ -27,7 +27,8 @@ public enum TipoObra {
     private String tipo;
 
     /**
-     * Constructor privado, para que solamente se creen objetos del tipo mencionados aquí
+     * Constructor de la clase TipoObra privado
+     * para que solamente se creen objetos del tipo mencionados aquí.
      * @param tipo
      */
     private TipoObra(String tipo) {
