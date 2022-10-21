@@ -19,7 +19,7 @@ public class Ejemplar {
     private String identUnico;
     private int codBarra;
     private String observaciones;
-    private ArrayList<String> lugarFisico; // Pasillo, Estantería, Estante
+    private ArrayList<String> lugarFisico; // Ubicación (Pasillo, Estantería, Estante)
     private LocalDate fechaDadoDeBaja;
     private String motivoDadoDeBaja;
     private ArrayList<String> ubicacionFisicaDadoDeBaja = new ArrayList<>();

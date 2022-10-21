@@ -3,16 +3,12 @@ package MainClasses;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import Enum.*;
 
-/**
- * Creación de los getters y setters mediante la importaación de lombok
- */
 @Getter
 @Setter
 
@@ -36,7 +32,7 @@ public class Biblioteca {
 
     /**
      * Método de instancia única.
-     * Restringe la creación de objetos de tipo Biblioteca a un único objeto
+     * Restringe la creación de objetos de tipo Biblioteca a un único objeto.
      * @return La instancia de tipo Biblioteca
      */
     public static Biblioteca getInstance() {
@@ -48,9 +44,8 @@ public class Biblioteca {
 
     /**
      * Agrega a la lista de ejemplares el ejemplar. Una vez agregado el ejemplar,
-     * agrega el índice del ejemplar correspondiente a su obra a la
-     * lista de índices y agrega la obra correspondiente al ejemplar a
-     * la lista de obras.
+     * agrega el índice del ejemplar a la lista de índices y agrega la obra
+     * correspondiente al ejemplar a la lista de obras (en caso de que el ejemplar sea nuevo).
      * @param ejemplar
      */
     public void agregarEjemplar(Ejemplar ejemplar){
@@ -64,25 +59,38 @@ public class Biblioteca {
         agregarObra(ejemplar.getObra());
     }
 
+    /**
+     * agregarObra agrega la obra pasada por paramétro a la lista de obras.
+     * @param obra
+     */
     private void agregarObra(Obra obra) {
         if(!obras.contains(obra)){
             obras.add(obra);
         }
     }
 
+    /**
+     * Elimina de la lista de ejemplares el ejemplar.
+     * @param ejemplar
+     */
     public void removerEjemplar(Ejemplar ejemplar){
         if(listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.remove(ejemplar);
         } else {
             throw new RuntimeException("El ejemplar no se encuentra en la biblioteca.");
         }
-        // se borran los índices y las obras de la biblioteca cuando no haya ejemplares disponibles.
+        //Se borran los índices y las obras de la biblioteca cuando no haya ejemplares disponibles.
         if(cantEjemplaresPorObra(ejemplar.getObra()) == 0) {
             listaDeIndices.remove(ejemplar.getObra().getIndice());
             obras.remove(ejemplar.getObra());
         }
     }
 
+    /**
+     * agregarIndice agrega a la lista de índice el índice pasado por parámetro
+     * @param indice
+     * @throws RuntimeException
+     */
     public void agregarIndice(String indice) throws RuntimeException {
         if (Objects.equals(indice, "")) throw new RuntimeException("Índice inválido.");
         if(!listaDeIndices.contains(indice)){
@@ -90,6 +98,11 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * removerIndice elimina de la lista de índices el índice pasado por paramétro
+     * @param indice
+     * @throws RuntimeException
+     */
     public void removerIndice(String indice) throws RuntimeException {
         if (Objects.equals(indice, "")) throw new RuntimeException("Índice inválido.");
         if(listaDeIndices.contains(indice)){
@@ -99,6 +112,10 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Muestra los ejemplares presentes en la biblioteca
+     * @return listaDeEjemplares
+     */
     public List<Ejemplar> mostrarEjemplares() {
         if(listaDeEjemplares.size() > 0) {
             return listaDeEjemplares;
@@ -107,6 +124,10 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Muestra los índices presentes en la biblioteca
+     * @return listaDeIndices
+     */
     public List<String> mostrarIndices(){
         if(listaDeIndices.size() > 0) {
             return listaDeIndices;
@@ -115,6 +136,10 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Muestra los deudores que deben regresar algún ejemplar a la biblioteca
+     * @return listaDeDeudores
+     */
     public List<Lector> mostrarDeudores(){
         if(listaDeDeudores.size() > 0) {
             return listaDeDeudores;
@@ -123,6 +148,10 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Muestra las obras presentes en la biblioteca
+     * @return obras
+     */
     public List<Obra> mostrarObras(){
         if(obras.size() > 0) {
             return obras;
@@ -133,6 +162,9 @@ public class Biblioteca {
 
     /**
      * Registra el retiro de un ejemplar reservado y modifica los registros de préstamosEnCurso y reservas
+     * @param reserva
+     * @param tipoLectura
+     * @param funcionario
      */
     public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario) {
         if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
@@ -147,6 +179,21 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * Chequea disponibilidad de ejemplares con la obra pasada por parámetro
+     * @param obra
+     * @return cant
+     */
+    public int cantEjemplaresPorObra(Obra obra){
+        int cant = 0;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if(listaDeEjemplares.get(i).getObra() == obra) {
+                cant++;
+            }
+        }
+        return cant;
+    }
+
     @Override
     public String toString() {
         return "-Biblioteca: " + "\n" +
@@ -157,20 +204,5 @@ public class Biblioteca {
                 "   -Obras solicitadas por el público=" + listaObrasSolicitadasPublico + "\n" +
                 "   -Lectores con multas=" + listaLectoresConMultas + "\n" +
                 "   -Obras=" + obras;
-    }
-
-    /**
-     * Chequea disponibilidad de ejemplares con la obra pasada por parámetro
-     * @param obra
-     * @return
-     */
-    public int cantEjemplaresPorObra(Obra obra){
-        int cant = 0;
-        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
-            if(listaDeEjemplares.get(i).getObra() == obra) {
-                cant++;
-            }
-        }
-        return cant;
     }
 }
