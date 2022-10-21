@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Se agregan nuevos tipos de obras que pueden existir.">
+    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Se elimina la clase Enum AreaTematica.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enum/AreaTematica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Enum/Profesion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666275610147</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Se elimina la clase Enum AreaTematica.">
+      <created>1666278793862</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666278793862</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +237,8 @@
     <MESSAGE value="Cambios en el paquete Enum.&#10;Se agregan atributos en TipoObra y AreaTematica.&#10;Cambio de nombre de dos clases.&#10;Correcciones en las clases en cuánto a la documentación y los métodos.&#10;Se agrega la documentación necesaria." />
     <MESSAGE value="Se agrega documentación a todas las clases.&#10;Se moifican las lineas de código demasiadas largas (superan los 80 caracteres) para que queden más cortas." />
     <MESSAGE value="Se agregan nuevos tipos de obras que pueden existir." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agregan nuevos tipos de obras que pueden existir." />
+    <MESSAGE value="Se elimina la clase Enum AreaTematica." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se elimina la clase Enum AreaTematica." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
