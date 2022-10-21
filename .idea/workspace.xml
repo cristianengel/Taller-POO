@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Se agregó documentación a la clase Alumno.">
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" afterDir="false" />
+    <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="Pequeños retoques en la clase Devolucion.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +208,28 @@
       <option name="project" value="LOCAL" />
       <updated>1666376403253</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Se agregó documentación a la clase Biblioteca.">
+      <created>1666377399791</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377399791</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Se agregó documentación a la clase Coleccion.">
+      <created>1666377518428</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377518428</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Pequeños retoques en la clase Devolucion.">
+      <created>1666377621858</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377621858</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +274,10 @@
     <MESSAGE value="Se elimina la clase Enum AreaTematica." />
     <MESSAGE value="Modificaciones de líneas y reducción de algunos ejemplares en la clases de testeo." />
     <MESSAGE value="Se agregó documentación a la clase Alumno." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agregó documentación a la clase Alumno." />
+    <MESSAGE value="Se agregó documentación a la clase Biblioteca." />
+    <MESSAGE value="Se agregó documentación a la clase Coleccion." />
+    <MESSAGE value="Pequeños retoques en la clase Devolucion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Pequeños retoques en la clase Devolucion." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
