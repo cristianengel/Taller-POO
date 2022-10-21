@@ -14,7 +14,7 @@ import Enum.*;
 
 /**
  * La clase Biblioteca propone un lugar donde se registran los datos referidos a
- * los ejemplares, las obras, los deudores, los lectores y los índices
+ * los ejemplares, las obras, los deudores, los lectores y los índices.
  */
 public class Biblioteca {
     private static Biblioteca instance;
@@ -43,9 +43,9 @@ public class Biblioteca {
     }
 
     /**
-     * Agrega a la lista de ejemplares el ejemplar. Una vez agregado el ejemplar,
-     * agrega el índice del ejemplar a la lista de índices y agrega la obra
-     * correspondiente al ejemplar a la lista de obras (en caso de que el ejemplar sea nuevo).
+     * agregarEjemplar agrega a la lista de ejemplares el ejemplar.
+     * Una vez agregado el ejemplar, si el ejemplar es nuevo, agrega el índice del ejemplar a la lista
+     * de índices y agrega la obra correspondiente al ejemplar a la lista de obras.
      * @param ejemplar
      */
     public void agregarEjemplar(Ejemplar ejemplar){
@@ -60,7 +60,7 @@ public class Biblioteca {
     }
 
     /**
-     * agregarObra agrega la obra pasada por paramétro a la lista de obras.
+     * agregarObra agrega la obra pasada por parámtro a la lista de obras.
      * @param obra
      */
     private void agregarObra(Obra obra) {
@@ -70,7 +70,7 @@ public class Biblioteca {
     }
 
     /**
-     * Elimina de la lista de ejemplares el ejemplar.
+     * removerEjemplar elimina de la lista de ejemplares el ejemplar pasado por parámetro.
      * @param ejemplar
      */
     public void removerEjemplar(Ejemplar ejemplar){
@@ -87,7 +87,7 @@ public class Biblioteca {
     }
 
     /**
-     * agregarIndice agrega a la lista de índice el índice pasado por parámetro
+     * agregarIndice agrega a la lista de índices el índice pasado por parámetro.
      * @param indice
      * @throws RuntimeException
      */
@@ -99,7 +99,7 @@ public class Biblioteca {
     }
 
     /**
-     * removerIndice elimina de la lista de índices el índice pasado por paramétro
+     * removerIndice elimina de la lista de índices el índice pasado por parámetro.
      * @param indice
      * @throws RuntimeException
      */
@@ -113,7 +113,7 @@ public class Biblioteca {
     }
 
     /**
-     * Muestra los ejemplares presentes en la biblioteca
+     * mostrarEjemplares muestra los ejemplares presentes en la biblioteca.
      * @return listaDeEjemplares
      */
     public List<Ejemplar> mostrarEjemplares() {
@@ -125,7 +125,7 @@ public class Biblioteca {
     }
 
     /**
-     * Muestra los índices presentes en la biblioteca
+     * mostrarIndices muestra los índices presentes en la biblioteca.
      * @return listaDeIndices
      */
     public List<String> mostrarIndices(){
@@ -137,7 +137,7 @@ public class Biblioteca {
     }
 
     /**
-     * Muestra los deudores que deben regresar algún ejemplar a la biblioteca
+     * mostrarDeudores muestra los deudores que deben regresar algún ejemplar a la biblioteca.
      * @return listaDeDeudores
      */
     public List<Lector> mostrarDeudores(){
@@ -149,7 +149,7 @@ public class Biblioteca {
     }
 
     /**
-     * Muestra las obras presentes en la biblioteca
+     * mostrarObras muestra las obras presentes en la biblioteca.
      * @return obras
      */
     public List<Obra> mostrarObras(){
@@ -161,7 +161,8 @@ public class Biblioteca {
     }
 
     /**
-     * Registra el retiro de un ejemplar reservado y modifica los registros de préstamosEnCurso y reservas
+     * registrarRetiroConReserva registra el retiro de un ejemplar reservado
+     * y modifica los registros de prestamosEnCurso y reservas.
      * @param reserva
      * @param tipoLectura
      * @param funcionario
@@ -180,7 +181,8 @@ public class Biblioteca {
     }
 
     /**
-     * Chequea disponibilidad de ejemplares con la obra pasada por parámetro
+     * cantEjemplaresPorObra chequea la disponibilidad de ejemplares con la
+     * obra pasada por parámetro.
      * @param obra
      * @return cant
      */

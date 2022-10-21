@@ -11,7 +11,7 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Setter
 
 /**
- * La clase Devolucion propone la acción de devolución de un ejemplar y todo lo que conlleva
+ * La clase Devolucion propone la acción de devolución de un ejemplar y todo lo que conlleva.
  */
 public class Devolucion {
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto
@@ -44,7 +44,7 @@ public class Devolucion {
     }
 
     /**
-     * Retorna los dias que se atrasó el lector en devolver un ejemplar.
+     * controlFechaDevolucion retorna los dias que se atrasó el lector en devolver un ejemplar.
      * Retorna 0 si lo entregó dentro del plazo.
      * @return dias
      */
@@ -60,7 +60,7 @@ public class Devolucion {
     }
 
     /**
-     * Método para aplicar la multa al lector
+     * aplicarMulta aplica la multa al lector.
      * @param multa
      */
     public void aplicarMulta(int multa) {

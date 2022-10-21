@@ -6,13 +6,13 @@ import java.util.List;
 import Enum.*;
 
 /**
- * La clase Alumno propone un tipo de lector
+ * La clase Alumno propone un tipo de lector.
  */
 public class Alumno extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
 
     /**
-     * Constructor de la clase Alumno
+     * Constructor de la clase Alumno.
      * @param nombre
      * @param apellido
      * @param tipoDoc
@@ -36,7 +36,7 @@ public class Alumno extends Lector{
     }
 
     /**
-     * Muestra las carreras que cursa el alumno
+     * mostrarCarreras muestra las carreras que cursa el objeto de tipo Alumno.
      * @return carreras
      * @throws RuntimeException
      */
@@ -49,7 +49,7 @@ public class Alumno extends Lector{
     }
 
     /**
-     * Agrega a la lista de carreras, la carrera que cursa el alumno
+     * agregarCarrera agrega a la lista de carreras la carrera pasada por parámetro.
      * @param carrera
      * @throws RuntimeException
      */
@@ -62,7 +62,7 @@ public class Alumno extends Lector{
     }
 
     /**
-     * Elimina de la lista de carreras, la carrera que el alumno no cursa
+     * removerCarrera elimina de la lista de carreras la carrera pasada por parámtro.
      * @param carrera
      * @throws RuntimeException
      */

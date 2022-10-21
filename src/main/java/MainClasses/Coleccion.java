@@ -18,7 +18,7 @@ public class Coleccion extends Obra {
     private ArrayList<Obra> obras;
 
     /**
-     * Constructor de la clase Coleccion
+     * Constructor de la clase Coleccion.
      * @param areaTematica
      * @param titulo
      * @param subtitulo
@@ -43,7 +43,7 @@ public class Coleccion extends Obra {
     }
 
     /**
-     * Compara si dos objetos de tipo Coleccion son iguales
+     * equals compara si dos objetos de tipo Coleccion son iguales.
      * @param o
      */
     @Override
