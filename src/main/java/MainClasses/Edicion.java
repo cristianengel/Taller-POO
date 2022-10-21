@@ -9,7 +9,7 @@ import java.util.Objects;
 @Setter
 
 /**
- * La Edicion ofrece información referida a la edición de cada obra
+ * La Edicion ofrece información referida a la edición de cada obra.
  */
 public class Edicion {
     private String editorial;
@@ -24,6 +24,20 @@ public class Edicion {
     private int isbn;
     private Obra obra; //Relación con la clase Obra
 
+    /**
+     * Constructor de la clase Edicion.
+     * @param editorial
+     * @param paisDeEdicion
+     * @param numeroDeEdicion
+     * @param anio
+     * @param volumenes
+     * @param paginas
+     * @param idioma
+     * @param formato
+     * @param esColeccion
+     * @param isbn
+     * @param obra
+     */
     public Edicion(String editorial, String paisDeEdicion, int numeroDeEdicion,
                    int anio, int volumenes, int paginas, String idioma, String formato,
                    boolean esColeccion, int isbn, Obra obra) {
@@ -40,6 +54,10 @@ public class Edicion {
         this.obra = obra;
     }
 
+    /**
+     * equals verifica si son objetos de tipo Edicion son iguales.
+     * @param o
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,6 +75,10 @@ public class Edicion {
                 Objects.equals(obra, edicion.obra);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Edicion.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Edición{" +

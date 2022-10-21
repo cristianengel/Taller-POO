@@ -187,12 +187,87 @@
       <option name="project" value="LOCAL" />
       <updated>1666147030219</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00016" summary="Se elimina la clase Enum AreaTematica.">
+      <created>1666278793862</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666278793862</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Modificaciones de líneas y reducción de algunos ejemplares en la clases de testeo.">
+      <created>1666376033366</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1666376033366</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Se agregó documentación a la clase Alumno.">
+      <created>1666376403253</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1666376403253</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Se agregó documentación a la clase Biblioteca.">
+      <created>1666377399791</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377399791</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Se agregó documentación a la clase Coleccion.">
+      <created>1666377518428</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377518428</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Pequeños retoques en la clase Devolucion.">
+      <created>1666377621858</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666377621858</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Se agregó documentación a la clase Docente.">
+      <created>1666378311167</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666378311167</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Pequelos retoques en la documentación de las clases de Devolucion hacia arriba.">
+      <created>1666378749188</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1666378749188</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Se agrega documentación a las clases.">
+      <created>1666379464400</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379464400</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Se agrega documentación a los metodos toString.">
+      <created>1666379703901</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1666379703901</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="3b9e0747-bc9f-420b-833a-85f242d8bb89">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -217,6 +292,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="3b9e0747-bc9f-420b-833a-85f242d8bb89" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -233,6 +313,22 @@
     <MESSAGE value="Creación de las clases Enum.&#10;Cambios en los toString.&#10;Cambios en los constructores y variables ya que se crearon las clases Enum.&#10;Y demás modificaciones." />
     <MESSAGE value="Se agrega un espacio." />
     <option name="LAST_COMMIT_MESSAGE" value="Se agrega un espacio." />
+    <MESSAGE value="Modificaciones y correcciones&#10;&#10;- Se corrigió un error que arrojaba NullPointerException&#10;- Se agregó la enumeración Condicion&#10;- Se agregaron algunos métodos de los préstamos&#10;- Otros ligeros cambios" />
+    <MESSAGE value="Se agrega documentación." />
+    <MESSAGE value="Cambios en el paquete Enum.&#10;Se agregan atributos en TipoObra y AreaTematica.&#10;Cambio de nombre de dos clases.&#10;Correcciones en las clases en cuánto a la documentación y los métodos.&#10;Se agrega la documentación necesaria." />
+    <MESSAGE value="Se agrega documentación a todas las clases.&#10;Se moifican las lineas de código demasiadas largas (superan los 80 caracteres) para que queden más cortas." />
+    <MESSAGE value="Se agregan nuevos tipos de obras que pueden existir." />
+    <MESSAGE value="Se elimina la clase Enum AreaTematica." />
+    <MESSAGE value="Modificaciones de líneas y reducción de algunos ejemplares en la clases de testeo." />
+    <MESSAGE value="Se agregó documentación a la clase Alumno." />
+    <MESSAGE value="Se agregó documentación a la clase Biblioteca." />
+    <MESSAGE value="Se agregó documentación a la clase Coleccion." />
+    <MESSAGE value="Pequeños retoques en la clase Devolucion." />
+    <MESSAGE value="Se agregó documentación a la clase Docente." />
+    <MESSAGE value="Pequelos retoques en la documentación de las clases de Devolucion hacia arriba." />
+    <MESSAGE value="Se agrega documentación a las clases." />
+    <MESSAGE value="Se agrega documentación a los metodos toString." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega documentación a los metodos toString." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -240,6 +336,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,13 +9,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * La clase Docente propone un tipo de lector
+ * La clase Docente propone un tipo de lector.
  */
 public class Docente extends Lector{
     private ArrayList<String> carreras = new ArrayList<>();
     private ArrayList<String> materias = new ArrayList<>();
 
-    public Docente(String nombre, String apellido, TipoDocumento tipoDoc, int numDoc,
+    /**
+     * Constructor de la clase Docente.
+     * @param nombre
+     * @param apellido
+     * @param tipoDoc
+     * @param numDoc
+     * @param correoElec
+     * @param numCel
+     * @param fechaNac
+     * @param sexo
+     * @param nacionalidad
+     * @param domicilio
+     * @param codigoPostal
+     * @param departamento
+     * @param localidad
+     */
+    public Docente(String nombre, String apellido, String tipoDoc, int numDoc,
                    String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                    String nacionalidad, String domicilio, int codigoPostal,
                    String departamento, String localidad) {
@@ -23,6 +39,11 @@ public class Docente extends Lector{
                 nacionalidad, domicilio, codigoPostal, departamento, localidad, Profesion.DOCENTE);
     }
 
+    /**
+     * mostrarCarreras muestra las carreras en las que da clases el objeto de tipo docente.
+     * @return carreras
+     * @throws RuntimeException
+     */
     public List<String> mostrarCarreras() throws RuntimeException{
         if(carreras.size() > 0){
             return carreras;
@@ -31,6 +52,11 @@ public class Docente extends Lector{
         }
     }
 
+    /**
+     * agregarCarrera agrega la carrea pasada por parámetro a la lista de carreras.
+     * @param carrera
+     * @throws RuntimeException
+     */
     public void agregarCarrera(String carrera) throws RuntimeException {
         if(!carreras.contains(carrera)){
             carreras.add(carrera);
@@ -39,6 +65,11 @@ public class Docente extends Lector{
         }
     }
 
+    /**
+     * removerCarrera elimina la carrera pasada por parámtro de la lista de carreras.
+     * @param carrera
+     * @throws RuntimeException
+     */
     public void removerCarrera(String carrera) throws RuntimeException{
         if(carreras.contains(carrera)){
             carreras.remove(carrera);
@@ -47,6 +78,11 @@ public class Docente extends Lector{
         }
     }
 
+    /**
+     * mostrarMaterias muestra las materias en la que el objeto de tipo Docente imparte las clases.
+     * @return materias
+     * @throws RuntimeException
+     */
     public List<String> mostrarMaterias() throws RuntimeException{
         if(materias.size() > 0){
             return materias;
@@ -55,6 +91,11 @@ public class Docente extends Lector{
         }
     }
 
+    /**
+     * agregarMateria agrega la materia pasada por parámetro a la lista de materias.
+     * @param materia
+     * @throws RuntimeException
+     */
     public void agregarMateria(String materia) throws RuntimeException {
         if(!materias.contains(materia)){
             materias.add(materia);
@@ -63,6 +104,11 @@ public class Docente extends Lector{
         }
     }
 
+    /**
+     * removermateria elimina la materia pasada por parámetro de la lista de materias.
+     * @param materia
+     * @throws RuntimeException
+     */
     public void removermateria(String materia) throws RuntimeException{
         if(materias.contains(materia)){
             materias.remove(materia);
