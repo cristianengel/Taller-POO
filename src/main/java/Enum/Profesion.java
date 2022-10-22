@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 
 /**
- * La clase Profesion propone distinguir la profesión del lector
+ * La clase Profesion propone distinguir la profesión del lector.
  */
 public enum Profesion {
     ALUMNO("Alumno"),
@@ -14,6 +14,11 @@ public enum Profesion {
 
     private String profesion;
 
+    /**
+     * Constructor de la clase Profesion privado
+     * para que solamente se creen objetos del tipo mencionados aquí.
+     * @param profesion
+     */
     private Profesion(String profesion) {
         this.profesion = profesion;
     }

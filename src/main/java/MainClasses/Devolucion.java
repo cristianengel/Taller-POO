@@ -45,13 +45,13 @@ public class Devolucion {
     }
 
     /**
-     * Retorna los dias que se atrasó el lector en devolver un ejemplar,
-     * retorna 0 si lo entregó dentro del plazo
+     * controlFechaDevolucion retorna los dias que se atrasó el lector en devolver un ejemplar.
+     * Retorna 0 si lo entregó dentro del plazo.
      * @return dias
      */
     public int controlFechaDevolucion() {
         /* Si la fecha y hora a la que se devuelve el ejemplar es posterior
-        a la hora y fecha que tenía que devolverse da true */
+        a la hora y fecha que tenía que devolverse */
         if (this.fechaHoraDevolucion.isAfter(this.prestamo.getFechaHoraDevolucion())) {
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
@@ -61,13 +61,17 @@ public class Devolucion {
     }
 
     /**
-     * Método para aplicar la multa al lector
+     * aplicarMulta aplica la multa al lector.
      * @param multa
      */
     public void aplicarMulta(int multa) {
         this.lector.setMultas(multa);
     }
 
+    /**
+     * toString devuelve una cadena que representa la instancia de Devolucion.
+     * @return
+     */
     @Override
     public String toString() {
         return "-Devolucion:" + "\n" +
