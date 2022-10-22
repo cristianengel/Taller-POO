@@ -36,6 +36,7 @@ public class ListaDeEjemplares extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 DatosDelPrestamo ddp = DatosDelPrestamo.getInstance();
+                ddp.obtenerEjemplar(b.getListaDeEjemplares().get(list1.getSelectedIndex()));
                 ddp.getEjemplarLabel().setText("Ejemplar: " + b.getListaDeEjemplares().get(list1.getSelectedIndex()).getIdentUnico());
                 dispose();
             }

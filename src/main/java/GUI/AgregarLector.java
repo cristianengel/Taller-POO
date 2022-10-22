@@ -3,9 +3,7 @@ package GUI;
 import Enum.Profesion;
 import Enum.Sexo;
 import Enum.TipoDocumento;
-import MainClasses.Alumno;
-import MainClasses.Docente;
-import MainClasses.Publico;
+import MainClasses.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -32,6 +30,8 @@ public class AgregarLector extends JFrame{
     private JTextField textFieldDepartamento;
     private JTextField textFieldLocalidad;
     private JComboBox<Profesion> comboBoxProfesion;
+    private DatosDelPrestamo ddp = DatosDelPrestamo.getInstance();
+    private Biblioteca biblioteca = Biblioteca.getInstance();
 
     public AgregarLector() {
         setContentPane(agregarLectorPanel);
@@ -83,44 +83,53 @@ public class AgregarLector extends JFrame{
         aceptarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                switch (comboBoxProfesion.getItemAt(comboBoxProfesion.getSelectedIndex())) {
-                    case ALUMNO -> {
-                        Alumno alumno = new Alumno(textFieldNombre.getText(), textFieldApellido.getText(),
-                                comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()), Integer.parseInt(textFieldDocumento.getText()),
-                                textFieldCorreoElec.getText(), textFieldNumTel.getText(),
-                                LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
-                                (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
-                                comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()), textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
-                                Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
-                                textFieldLocalidad.getText());
-                        break;
+                try {
+                    Object lector = null;
+                    switch (comboBoxProfesion.getItemAt(comboBoxProfesion.getSelectedIndex())) {
+                        case ALUMNO -> {
+                            lector = new Alumno(textFieldNombre.getText(), textFieldApellido.getText(),
+                                    comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()),
+                                    Integer.parseInt(textFieldDocumento.getText()),
+                                    textFieldCorreoElec.getText(), textFieldNumTel.getText(),
+                                    LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
+                                            (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
+                                    comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()),
+                                    textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
+                                    Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
+                                    textFieldLocalidad.getText());
+                        }
+                        case DOCENTE -> {
+                            lector = new Docente(textFieldNombre.getText(), textFieldApellido.getText(),
+                                    comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()),
+                                    Integer.parseInt(textFieldDocumento.getText()),
+                                    textFieldCorreoElec.getText(), textFieldNumTel.getText(),
+                                    LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
+                                            (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
+                                    comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()),
+                                    textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
+                                    Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
+                                    textFieldLocalidad.getText());
+                        }
+                        case PUBLICO -> {
+                            lector = new Publico(textFieldNombre.getText(), textFieldApellido.getText(),
+                                    comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()),
+                                    Integer.parseInt(textFieldDocumento.getText()),
+                                    textFieldCorreoElec.getText(), textFieldNumTel.getText(),
+                                    LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
+                                            (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
+                                    comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()),
+                                    textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
+                                    Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
+                                    textFieldLocalidad.getText());
+                        }
                     }
-                    case DOCENTE -> {
-                        Docente docente = new Docente(textFieldNombre.getText(), textFieldApellido.getText(),
-                                comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()), Integer.parseInt(textFieldDocumento.getText()),
-                                textFieldCorreoElec.getText(), textFieldNumTel.getText(),
-                                LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
-                                        (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
-                                comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()), textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
-                                Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
-                                textFieldLocalidad.getText());
-                        break;
-                    }
-                    case PUBLICO -> {
-                        Publico publico = new Publico(textFieldNombre.getText(), textFieldApellido.getText(),
-                                comboBoxTipoDoc.getItemAt(comboBoxTipoDoc.getSelectedIndex()), Integer.parseInt(textFieldDocumento.getText()),
-                                textFieldCorreoElec.getText(), textFieldNumTel.getText(),
-                                LocalDate.of((Integer) comboBoxAnio.getSelectedItem(),
-                                        (Integer) comboBoxMes.getSelectedItem(), (Integer) comboBoxDia.getSelectedItem()),
-                                comboBoxGenero.getItemAt(comboBoxGenero.getSelectedIndex()), textFieldNacionalidad.getText(), textFieldDomicilio.getText(),
-                                Integer.parseInt(textFieldCP.getText()), textFieldDepartamento.getText(),
-                                textFieldLocalidad.getText());
-                        break;
-                    }
-                    default -> {
-                        return;
-                    }
+                    ddp.getIngresarDatosLectorLabel().setText("Lector: " + textFieldDocumento.getText());
+                    ddp.obtenerLector((Lector) lector);
+                } catch(NullPointerException exception) {
+                    JOptionPane.showMessageDialog(null, "Faltan rellenar campos");
+                    return;
                 }
+                dispose();
             }
         });
     }
