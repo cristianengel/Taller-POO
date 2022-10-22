@@ -26,7 +26,7 @@ public class Publico extends Lector{
      * @param departamento
      * @param localidad
      */
-    public Publico(String nombre, String apellido, String tipoDoc, int numDoc,
+    public Publico(String nombre, String apellido, TipoDocumento tipoDoc, int numDoc,
                    String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                    String nacionalidad, String domicilio, int codigoPostal,
                    String departamento, String localidad) {

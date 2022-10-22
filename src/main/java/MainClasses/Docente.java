@@ -31,7 +31,7 @@ public class Docente extends Lector{
      * @param departamento
      * @param localidad
      */
-    public Docente(String nombre, String apellido, String tipoDoc, int numDoc,
+    public Docente(String nombre, String apellido, TipoDocumento tipoDoc, int numDoc,
                    String correoElec, String numCel, LocalDate fechaNac, Sexo sexo,
                    String nacionalidad, String domicilio, int codigoPostal,
                    String departamento, String localidad) {

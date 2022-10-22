@@ -198,18 +198,6 @@ public class Biblioteca {
         return new Devolucion(fechaHoraDevolucion, ejemplar, lector, funcionario, prestamo);
     }
 
-    @Override
-    public String toString() {
-        return "-Biblioteca: " + "\n" +
-                "   -Ejemplares=" + listaDeEjemplares + "\n" +
-                "   -Índices=" + listaDeIndices + "\n" +
-                "   -Deudores=" + listaDeDeudores + "\n" +
-                "   -Obras solicitadas por alumnos y docentes=" + listaObrasSolicitadasAluDoc + "\n" +
-                "   -Obras solicitadas por el público=" + listaObrasSolicitadasPublico + "\n" +
-                "   -Lectores con multas=" + listaLectoresConMultas + "\n" +
-                "   -Obras=" + obras;
-    }
-
     /**
      * cantEjemplaresPorObra chequea la disponibilidad de ejemplares con la
      * obra pasada por parámetro.

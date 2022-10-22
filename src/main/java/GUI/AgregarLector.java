@@ -125,6 +125,7 @@ public class AgregarLector extends JFrame{
                     }
                     ddp.getIngresarDatosLectorLabel().setText("Lector: " + textFieldDocumento.getText());
                     ddp.obtenerLector((Lector) lector);
+                    ddp.setHayLector(true);
                 } catch(NullPointerException exception) {
                     JOptionPane.showMessageDialog(null, "Faltan rellenar campos");
                     return;
