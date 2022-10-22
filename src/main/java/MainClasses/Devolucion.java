@@ -11,7 +11,8 @@ import static java.time.temporal.ChronoUnit.DAYS;
 @Setter
 
 /**
- * La clase Devolucion propone la acción de devolución de un ejemplar y todo lo que conlleva.
+ * La clase Devolucion propone la acción de devolución de un ejemplar
+ * y lo que conlleva
  */
 public class Devolucion {
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto

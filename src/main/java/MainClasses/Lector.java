@@ -1,11 +1,13 @@
 package MainClasses;
 
+import Enum.Profesion;
+import Enum.Sexo;
+import Enum.TipoDocumento;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import Enum.*;
 
 @Getter
 @Setter
@@ -17,7 +19,7 @@ import Enum.*;
 public class Lector {
     private String nombre;
     private String apellido;
-    private String tipoDoc;
+    private TipoDocumento tipoDoc;
     private int numDoc;
     private String correoElec;
     private String numCel;

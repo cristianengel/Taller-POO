@@ -1,5 +1,6 @@
 package test;
 
+import Enum.*;
 import GUI.WelcomeScreen;
 import MainClasses.*;
 
@@ -7,8 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import Enum.TipoLectura;
-import Enum.Sexo;
 
 
 /**

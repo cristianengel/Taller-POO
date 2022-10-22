@@ -1,13 +1,15 @@
 package MainClasses;
 
+import Enum.Profesion;
+import Enum.Sexo;
+import Enum.TipoDocumento;
+
 import java.time.LocalDate;
-import Enum.*;
 
 /**
  * La clase Publico propone un tipo de lector.
  */
 public class Publico extends Lector{
-
     /**
      * Constructor de la clase Publico.
      * @param nombre

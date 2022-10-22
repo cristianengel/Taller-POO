@@ -1,12 +1,13 @@
 package test;
 
+import Enum.Sexo;
+import Enum.TipoDocumento;
 import GUI.WelcomeScreen;
 import MainClasses.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import Enum.Sexo;
 
 /**

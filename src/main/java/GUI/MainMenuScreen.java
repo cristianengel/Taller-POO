@@ -45,5 +45,12 @@ public class MainMenuScreen extends JFrame {
                 dispose();
             }
         });
+        prestamosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PrestamosYReservas pyr = new PrestamosYReservas();
+                dispose();
+            }
+        });
     }
 }

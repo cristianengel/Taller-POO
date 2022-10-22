@@ -1,9 +1,12 @@
 package MainClasses;
 
+import Enum.Profesion;
+import Enum.Sexo;
+import Enum.TipoDocumento;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import Enum.*;
 
 /**
  * La clase Docente propone un tipo de lector.
