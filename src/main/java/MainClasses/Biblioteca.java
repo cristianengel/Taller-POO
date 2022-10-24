@@ -241,6 +241,23 @@ public class Biblioteca {
     }
 
     /**
+     * identificarLugarEjemplar permite identificar el lugar físico donde se encuentra el ejemplar
+     * dentro de la bibliioteca con el identificador único de este.
+     * @param identUnico
+     * @return ubicacion
+     */
+    public ArrayList<String> identificarLugarEjemplar(String identUnico) {
+        ArrayList<String> ubicacion = null;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if (listaDeEjemplares.get(i).getIdentUnico() == identUnico) {
+                ubicacion = listaDeEjemplares.get(i).getLugarFisico();
+                break;
+            }
+        }
+        return ubicacion;
+    }
+
+    /**
      * toString devuelve una cadena que representa la instancia de Biblioteca.
      * @return String
      */
