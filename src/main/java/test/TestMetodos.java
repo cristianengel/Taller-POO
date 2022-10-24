@@ -17,7 +17,7 @@ public class TestMetodos {
     public static void main(String[] args) {
         Biblioteca biblioteca = Biblioteca.getInstance();
 
-        // Obras de Prueba
+        //Obras de Prueba
         Obra elPrincipito = new Obra("Literatura infantil", "El Principito", "",
                 "Antoine de Saint-Exupery", "","", "Fabula",
                 "El principito es una narración corta del escritor francés Antoine de Saint-Exupéry, " +
@@ -33,7 +33,7 @@ public class TestMetodos {
                         " en el mundo real.",  "Introduccion + 22 Capitulos + Apendice + Indice alfabetico");
 
 
-        // Ejemplares de Prueba
+        //Ejemplares de Prueba
         Ejemplar principito1 = new Ejemplar("jkhdLgH", 6985422,
                 "Se trata de un niño que vivía en un planeta con una rosa de compañía. " +
                         "El planeta era muy pequeño y los días pasaban muy rápido. El Principito tiene la " +
@@ -56,11 +56,11 @@ public class TestMetodos {
                 "Compra por Internet", bibliaDeJava);
 
 
-        // Método agregar ejemplar de prueba
+        //Método para agregar los ejemplar de prueba a la biblioteca
         biblioteca.agregarEjemplar(principito1);
         biblioteca.agregarEjemplar(bibliaJava1);
 
-        // Creacion de Lectores de prueba
+        //Creacion de Lectores de prueba
         Docente isaias = new Docente("Isaias", "Reniero", TipoDocumento.DNI,
                 15489630, "isa@gmail.com", "3454652000",
                 LocalDate.of(1995,3,27), Sexo.MASCULINO, "Argentina",

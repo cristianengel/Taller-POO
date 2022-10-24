@@ -35,7 +35,7 @@ public class Prestamo {
     public Prestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio,
                     String funcionario, Ejemplar ejemplar, Lector lector,
                     boolean desdeReserva) throws RuntimeException {
-        /* Si la fecha del inicio del prestamo anterior a la fecha con multas -> No se realiza el préstamo */
+        /* Si la fecha del inicio del prestamo es anterior a la fecha con multas -> No se realiza el préstamo */
         if (fechaHoraInicio.isBefore(fechaHoraInicio.plusDays(lector.getMultas())))
             throw new RuntimeException("El lector aún tiene multas.");
         this.tipoLectura = tipoLectura;
@@ -58,7 +58,7 @@ public class Prestamo {
     }
 
     /**
-     * cambiarPlazoDelPrestamo cambie el plazo de una devolución
+     * cambiarPlazoDelPrestamo cambia el plazo de una devolución
      * (extender o acorta el plazo)
      * @param dias
      */
