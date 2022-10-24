@@ -34,7 +34,7 @@ public class TestMetodos {
 
 
         // Ejemplares de Prueba
-        Ejemplar principito1 = new Ejemplar("jkhdLH", 6985422,
+        Ejemplar principito1 = new Ejemplar("jkhdLgH", 6985422,
                 "Se trata de un niño que vivía en un planeta con una rosa de compañía. " +
                         "El planeta era muy pequeño y los días pasaban muy rápido. El Principito tiene la " +
                         "amenaza de los baobas que pueden estallar el planeta si los deja crecer. \n" +
@@ -44,7 +44,7 @@ public class TestMetodos {
                 new ArrayList<String>(Arrays.asList("34", "1", "32")), LocalDate.of(2022, 7, 21),
                 "Compra por Internet", elPrincipito);
 
-        Ejemplar bibliaJava1 = new Ejemplar("rebarnu", 9817442,
+        Ejemplar bibliaJava1 = new Ejemplar("gf34t3t", 9817442,
                 " La biblia de Java 2 está diseñado para mostrarle toda la historia del " +
                         "lenguaje de programación Java, contiene no sólo toda la sintaxis de Java, desde la" +
                         " declaración de variables hasta temas de orientación a objetos avanzada, sino también " +
@@ -67,7 +67,7 @@ public class TestMetodos {
                 "Los Valles 540", 3200, "", "Concordia");
         Alumno cristian = new Alumno("Cristian", "Engel", TipoDocumento.DNI,
                 87426555, "cris@gmail.com", "3454987467",
-                LocalDate.of(2003,6, 5), Sexo.FEMENINO, "Argentina",
+                LocalDate.of(2003,6, 5), Sexo.MASCULINO, "Argentina",
                 "Quintana 5", 3200, "3b", "Concordia");
         Publico marcos = new Publico("Marcos", "Barboza", TipoDocumento.DNI,
                 65984111, "marquitos@gmail.com", "3454020663",
@@ -81,12 +81,14 @@ public class TestMetodos {
         biblioteca.registrarRetiroConReserva(r, TipoLectura.DOMICILIO, "Roberto");
 
         //Creación de un préstamo y su devolución
+
         Prestamo p = new Prestamo(TipoLectura.DOMICILIO,
-                LocalDateTime.of(2002,10,15,14,34), "Roberto", principito1, marcos, false);
-        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34), principito1, marcos,"Roberto", p);
+                LocalDateTime.of(2002,10,15,14,34),
+                "Roberto", principito1, marcos, false);
+        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34),
+                principito1, marcos,"Roberto", p);
 
         System.out.println(biblioteca.getPrestamosEnCurso());
-
         WelcomeScreen ws = new WelcomeScreen();
     }
 }

@@ -1,6 +1,6 @@
 package GUI;
 
-import Enum.TipoLectura;
+import Enum.*;
 import MainClasses.Biblioteca;
 import MainClasses.Ejemplar;
 import MainClasses.Lector;
@@ -78,6 +78,7 @@ public class DatosDelPrestamo extends JFrame{
                 }
                 Prestamo prestamo = new Prestamo((TipoLectura) comboBoxTipoDeLectura.getSelectedItem(), LocalDateTime.now(), funcionario.getText(), ejemplarAPrestamo, lectorQueSolicita, false);
                 instance = null;
+                MainMenuScreen mm = new MainMenuScreen();
                 dispose();
             }
         });

@@ -100,13 +100,13 @@ public class Ejemplar {
     @Override
     public String toString() {
         return "-Ejemplar: " + "\n" +
-                "   -Identificador único=" + identUnico + "\n" +
+                "   -Identificador único=" + identUnico + "\n " + obra + "\n" +
                 "   -Código de barra=" + codBarra + "\n" +
                 "   -Observaciones=" + observaciones + "\n" +
                 "   -Ubicación física de dado de baja=" + ubicacionFisicaDadoDeBaja + "\n" +
                 "   -Fecha de adquisición=" + fechaDeAdquisicion + "\n" +
                 "   -Fecha de dado de baja=" + fechaDadoDeBaja + "\n" +
                 "   -Motivo de dado de baja=" + motivoDadoDeBaja + "\n" +
-                "   -Forma de adquisición=" + formaDeAdquisicion + "\n" + obra;
+                "   -Forma de adquisición=" + formaDeAdquisicion + "\n";
     }
 }
