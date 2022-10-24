@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="730cb658-8af3-4743-81ed-f3044f0ba373" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/InterfazDevolucion.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/InterfazDevolucion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Biblioteca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Docente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Lector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Publico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/DatosDelPrestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/DatosDelPrestamo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/OperacionesConEjemplares.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/OperacionesConEjemplares.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/PrestamosYReservas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/PrestamosYReservas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Devolucion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Devolucion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Ejemplar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainClasses/Prestamo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainClasses/Prestamo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/TestMetodos.java" afterDir="false" />
     </list>
@@ -245,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666379703901</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Algunas correcciones de errores">
+      <created>1666474560379</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666474560379</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -288,7 +298,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creacion de los atributos de la clase Biblioteca" />
     <MESSAGE value="Creacion del metodo removerEjemplar" />
     <MESSAGE value="Agregación del método equals()" />
     <MESSAGE value="Agregación del método toString()" />
@@ -315,7 +324,8 @@
     <MESSAGE value="Pequelos retoques en la documentación de las clases de Devolucion hacia arriba." />
     <MESSAGE value="Se agrega documentación a las clases." />
     <MESSAGE value="Se agrega documentación a los metodos toString." />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega documentación a los metodos toString." />
+    <MESSAGE value="Algunas correcciones de errores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Algunas correcciones de errores" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

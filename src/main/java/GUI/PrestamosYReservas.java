@@ -36,7 +36,8 @@ public class PrestamosYReservas extends JFrame{
         devolverButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: 10/21/22  
+                InterfazDevolucion id = new InterfazDevolucion();
+                dispose();
             }
         });
         reservarButton.addActionListener(new ActionListener() {

@@ -3,6 +3,7 @@ package MainClasses;
 import lombok.Getter;
 import lombok.Setter;
 
+import Enum.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import static java.time.temporal.ChronoUnit.DAYS;
@@ -15,6 +16,7 @@ import static java.time.temporal.ChronoUnit.DAYS;
  * y lo que conlleva
  */
 public class Devolucion {
+    Biblioteca b = Biblioteca.getInstance();
     private LocalDateTime fechaHoraDevolucion; //Fecha y hora en que el ejemplar es devuelto
     private String funcionario; //Bibliotecario que recibe el ejemplar
     private Prestamo prestamo; //Relación con la clase Prestamo
@@ -42,6 +44,9 @@ public class Devolucion {
         if(this.diasAtrasados > 0){
             aplicarMulta(this.diasAtrasados);
         }
+        this.ejemplar.setCondicion(Condicion.DISPONIBLE);
+        this.ejemplar.setPrestamo(null);
+        b.getPrestamosEnCurso().remove(this.prestamo);
     }
 
     /**

@@ -1,10 +1,10 @@
 package MainClasses;
 
+import Enum.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import Enum.*;
 
 @Getter
 @Setter
@@ -51,7 +51,10 @@ public class Prestamo {
             this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
         }
         this.ejemplar.agregarSolicitud();
-
+        this.ejemplar.setCondicion(Condicion.PRESTADO);
+        this.ejemplar.setPrestamo(this);
+        this.ejemplar.setVecesSolicitado(this.ejemplar.getVecesSolicitado() + 1);
+        b.getPrestamosEnCurso().add(this);
     }
 
     /**
