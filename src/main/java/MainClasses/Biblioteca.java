@@ -258,6 +258,21 @@ public class Biblioteca {
     }
 
     /**
+     * obrasDeUnaEditorial devuelve un listado de obras dada una editorial determinada
+     * @param editorial
+     * @return obrasEdi
+     */
+    public ArrayList<Obra> obrasDeUnaEditorial(String editorial) {
+        ArrayList<Obra> obrasEdi = null;
+        for(int i = 0; i < obras.toArray().length; i++) {
+            if (obras.get(i).getEdicion().getEditorial() == editorial) {
+                obrasEdi.add(obras.get(i));
+            }
+        }
+        return obrasEdi;
+    }
+
+    /**
      * toString devuelve una cadena que representa la instancia de Biblioteca.
      * @return String
      */
