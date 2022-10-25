@@ -24,7 +24,7 @@
             <constraints/>
             <properties>
               <background color="-13881551"/>
-              <font name="Roboto Light" size="20"/>
+              <font name="Roboto Light"/>
               <foreground color="-1"/>
               <model/>
               <selectionBackground color="-16744193"/>

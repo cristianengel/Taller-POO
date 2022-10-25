@@ -76,7 +76,7 @@ public class TestMetodos {
 
         //Creación de una reserva
         Reserva r = new Reserva(LocalDateTime.now(),
-                LocalDateTime.of(2023, 10, 20, 14,34), principito1, cristian);
+                LocalDateTime.of(2023, 10, 20, 14,34), bibliaJava1, cristian);
 
         biblioteca.registrarRetiroConReserva(r, TipoLectura.DOMICILIO, "Roberto");
 
