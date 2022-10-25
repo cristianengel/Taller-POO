@@ -48,5 +48,15 @@ public class PrestamosYReservas extends JFrame{
                 dispose();
             }
         });
+        retirarButton.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaDeReservas ldr = new ListaDeReservas();
+                dispose();
+            }
+        });
     }
 }

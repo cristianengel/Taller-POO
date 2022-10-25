@@ -25,7 +25,7 @@ public class Biblioteca {
     private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
     private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
     private final ArrayList<Prestamo> prestamosEnCurso = new ArrayList<>(); //Lista de préstamos
-    private final ArrayList<Reserva> reservas = new ArrayList<>(); //Lista de reservas
+    private final ArrayList<Reserva> reservasEnCurso = new ArrayList<>(); //Lista de reservas
 
     private Biblioteca(){}
 
@@ -177,10 +177,9 @@ public class Biblioteca {
         if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
             LocalDateTime.now().isBefore(reserva.getFechaHoraFin())) {
             reserva.getEjemplar().setCondicion(Condicion.PRESTADO);
-            Prestamo prestamo = new Prestamo(tipoLectura, LocalDateTime.now(), funcionario,
+            Prestamo prestamo = this.solicitarPrestamo(tipoLectura, LocalDateTime.now(), funcionario,
                     reserva.getEjemplar(), reserva.getLector(), true);
-            reservas.remove(reserva);
-            prestamosEnCurso.add(prestamo);
+            reservasEnCurso.remove(reserva);
         } else {
             throw new RuntimeException("El ejemplar no está reservado actualmente");
         }
@@ -199,8 +198,10 @@ public class Biblioteca {
     public Prestamo solicitarPrestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio,
                                   String funcionario, Ejemplar ejemplar, Lector lector,
                                   boolean desdeReserva) {
-        return new Prestamo(tipoLectura, fechaHoraInicio, funcionario,
+        ejemplar.setCondicion(Condicion.PRESTADO);
+        Prestamo prestamo = new Prestamo(tipoLectura, fechaHoraInicio, funcionario,
                 ejemplar, lector, desdeReserva);
+        return prestamo;
     }
 
     /**
@@ -213,6 +214,7 @@ public class Biblioteca {
      */
     public Reserva reservar(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin,
                             Ejemplar ejemplar, Lector lector) {
+        ejemplar.setCondicion(Condicion.RESERVADO);
         return new Reserva(fechaHoraInicio, fechaHoraFin, ejemplar, lector);
     }
 
@@ -227,6 +229,7 @@ public class Biblioteca {
      */
     public Devolucion devolver(LocalDateTime fechaHoraDevolucion, Ejemplar ejemplar, Lector lector,
                                String funcionario, Prestamo prestamo) {
+        ejemplar.setCondicion(Condicion.DISPONIBLE);
         return new Devolucion(fechaHoraDevolucion, ejemplar, lector, funcionario, prestamo);
     }
 
@@ -343,8 +346,8 @@ public class Biblioteca {
      * @param r
      */
     public void registrarReserva(Reserva r) {
-        if(!reservas.contains(r)){
-            reservas.add(r);
+        if(!reservasEnCurso.contains(r)){
+            reservasEnCurso.add(r);
         }
     }
 
@@ -354,8 +357,8 @@ public class Biblioteca {
      * @throws RuntimeException
      */
     public ArrayList<Reserva> mostrarReservas() throws RuntimeException {
-        if(reservas.size() > 0) {
-            return reservas;
+        if(reservasEnCurso.size() > 0) {
+            return reservasEnCurso;
         } else {
             throw new RuntimeException("No hay reservas registradas.");
         }
@@ -371,9 +374,9 @@ public class Biblioteca {
         ArrayList<Reserva> reservasFecha = null;
         for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
             //En fechaReserva se guarda la fecha en el cual se inició la reserva de un ejemplar
-            LocalDate fechaReserva = reservas.get(i).getFechaHoraInicio().toLocalDate();
+            LocalDate fechaReserva = reservasEnCurso.get(i).getFechaHoraInicio().toLocalDate();
             if (fecha.isEqual(fechaReserva) || fecha.isAfter(fechaReserva)) {
-                reservasFecha.add(reservas.get(i));
+                reservasFecha.add(reservasEnCurso.get(i));
             }
         }
         return reservasFecha;

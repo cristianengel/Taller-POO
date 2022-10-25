@@ -1,6 +1,7 @@
 package GUI;
 
-import Enum.*;
+import Enum.Condicion;
+import Enum.TipoLectura;
 import MainClasses.Biblioteca;
 import MainClasses.Ejemplar;
 import MainClasses.Lector;
@@ -83,7 +84,7 @@ public class DatosDelPrestamo extends JFrame{
                     JOptionPane.showMessageDialog(null, "Hay datos faltantes.");
                     return;
                 }
-                Prestamo prestamo = new Prestamo((TipoLectura) comboBoxTipoDeLectura.getSelectedItem(), LocalDateTime.now(), funcionario.getText(), ejemplarAPrestamo, lectorQueSolicita, false);
+                Prestamo prestamo = biblioteca.solicitarPrestamo((TipoLectura) comboBoxTipoDeLectura.getSelectedItem(), LocalDateTime.now(), funcionario.getText(), ejemplarAPrestamo, lectorQueSolicita, false);
                 for(int i = 0; i < biblioteca.getListaDeEjemplares().size(); i++) {
                     if(biblioteca.getListaDeEjemplares().get(i).equals(ejemplarAPrestamo)) {
                         biblioteca.getListaDeEjemplares().get(i).setCondicion(Condicion.PRESTADO);
