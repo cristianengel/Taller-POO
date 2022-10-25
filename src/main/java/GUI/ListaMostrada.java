@@ -28,7 +28,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for(int i = 0; i < b.getListaDeIndices().size(); i++) {
                 listModel.addElement(b.getListaDeIndices().get(i).toString());
             }
 
@@ -37,7 +37,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for(int i = 0; i < b.getListaDeDeudores().size(); i++) {
                 listModel.addElement(b.getListaDeDeudores().get(i).toString());
             }
 
@@ -46,7 +46,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for(int i = 0; i < b.getListaObrasSolicitadasAluDoc().size(); i++) {
                 listModel.addElement(b.getListaObrasSolicitadasAluDoc().get(i).toString());
             }
         } else if(listaElegida == "Publico") {
@@ -54,7 +54,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for(int i = 0; i < b.getListaObrasSolicitadasPublico().size(); i++) {
                 listModel.addElement(b.getListaObrasSolicitadasPublico().get(i).toString());
             }
 
@@ -63,7 +63,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for (int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for (int i = 0; i < b.getListaLectoresConMultas().size(); i++) {
                 listModel.addElement(b.getListaLectoresConMultas().get(i).toString());
             }
 
@@ -72,7 +72,7 @@ public class ListaMostrada extends JFrame{
                 JOptionPane.showMessageDialog(null, "La lista está vacía.");
                 throw new RuntimeException("La lista está vacía");
             }
-            for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+            for(int i = 0; i < b.getObras().size(); i++) {
                 listModel.addElement(b.getObras().get(i).toString());
             }
         }

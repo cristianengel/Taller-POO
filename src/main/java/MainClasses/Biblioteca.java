@@ -58,6 +58,7 @@ public class Biblioteca {
         }
         agregarIndice(ejemplar.getObra().getIndice());
         agregarObra(ejemplar.getObra());
+        ejemplar.getObra().getEjemplares().add(ejemplar);
     }
 
     /**

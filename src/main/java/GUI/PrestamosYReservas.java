@@ -10,6 +10,7 @@ public class PrestamosYReservas extends JFrame{
     private JButton reservarButton;
     private JButton atrasButton;
     private JButton devolverButton;
+    private JButton retirarButton;
 
     public PrestamosYReservas() {
         setContentPane(prestamosYReservasPanel);
@@ -43,7 +44,8 @@ public class PrestamosYReservas extends JFrame{
         reservarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // TODO: 10/21/22  
+                DatosDeLaReserva ddlr = new DatosDeLaReserva();
+                dispose();
             }
         });
     }

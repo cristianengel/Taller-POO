@@ -1,11 +1,11 @@
 package MainClasses;
 
+import Enum.Profesion;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import Enum.*;
 
 @Getter
 @Setter
@@ -15,6 +15,7 @@ import Enum.*;
  * biblioteca.
  */
 public class Obra {
+    Biblioteca biblioteca = Biblioteca.getInstance();
     private String areaTematica;
     private String titulo;
     private String subtitulo;
@@ -26,7 +27,6 @@ public class Obra {
     private String indice;
     private int vecesSolicitadaAluDoc = 0;
     private int vecesSolicitadaPublico = 0;
-    //private ArrayList<Edicion> ediciones = new ArrayList<Edicion>(); //Relación con la clase Edición
     private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
 
     /**
@@ -62,8 +62,14 @@ public class Obra {
     public void agregarSolicitud(Profesion profesion) {
         if(Objects.equals(profesion, Profesion.ALUMNO) || Objects.equals(profesion, Profesion.DOCENTE)) {
             this.vecesSolicitadaAluDoc += 1;
+            if(!biblioteca.getListaObrasSolicitadasAluDoc().contains(this)) {
+                biblioteca.getListaObrasSolicitadasAluDoc().add(this);
+            }
         } else if (Objects.equals(profesion, Profesion.PUBLICO)) {
             this.vecesSolicitadaPublico += 1;
+            if(!biblioteca.getListaObrasSolicitadasPublico().contains(this)) {
+                biblioteca.getListaObrasSolicitadasPublico().add(this);
+            }
         }
     }
 

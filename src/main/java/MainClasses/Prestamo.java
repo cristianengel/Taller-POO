@@ -46,15 +46,14 @@ public class Prestamo {
         this.fechaHoraDevolucion = fechaHoraInicio.plusDays(plazo);
         this.ejemplar = ejemplar;
         this.lector = lector;
-
-        if(!desdeReserva) {
-            this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
-        }
-        this.ejemplar.agregarSolicitud();
         this.ejemplar.setCondicion(Condicion.PRESTADO);
         this.ejemplar.setPrestamo(this);
-        this.ejemplar.setVecesSolicitado(this.ejemplar.getVecesSolicitado() + 1);
         b.getPrestamosEnCurso().add(this);
+        if(!desdeReserva) {
+            this.ejemplar.agregarSolicitud();
+            this.ejemplar.setVecesSolicitado(this.ejemplar.getVecesSolicitado() + 1);
+            this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
+        }
     }
 
     /**
