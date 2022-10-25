@@ -56,7 +56,7 @@ public class Devolucion {
      */
     public int controlFechaDevolucion() {
         /* Si la fecha y hora a la que se devuelve el ejemplar es posterior
-        a la hora y fecha que tenía que devolverse */
+        a la hora y fecha que tenía que devolverse... */
         if (this.fechaHoraDevolucion.isAfter(this.prestamo.getFechaHoraDevolucion())) {
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
