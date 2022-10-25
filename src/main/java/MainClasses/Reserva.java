@@ -19,7 +19,7 @@ public class Reserva {
     private LocalDateTime fechaHoraFin;
     private Ejemplar ejemplar; //Relación con la clase Ejemplar
     private Lector lector; //Relación con la clase Lector
-    private Biblioteca biblioteca; //Relación con la clase Biblioteca
+    private Biblioteca biblioteca = Biblioteca.getInstance(); //Relación con la clase Biblioteca
 
     /**
      * Constructor de la clase Reserva.
