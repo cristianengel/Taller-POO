@@ -89,4 +89,16 @@ public class Devolucion {
                 "   -Ejemplar=" + ejemplar + "\n" +
                 "   -Días atrasados=" + diasAtrasados;
     }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de una devolución.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Devolucion:" + "\n" +
+                "   -Fecha de la devolución=" + fechaHoraDevolucion + "\n" +
+                "   -Funcionario=" + funcionario + "\n" +
+                "   -Lector=" + lector + "\n" +
+                "   -Ejemplar=" + ejemplar + "\n";
+    }
 }

@@ -110,4 +110,14 @@ public class Obra {
                 "   -Característica=" + caracteristica + "\n" +
                 "   -Índice=" + indice + "\n";
     }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de una obra.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Obra: " + "\n" +
+                "   -Título=" + titulo + "\n" +
+                "   -Género=" + genero;
+    }
 }

@@ -129,4 +129,16 @@ public class Lector {
                 "   -Prestamo=" + ejemplarPrestamo + "\n" +
                 "   -Cantidad de multas=" + multas;
     }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de un lector.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Lector:" + "\n" +
+                "   -Nombre=" + nombre + "\n" +
+                "   -Apellido=" + apellido + "\n" +
+                "   -Número de documento=" + numDoc + "\n" +
+                "   -Número de celular=" + numCel;
+    }
 }

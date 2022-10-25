@@ -94,4 +94,16 @@ public class Edicion {
                 "   -ISBN=" + isbn + "\n" +
                 "   -Obra=" + obra;
     }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de una edición.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Edición{" +
+                "   -Editorial=" + editorial + "\n" +
+                "   -País de edición=" + paisDeEdicion + "\n" +
+                "   -Año=" + anio + "\n" +
+                "   -¿Es colección?=" + esColeccion + "\n";
+    }
 }

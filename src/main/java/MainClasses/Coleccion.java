@@ -58,6 +58,7 @@ public class Coleccion extends Obra {
      * toString devuelve una cadena que representa la instancia de Coleccion.
      * @return
      */
+    @Override
     public String toString() {
         return "-Coleccion: " +
                 "   -Nombre='" + nombre + "\n" +
@@ -71,5 +72,17 @@ public class Coleccion extends Obra {
                 "   -Característica=" + getCaracteristica() + "\n" +
                 "   -ISBN=" + isbn + "\n" +
                 "   -Índice=" + getIndice() + "\n";
+    }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de una colección.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Coleccion: " +
+                "   -Nombre='" + nombre + "\n" +
+                "   -Área temática='" + getAreaTematica() + "\n" +
+                "   -Título=" + getTitulo() + "\n" +
+                "   -Género=" + getGenero() + "\n";
     }
 }

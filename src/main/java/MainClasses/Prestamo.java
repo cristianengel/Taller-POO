@@ -93,8 +93,19 @@ public class Prestamo {
         return "-Prestamo:" + "\n" +
                 "   -Tipo de lectura=" + tipoLectura + "\n" +
                 "   -Fecha y hora de inicio del préstamo=" + fechaHoraInicio + "\n" +
-                "   -Funcionario que lo presó=" + funcionario + "\n" +
+                "   -Funcionario que lo prestó=" + funcionario + "\n" +
                 "   -Plazo=" + plazo + "\n" +
+                "   -Fecha y hora de devolución=" + fechaHoraDevolucion + "\n" +
+                "   -Ejemplar=" + ejemplar + "\n" +
+                "   -Lector=" + lector;
+    }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de un préstamo.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Prestamo:" + "\n" +
                 "   -Fecha y hora de devolución=" + fechaHoraDevolucion + "\n" +
                 "   -Ejemplar=" + ejemplar + "\n" +
                 "   -Lector=" + lector;

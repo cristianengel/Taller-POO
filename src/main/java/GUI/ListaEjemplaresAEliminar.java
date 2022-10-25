@@ -5,7 +5,6 @@ import MainClasses.Biblioteca;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Objects;
 
 public class ListaEjemplaresAEliminar extends JFrame{
     Biblioteca b = Biblioteca.getInstance();
@@ -21,7 +20,7 @@ public class ListaEjemplaresAEliminar extends JFrame{
             throw new RuntimeException("La lista está vacía");
         }
         for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-            listModel.addElement(b.getListaDeEjemplares().get(i).stringSimplificado());
+            listModel.addElement(b.getListaDeEjemplares().get(i).toStringReducido());
         }
         list1.setModel(listModel);
         setContentPane(listaEjemplaresAEliminarPanel);
