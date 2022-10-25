@@ -304,12 +304,7 @@ public class Biblioteca {
      * de mayor a menor para obtner el ranking de lectores con más multas.
      */
     public void ordenarLectoresConMultas() {
-        Collections.sort(listaLectoresConMultas, new Comparator<Lector>() {
-            @Override
-            public int compare(Lector o1, Lector o2) {
-                return o1.getMultas().compareTo(o2.getMultas()); //Ni idea toavia porque no me anda... probé de todo
-            }
-        });
+        listaLectoresConMultas.sort(Comparator.comparing(Lector::getMultas).reversed());
     }
 
     /**
