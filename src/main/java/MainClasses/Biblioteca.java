@@ -373,6 +373,23 @@ public class Biblioteca {
     }
 
     /**
+     * ejemplaresDisponibles retorna una lista de ejemplares disponibles para préstamo
+     * para un área de referencia determinada.
+     * @param area
+     * @return ejemplares
+     */
+    public ArrayList<Ejemplar> ejemplaresDisponiblesArea(String area) {
+        ArrayList<Ejemplar> ejemplares = null;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if ((listaDeEjemplares.get(i).getObra().getAreaTematica() == area) &&
+                    (listaDeEjemplares.get(i).getCondicion() == Condicion.DISPONIBLE)) {
+                ejemplares.add(listaDeEjemplares.get(i));
+            }
+        }
+        return ejemplares;
+    }
+
+    /**
      * toString devuelve una cadena que representa la instancia de Biblioteca.
      * @return String
      */

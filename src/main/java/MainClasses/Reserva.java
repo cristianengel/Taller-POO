@@ -1,5 +1,6 @@
 package MainClasses;
 
+import Enum.Condicion;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +17,8 @@ import java.util.Objects;
 public class Reserva {
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
-    private Ejemplar ejemplar; //Relación intermedia entre Lector y Ejemplar
-    private Lector lector; //Relación intermedia entre Lector y Ejemplar
+    private Ejemplar ejemplar; //Relación con la clase Ejemplar
+    private Lector lector; //Relación con la clase Lector
     private Biblioteca biblioteca; //Relación con la clase Biblioteca
 
     /**
@@ -34,6 +35,7 @@ public class Reserva {
         this.lector = lector;
 
         this.biblioteca.registrarReserva(this);
+        this.ejemplar.setCondicion(Condicion.RESERVADO);
 
         this.ejemplar.agregarSolicitud();
         this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
