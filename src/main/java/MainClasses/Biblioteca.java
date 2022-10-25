@@ -46,8 +46,9 @@ public class Biblioteca {
      * Una vez agregado el ejemplar, si el ejemplar es nuevo, agrega el índice del ejemplar a la lista
      * de índices y agrega la obra correspondiente al ejemplar a la lista de obras.
      * @param ejemplar
+     * @throws RuntimeException
      */
-    public void agregarEjemplar(Ejemplar ejemplar){
+    public void agregarEjemplar(Ejemplar ejemplar) throws RuntimeException {
         /* Si el el objeto de tipo Ejemplar no se encuentra en la lista de ejemplares */
         if(!listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.add(ejemplar);
@@ -72,8 +73,9 @@ public class Biblioteca {
     /**
      * removerEjemplar elimina de la lista de ejemplares el ejemplar pasado por parámetro.
      * @param ejemplar
+     * @throws RuntimeException
      */
-    public void removerEjemplar(Ejemplar ejemplar){
+    public void removerEjemplar(Ejemplar ejemplar) throws RuntimeException {
         if(listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.remove(ejemplar);
         } else {
@@ -139,8 +141,9 @@ public class Biblioteca {
     /**
      * mostrarDeudores muestra los deudores que deben regresar algún ejemplar a la biblioteca.
      * @return listaDeDeudores
+     * @throws RuntimeException
      */
-    public List<Lector> mostrarDeudores(){
+    public List<Lector> mostrarDeudores() throws RuntimeException {
         if(listaDeDeudores.size() > 0) {
             return listaDeDeudores;
         } else {
@@ -151,8 +154,9 @@ public class Biblioteca {
     /**
      * mostrarObras muestra las obras presentes en la biblioteca.
      * @return obras
+     * @throws RuntimeException
      */
-    public List<Obra> mostrarObras(){
+    public List<Obra> mostrarObras() throws RuntimeException {
         if(obras.size() > 0) {
             return obras;
         } else {
@@ -166,8 +170,10 @@ public class Biblioteca {
      * @param reserva
      * @param tipoLectura
      * @param funcionario
+     * @throws RuntimeException
      */
-    public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario) {
+    public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario)
+            throws RuntimeException {
         if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
             LocalDateTime.now().isBefore(reserva.getFechaHoraFin())) {
             reserva.getEjemplar().setCondicion(Condicion.PRESTADO);
@@ -246,11 +252,11 @@ public class Biblioteca {
      * @param identUnico
      * @return ubicacion
      */
-    public ArrayList<String> identificarLugarEjemplar(String identUnico) {
-        ArrayList<String> ubicacion = null;
+    public String identificarLugarEjemplar(String identUnico) {
+        String ubicacion = "";
         for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
             if (listaDeEjemplares.get(i).getIdentUnico() == identUnico) {
-                ubicacion = listaDeEjemplares.get(i).getLugarFisico();
+                ubicacion = String.valueOf(listaDeEjemplares.get(i).getLugarFisico());
                 break;
             }
         }
@@ -290,8 +296,9 @@ public class Biblioteca {
     /**
      * mostrarLectoresConMultas devuelve la lista de los lectores con multas.
      * @return listaLectoresConMultas
+     * @throws RuntimeException
      */
-    public List<Lector> mostrarLectoresConMultas() {
+    public List<Lector> mostrarLectoresConMultas() throws RuntimeException {
         if(listaLectoresConMultas.size() > 0) {
             ordenarLectoresConMultas();
             return listaLectoresConMultas;
@@ -318,9 +325,9 @@ public class Biblioteca {
     public ArrayList<Lector> lectoresConMultasPeriodoTiempo(LocalDate inicio, LocalDate fin) {
         ArrayList<Lector> lectores = null;
         for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
-            //En fechaDevolucion guarda la fecha en el cual el ejemplar fue devuelto
+            //En fechaDevolucion se guarda la fecha en el cual el ejemplar fue devuelto
             LocalDate fechaDevolucion = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().toLocalDate();
-            //En diasDeMultas guarda la fecha en el cual el ejemplar fue devuelto más los días de multas
+            //En diasDeMultas se guarda la fecha en el cual el ejemplar fue devuelto más los días de multas
             LocalDate diasDeMultas = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().
                     toLocalDate().plusDays(listaLectoresConMultas.get(i).getMultas());
             if ((inicio.isEqual(fechaDevolucion) || inicio.isAfter(fechaDevolucion)) &&
@@ -332,6 +339,92 @@ public class Biblioteca {
     }
 
     /**
+     * registrarReserva guarda en la lista de reservas la reserva ejecutada.
+     * @param r
+     */
+    public void registrarReserva(Reserva r) {
+        if(!reservas.contains(r)){
+            reservas.add(r);
+        }
+    }
+
+    /**
+     * mostrarReservas devuelve la lista de todas las reservas vigentes.
+     * @return reservas
+     * @throws RuntimeException
+     */
+    public ArrayList<Reserva> mostrarReservas() throws RuntimeException {
+        if(reservas.size() > 0) {
+            return reservas;
+        } else {
+            throw new RuntimeException("No hay reservas registradas.");
+        }
+    }
+
+    /**
+     * reservasAPartirFecha muestra las obras que se encuentran reservadas
+     * a partir de una fecha determinada.
+     * @param fecha
+     * @return reservasFecha
+     */
+    public ArrayList<Reserva> reservasAPartirFecha(LocalDate fecha) {
+        ArrayList<Reserva> reservasFecha = null;
+        for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
+            //En fechaReserva se guarda la fecha en el cual se inició la reserva de un ejemplar
+            LocalDate fechaReserva = reservas.get(i).getFechaHoraInicio().toLocalDate();
+            if (fecha.isEqual(fechaReserva) || fecha.isAfter(fechaReserva)) {
+                reservasFecha.add(reservas.get(i));
+            }
+        }
+        return reservasFecha;
+    }
+
+    /**
+     * ejemplaresDisponibles retorna una lista de ejemplares disponibles para préstamo
+     * para un área de referencia determinada.
+     * @param area
+     * @return ejemplares
+     */
+    public ArrayList<Ejemplar> ejemplaresDisponiblesArea(String area) {
+        ArrayList<Ejemplar> ejemplares = null;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if ((listaDeEjemplares.get(i).getObra().getAreaTematica() == area) &&
+                    (listaDeEjemplares.get(i).getCondicion() == Condicion.DISPONIBLE)) {
+                ejemplares.add(listaDeEjemplares.get(i));
+            }
+        }
+        return ejemplares;
+    }
+
+    /**
+     * mostrarObrasSolicitadasAluDoc muestra un listado de las obras más solicitadas
+     * por alumnos y docentes.
+     * @return listaObrasSolicitadasAluDoc
+     * @throws RuntimeException
+     */
+    public List<Obra> mostrarObrasSolicitadasAluDoc() throws RuntimeException {
+        if(listaObrasSolicitadasAluDoc.size() > 0) {
+            return listaObrasSolicitadasAluDoc;
+        } else {
+            throw new RuntimeException("No hay obras registradas.");
+        }
+    }
+
+    /**
+     * mostrarObrasSolicitadasPublico un listado de las obras más solicitadas
+     * por el público en general.
+     * @return listaObrasSolicitadasPublico
+     * @throws RuntimeException
+     */
+    public List<Obra> mostrarObrasSolicitadasPublico() throws RuntimeException {
+        if(listaObrasSolicitadasPublico.size() > 0) {
+            return listaObrasSolicitadasPublico;
+        } else {
+            throw new RuntimeException("No hay obras registradas.");
+        }
+    }
+
+    /**
      * toString devuelve una cadena que representa la instancia de Biblioteca.
      * @return String
      */
@@ -339,11 +432,6 @@ public class Biblioteca {
     public String toString() {
         return "-Biblioteca: " + "\n" +
                 "   -Ejemplares=" + listaDeEjemplares + "\n" +
-                "   -Índices=" + listaDeIndices + "\n" +
-                "   -Deudores=" + listaDeDeudores + "\n" +
-                "   -Obras solicitadas por alumnos y docentes=" + listaObrasSolicitadasAluDoc + "\n" +
-                "   -Obras solicitadas por el público=" + listaObrasSolicitadasPublico + "\n" +
-                "   -Lectores con multas=" + listaLectoresConMultas + "\n" +
                 "   -Obras=" + obras;
     }
 }

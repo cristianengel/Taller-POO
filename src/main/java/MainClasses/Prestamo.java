@@ -42,6 +42,7 @@ public class Prestamo {
         this.fechaHoraInicio = fechaHoraInicio;
         this.funcionario = funcionario;
         this.plazo = 4; //Los plazos se efectúan por un plazo maximo de 4 días
+
         /* A la fecha de devolución se le agrega la fecha de inicio del préstamo más el plazo (días) */
         this.fechaHoraDevolucion = fechaHoraInicio.plusDays(plazo);
         this.ejemplar = ejemplar;
