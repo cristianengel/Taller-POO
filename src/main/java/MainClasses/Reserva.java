@@ -21,6 +21,7 @@ public class Reserva {
     private Lector lector; //Relación con la clase Lector
     private Biblioteca biblioteca = Biblioteca.getInstance();
 
+
     /**
      * Constructor de la clase Reserva.
      * @param fechaHoraInicio
