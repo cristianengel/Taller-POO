@@ -1,7 +1,6 @@
 package MainClasses;
 
-import Enum.Condicion;
-import Enum.TipoLectura;
+import Enum.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,8 +25,8 @@ public class Biblioteca {
     private final ArrayList<Obra> listaObrasSolicitadasPublico = new ArrayList<>();
     private final ArrayList<Lector> listaLectoresConMultas = new ArrayList<>();
     private final ArrayList<Obra> obras = new ArrayList<>(); //Relación con la clase Obra
-    private final ArrayList<Prestamo> prestamosEnCurso = new ArrayList<>(); // Lista de préstamos
-    private final ArrayList<Reserva> reservas = new ArrayList<>(); // Lista de reservas
+    private final ArrayList<Prestamo> prestamosEnCurso = new ArrayList<>(); //Lista de préstamos
+    private final ArrayList<Reserva> reservas = new ArrayList<>(); //Lista de reservas
 
     private Biblioteca(){}
 
@@ -182,6 +181,16 @@ public class Biblioteca {
         }
     }
 
+    /**
+     * solicitarPrestamo genera un nuevo préstamo.
+     * @param tipoLectura
+     * @param fechaHoraInicio
+     * @param funcionario
+     * @param ejemplar
+     * @param lector
+     * @param desdeReserva
+     * @return Prestamo
+     */
     public Prestamo solicitarPrestamo(TipoLectura tipoLectura, LocalDateTime fechaHoraInicio,
                                   String funcionario, Ejemplar ejemplar, Lector lector,
                                   boolean desdeReserva) {
@@ -189,11 +198,28 @@ public class Biblioteca {
                 ejemplar, lector, desdeReserva);
     }
 
+    /**
+     * reservar genera una nueva reserva para un ejemplar.
+     * @param fechaHoraInicio
+     * @param fechaHoraFin
+     * @param ejemplar
+     * @param lector
+     * @return Reserva
+     */
     public Reserva reservar(LocalDateTime fechaHoraInicio, LocalDateTime fechaHoraFin,
                             Ejemplar ejemplar, Lector lector) {
         return new Reserva(fechaHoraInicio, fechaHoraFin, ejemplar, lector);
     }
 
+    /**
+     * devolver genera los datos para realizar una devolución.
+     * @param fechaHoraDevolucion
+     * @param ejemplar
+     * @param lector
+     * @param funcionario
+     * @param prestamo
+     * @return Devolucion
+     */
     public Devolucion devolver(LocalDateTime fechaHoraDevolucion, Ejemplar ejemplar, Lector lector,
                                String funcionario, Prestamo prestamo) {
         return new Devolucion(fechaHoraDevolucion, ejemplar, lector, funcionario, prestamo);
@@ -213,6 +239,38 @@ public class Biblioteca {
             }
         }
         return cant;
+    }
+
+    /**
+     * identificarLugarEjemplar permite identificar el lugar físico donde se encuentra el ejemplar
+     * dentro de la bibliioteca con el identificador único de este.
+     * @param identUnico
+     * @return ubicacion
+     */
+    public ArrayList<String> identificarLugarEjemplar(String identUnico) {
+        ArrayList<String> ubicacion = null;
+        for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
+            if (listaDeEjemplares.get(i).getIdentUnico() == identUnico) {
+                ubicacion = listaDeEjemplares.get(i).getLugarFisico();
+                break;
+            }
+        }
+        return ubicacion;
+    }
+
+    /**
+     * obrasDeUnaEditorial devuelve un listado de obras dada una editorial determinada
+     * @param editorial
+     * @return obrasEdi
+     */
+    public ArrayList<Obra> obrasDeUnaEditorial(String editorial) {
+        ArrayList<Obra> obrasEdi = null;
+        for(int i = 0; i < obras.toArray().length; i++) {
+            if (obras.get(i).getEdicion().getEditorial() == editorial) {
+                obrasEdi.add(obras.get(i));
+            }
+        }
+        return obrasEdi;
     }
 
     /**

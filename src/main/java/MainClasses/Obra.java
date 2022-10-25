@@ -27,7 +27,8 @@ public class Obra {
     private String indice;
     private int vecesSolicitadaAluDoc = 0;
     private int vecesSolicitadaPublico = 0;
-    private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //relación con la clase Ejemplar
+    private Edicion edicion; //Relación con la clase Edición
+    private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //Relación con la clase Ejemplar
 
     /**
      * Constructor de la clase Obra.

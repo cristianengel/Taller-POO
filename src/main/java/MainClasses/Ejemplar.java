@@ -56,6 +56,14 @@ public class Ejemplar {
     }
 
     /**
+     * agregarSolicitud agrega al contador de vecesSolicitado las veces
+     * que se solicitó un ejemplar.
+     */
+    public void agregarSolicitud() {
+        this.vecesSolicitado += 1;
+    }
+
+    /**
      * equals verifica si son objetos de tipo Ejemplar son iguales.
      * @param o
      */
@@ -75,14 +83,6 @@ public class Ejemplar {
                 Objects.equals(reserva, ejemplar.reserva) &&
                 Objects.equals(prestamo, ejemplar.prestamo) &&
                 Objects.equals(condicion, ejemplar.condicion);
-    }
-
-    /**
-     * agregarSolicitud agrega al contador de vecesSolicitado las veces
-     * que se solicitó un ejemplar.
-     */
-    public void agregarSolicitud() {
-        this.vecesSolicitado += 1;
     }
 
     /**
