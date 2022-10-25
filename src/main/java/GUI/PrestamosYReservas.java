@@ -44,7 +44,7 @@ public class PrestamosYReservas extends JFrame{
         reservarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DatosDeLaReserva ddlr = new DatosDeLaReserva();
+                DatosDeLaReserva ddlr = DatosDeLaReserva.getInstance();
                 dispose();
             }
         });

@@ -30,8 +30,9 @@ public class AgregarLector extends JFrame{
     private JTextField textFieldDepartamento;
     private JTextField textFieldLocalidad;
     private JComboBox<Profesion> comboBoxProfesion;
-    private DatosDelPrestamo ddp = DatosDelPrestamo.getInstance();
-    private Biblioteca biblioteca = Biblioteca.getInstance();
+    private final DatosDelPrestamo ddp = DatosDelPrestamo.getInstance();
+    private final DatosDeLaReserva ddlr = DatosDeLaReserva.getInstance();
+    private final Biblioteca biblioteca = Biblioteca.getInstance();
 
     public AgregarLector() {
         setContentPane(agregarLectorPanel);
@@ -123,9 +124,16 @@ public class AgregarLector extends JFrame{
                                     textFieldLocalidad.getText());
                         }
                     }
-                    ddp.getIngresarDatosLectorLabel().setText("Lector: " + textFieldDocumento.getText());
-                    ddp.obtenerLector((Lector) lector);
-                    ddp.setHayLector(true);
+                    if(DatosDelPrestamo.getExistente()) {
+                        ddp.getIngresarDatosLectorLabel().setText("Lector: " + textFieldDocumento.getText());
+                        ddp.obtenerLector((Lector) lector);
+                        ddp.setHayLector(true);
+                    }
+                    if(DatosDeLaReserva.getExistente()) {
+                        ddlr.getLectorLabel().setText("Lector: " + textFieldDocumento.getText());
+                        ddlr.obtenerLector((Lector) lector);
+                        ddlr.setHayLector(true);
+                    }
                 } catch(NullPointerException exception) {
                     JOptionPane.showMessageDialog(null, "Faltan rellenar campos");
                     return;

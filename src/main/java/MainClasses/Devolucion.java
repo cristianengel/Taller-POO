@@ -72,7 +72,7 @@ public class Devolucion {
      */
     public void aplicarMulta(int multa) {
         this.lector.setMultas(multa);
-        this.ejemplar.getBilioteca().agregarLectorConMultas(this.lector);
+        b.agregarLectorConMultas(this.lector);
     }
 
     /**
