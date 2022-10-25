@@ -73,7 +73,7 @@ public class DatosDelPrestamo extends JFrame{
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AgregarLector al = new AgregarLector();
+                AgregarLector al = new AgregarLector("Prestamo");
             }
         });
         aceptarButton.addActionListener(new ActionListener() {
@@ -84,6 +84,11 @@ public class DatosDelPrestamo extends JFrame{
                     return;
                 }
                 Prestamo prestamo = new Prestamo((TipoLectura) comboBoxTipoDeLectura.getSelectedItem(), LocalDateTime.now(), funcionario.getText(), ejemplarAPrestamo, lectorQueSolicita, false);
+                for(int i = 0; i < biblioteca.getListaDeEjemplares().size(); i++) {
+                    if(biblioteca.getListaDeEjemplares().get(i).equals(ejemplarAPrestamo)) {
+                        biblioteca.getListaDeEjemplares().get(i).setCondicion(Condicion.PRESTADO);
+                    }
+                }
                 instance = null;
                 MainMenuScreen mm = new MainMenuScreen();
                 dispose();

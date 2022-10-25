@@ -30,11 +30,11 @@ public class AgregarLector extends JFrame{
     private JTextField textFieldDepartamento;
     private JTextField textFieldLocalidad;
     private JComboBox<Profesion> comboBoxProfesion;
-    private final DatosDelPrestamo ddp = DatosDelPrestamo.getInstance();
-    private final DatosDeLaReserva ddlr = DatosDeLaReserva.getInstance();
+    private DatosDelPrestamo ddp;
+    private DatosDeLaReserva ddlr;
     private final Biblioteca biblioteca = Biblioteca.getInstance();
 
-    public AgregarLector() {
+    public AgregarLector(String tipo) {
         setContentPane(agregarLectorPanel);
         setTitle("Gestor de Préstamos");
         setSize(450,300);
@@ -52,6 +52,12 @@ public class AgregarLector extends JFrame{
         comboBoxProfesion.addItem(Profesion.ALUMNO);
         comboBoxProfesion.addItem(Profesion.DOCENTE);
         comboBoxProfesion.addItem(Profesion.PUBLICO);
+
+        if(tipo == "Reserva") {
+            ddlr = DatosDeLaReserva.getInstance();
+        } else {
+            ddp = DatosDelPrestamo.getInstance();
+        }
 
         for(int i = LocalDate.now().getYear(); i >= 1900; i--) {
             comboBoxAnio.addItem(i);

@@ -1,28 +1,32 @@
 package GUI;
 
+import MainClasses.Biblioteca;
 import MainClasses.Ejemplar;
 import MainClasses.Lector;
 import MainClasses.Reserva;
 import lombok.Getter;
 import lombok.Setter;
+import Enum.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Getter
 @Setter
 public class DatosDeLaReserva extends JFrame{
     private static DatosDeLaReserva instance;
+    private Biblioteca b = Biblioteca.getInstance();
     private JPanel datosDeLaReservaPanel;
-    private JComboBox comboBoxAnio;
-    private JComboBox comboBoxMes;
-    private JComboBox comboBoxDia;
-    private JComboBox comboBoxHora;
-    private JComboBox comboBoxMinutos;
-    private JComboBox comboBoxPlazo;
+    private JComboBox<Integer> comboBoxAnio;
+    private JComboBox<Integer> comboBoxMes;
+    private JComboBox<Integer> comboBoxDia;
+    private JComboBox<Integer> comboBoxHora;
+    private JComboBox<Integer> comboBoxMinutos;
+    private JComboBox<Integer> comboBoxPlazo;
     private JButton seleccionarButton;
     private JButton ingresarButton;
     private JButton atrasButton;
@@ -42,10 +46,7 @@ public class DatosDeLaReserva extends JFrame{
     }
 
     public static boolean getExistente() {
-        if (instance == null) {
-            return false;
-        }
-        return true;
+        return instance != null;
     }
 
     private DatosDeLaReserva() {
@@ -118,6 +119,8 @@ public class DatosDeLaReserva extends JFrame{
         atrasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                PrestamosYReservas pyr = new PrestamosYReservas();
+                instance = null;
                 dispose();
             }
         });
@@ -127,7 +130,7 @@ public class DatosDeLaReserva extends JFrame{
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                AgregarLector al = new AgregarLector();
+                AgregarLector al = new AgregarLector("Reserva");
             }
         });
         aceptarButton.addActionListener(new ActionListener() {
@@ -140,12 +143,32 @@ public class DatosDeLaReserva extends JFrame{
                     JOptionPane.showMessageDialog(null, "Hay datos faltantes.");
                     return;
                 }
-                LocalDateTime fechaHoraInicio = LocalDateTime.of(Integer.parseInt(comboBoxAnio.getSelectedItem().toString()), Integer.parseInt(comboBoxMes.getSelectedItem().toString()), Integer.parseInt(comboBoxDia.getSelectedItem().toString()), Integer.parseInt(comboBoxHora.getSelectedItem().toString()), Integer.parseInt(comboBoxMinutos.getSelectedItem().toString()));
-                LocalDateTime fechaHoraFin = fechaHoraInicio.plusDays(Integer.parseInt(comboBoxPlazo.getSelectedItem().toString()));
+                LocalDateTime fechaHoraInicio = LocalDateTime.of(Integer.parseInt(Objects.requireNonNull(
+                        comboBoxAnio.getSelectedItem()).toString()), Integer.parseInt(Objects.requireNonNull(
+                                comboBoxMes.getSelectedItem()).toString()), Integer.parseInt(Objects.requireNonNull(
+                                        comboBoxDia.getSelectedItem()).toString()), Integer.parseInt(
+                                                Objects.requireNonNull(comboBoxHora.getSelectedItem()).toString()),
+                        Integer.parseInt(Objects.requireNonNull(comboBoxMinutos.getSelectedItem()).toString()));
+                LocalDateTime fechaHoraFin = fechaHoraInicio.plusDays(Integer.parseInt(
+                        Objects.requireNonNull(comboBoxPlazo.getSelectedItem()).toString()));
                 Reserva reserva = new Reserva(fechaHoraInicio, fechaHoraFin, ejemplarAReserva, lectorQueSolicita);
+                for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
+                    if(b.getListaDeEjemplares().get(i).equals(ejemplarAReserva)) {
+                        b.getListaDeEjemplares().get(i).setCondicion(Condicion.RESERVADO);
+                    }
+                }
                 instance = null;
                 MainMenuScreen mm = new MainMenuScreen();
                 dispose();
+            }
+        });
+        seleccionarButton.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ListaDeEjemplaresAReservar lear = new ListaDeEjemplaresAReservar();
             }
         });
     }
@@ -168,12 +191,9 @@ public class DatosDeLaReserva extends JFrame{
 
     public boolean chequeoBisiesto() {
         if(comboBoxAnio.getSelectedItem() == null) return false;
-        if((Integer.parseInt(comboBoxAnio.getSelectedItem().toString()) % 4 == 0) &&
+        return (Integer.parseInt(comboBoxAnio.getSelectedItem().toString()) % 4 == 0) &&
                 ((Integer.parseInt(comboBoxAnio.getSelectedItem().toString()) % 100 != 0) ||
-                        ((Integer.parseInt(comboBoxAnio.getSelectedItem().toString()) % 400 == 0)))) {
-            return true;
-        }
-        return false;
+                        ((Integer.parseInt(comboBoxAnio.getSelectedItem().toString()) % 400 == 0)));
     }
 
     /**
