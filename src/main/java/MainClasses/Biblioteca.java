@@ -46,8 +46,9 @@ public class Biblioteca {
      * Una vez agregado el ejemplar, si el ejemplar es nuevo, agrega el índice del ejemplar a la lista
      * de índices y agrega la obra correspondiente al ejemplar a la lista de obras.
      * @param ejemplar
+     * @throws RuntimeException
      */
-    public void agregarEjemplar(Ejemplar ejemplar){
+    public void agregarEjemplar(Ejemplar ejemplar) throws RuntimeException {
         /* Si el el objeto de tipo Ejemplar no se encuentra en la lista de ejemplares */
         if(!listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.add(ejemplar);
@@ -72,8 +73,9 @@ public class Biblioteca {
     /**
      * removerEjemplar elimina de la lista de ejemplares el ejemplar pasado por parámetro.
      * @param ejemplar
+     * @throws RuntimeException
      */
-    public void removerEjemplar(Ejemplar ejemplar){
+    public void removerEjemplar(Ejemplar ejemplar) throws RuntimeException {
         if(listaDeEjemplares.contains(ejemplar)){
             listaDeEjemplares.remove(ejemplar);
         } else {
@@ -139,8 +141,9 @@ public class Biblioteca {
     /**
      * mostrarDeudores muestra los deudores que deben regresar algún ejemplar a la biblioteca.
      * @return listaDeDeudores
+     * @throws RuntimeException
      */
-    public List<Lector> mostrarDeudores(){
+    public List<Lector> mostrarDeudores() throws RuntimeException {
         if(listaDeDeudores.size() > 0) {
             return listaDeDeudores;
         } else {
@@ -151,8 +154,9 @@ public class Biblioteca {
     /**
      * mostrarObras muestra las obras presentes en la biblioteca.
      * @return obras
+     * @throws RuntimeException
      */
-    public List<Obra> mostrarObras(){
+    public List<Obra> mostrarObras() throws RuntimeException {
         if(obras.size() > 0) {
             return obras;
         } else {
@@ -166,8 +170,10 @@ public class Biblioteca {
      * @param reserva
      * @param tipoLectura
      * @param funcionario
+     * @throws RuntimeException
      */
-    public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario) {
+    public void registrarRetiroConReserva(Reserva reserva, TipoLectura tipoLectura, String funcionario)
+            throws RuntimeException {
         if(LocalDateTime.now().isAfter(reserva.getFechaHoraInicio()) &&
             LocalDateTime.now().isBefore(reserva.getFechaHoraFin())) {
             reserva.getEjemplar().setCondicion(Condicion.PRESTADO);
@@ -246,11 +252,11 @@ public class Biblioteca {
      * @param identUnico
      * @return ubicacion
      */
-    public ArrayList<String> identificarLugarEjemplar(String identUnico) {
-        ArrayList<String> ubicacion = null;
+    public String identificarLugarEjemplar(String identUnico) {
+        String ubicacion = "";
         for(int i = 0; i < listaDeEjemplares.toArray().length; i++) {
             if (listaDeEjemplares.get(i).getIdentUnico() == identUnico) {
-                ubicacion = listaDeEjemplares.get(i).getLugarFisico();
+                ubicacion = String.valueOf(listaDeEjemplares.get(i).getLugarFisico());
                 break;
             }
         }
@@ -290,8 +296,9 @@ public class Biblioteca {
     /**
      * mostrarLectoresConMultas devuelve la lista de los lectores con multas.
      * @return listaLectoresConMultas
+     * @throws RuntimeException
      */
-    public List<Lector> mostrarLectoresConMultas() {
+    public List<Lector> mostrarLectoresConMultas() throws RuntimeException {
         if(listaLectoresConMultas.size() > 0) {
             ordenarLectoresConMultas();
             return listaLectoresConMultas;
@@ -387,6 +394,34 @@ public class Biblioteca {
             }
         }
         return ejemplares;
+    }
+
+    /**
+     * mostrarObrasSolicitadasAluDoc muestra un listado de las obras más solicitadas
+     * por alumnos y docentes.
+     * @return listaObrasSolicitadasAluDoc
+     * @throws RuntimeException
+     */
+    public List<Obra> mostrarObrasSolicitadasAluDoc() throws RuntimeException {
+        if(listaObrasSolicitadasAluDoc.size() > 0) {
+            return listaObrasSolicitadasAluDoc;
+        } else {
+            throw new RuntimeException("No hay obras registradas.");
+        }
+    }
+
+    /**
+     * mostrarObrasSolicitadasPublico un listado de las obras más solicitadas
+     * por el público en general.
+     * @return listaObrasSolicitadasPublico
+     * @throws RuntimeException
+     */
+    public List<Obra> mostrarObrasSolicitadasPublico() throws RuntimeException {
+        if(listaObrasSolicitadasPublico.size() > 0) {
+            return listaObrasSolicitadasPublico;
+        } else {
+            throw new RuntimeException("No hay obras registradas.");
+        }
     }
 
     /**

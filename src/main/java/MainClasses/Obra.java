@@ -99,7 +99,7 @@ public class Obra {
      */
     @Override
     public String toString() {
-        return "🔹Obra: " + "\n" +
+        return "-Obra: " + "\n" +
                 "   -Área temática='" + areaTematica + "\n" +
                 "   -Título=" + titulo + "\n" +
                 "   -Subtítulo=" + subtitulo + "\n" +
