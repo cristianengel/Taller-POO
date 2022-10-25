@@ -40,6 +40,13 @@ public class DatosDelPrestamo extends JFrame{
         return instance;
     }
 
+    public static boolean getExistente() {
+        if (instance == null) {
+            return false;
+        }
+        return true;
+    }
+
     private DatosDelPrestamo() {
         comboBoxTipoDeLectura.addItem(TipoLectura.DOMICILIO);
         comboBoxTipoDeLectura.addItem(TipoLectura.SALA);
@@ -52,7 +59,7 @@ public class DatosDelPrestamo extends JFrame{
         elegirEjemplarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ListaDeEjemplares lde = new ListaDeEjemplares();
+                ListaDeEjemplaresAPrestar lde = new ListaDeEjemplaresAPrestar();
             }
         });
         atrasButton.addActionListener(new ActionListener() {

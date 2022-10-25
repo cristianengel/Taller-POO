@@ -1,12 +1,13 @@
 package GUI;
 
+import Enum.Condicion;
 import MainClasses.Biblioteca;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ListaDeEjemplares extends JFrame{
+public class ListaDeEjemplaresAPrestar extends JFrame{
     private JPanel listaDeEjemplaresPanel;
     private JList<String> list1;
     private JButton seleccionarButton;
@@ -15,7 +16,7 @@ public class ListaDeEjemplares extends JFrame{
     DefaultListModel<String> listModel = new DefaultListModel<>();
     Biblioteca b = Biblioteca.getInstance();
     
-    public ListaDeEjemplares() {
+    public ListaDeEjemplaresAPrestar() {
         setContentPane(listaDeEjemplaresPanel);
         setTitle("Gestor de Préstamos");
         setSize(450,300);
@@ -24,7 +25,9 @@ public class ListaDeEjemplares extends JFrame{
         setVisible(true);
         list1.setModel(listModel);
         for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-            listModel.addElement(b.getListaDeEjemplares().get(i).toStringReducido());
+            if(b.getListaDeEjemplares().get(i).getCondicion() == Condicion.DISPONIBLE) {
+                listModel.addElement(b.getListaDeEjemplares().get(i).toStringReducido());
+            }
         }
         atrasButton.addActionListener(new ActionListener() {
             @Override

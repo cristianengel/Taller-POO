@@ -31,8 +31,6 @@ public class Ejemplar {
     private Condicion condicion; //Condición del ejemplar (Disponible / Prestado / Reservado)
     private int vecesSolicitado = 0;
 
-    private Biblioteca bilioteca;
-
     /**
      * Constructor de la clase Ejemplar.
      * @param identUnico
