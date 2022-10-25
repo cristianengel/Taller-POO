@@ -15,6 +15,7 @@ import java.util.Objects;
  * biblioteca.
  */
 public class Obra {
+    Biblioteca biblioteca = Biblioteca.getInstance();
     private String areaTematica;
     private String titulo;
     private String subtitulo;
@@ -62,8 +63,14 @@ public class Obra {
     public void agregarSolicitud(Profesion profesion) {
         if(Objects.equals(profesion, Profesion.ALUMNO) || Objects.equals(profesion, Profesion.DOCENTE)) {
             this.vecesSolicitadaAluDoc += 1;
+            if(!biblioteca.getListaObrasSolicitadasAluDoc().contains(this)) {
+                biblioteca.getListaObrasSolicitadasAluDoc().add(this);
+            }
         } else if (Objects.equals(profesion, Profesion.PUBLICO)) {
             this.vecesSolicitadaPublico += 1;
+            if(!biblioteca.getListaObrasSolicitadasPublico().contains(this)) {
+                biblioteca.getListaObrasSolicitadasPublico().add(this);
+            }
         }
     }
 

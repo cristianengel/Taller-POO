@@ -32,6 +32,7 @@ public class Reserva {
         this.ejemplar = ejemplar;
         this.lector = lector;
 
+        this.ejemplar.agregarSolicitud();
         this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
     }
 
