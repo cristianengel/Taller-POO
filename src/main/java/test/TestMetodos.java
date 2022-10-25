@@ -78,15 +78,15 @@ public class TestMetodos {
         Reserva r = new Reserva(LocalDateTime.now(),
                 LocalDateTime.of(2023, 10, 20, 14,34), bibliaJava1, cristian);
 
-        biblioteca.registrarRetiroConReserva(r, TipoLectura.DOMICILIO, "Roberto");
+        //biblioteca.registrarRetiroConReserva(r, TipoLectura.DOMICILIO, "Roberto");
 
         //Creación de un préstamo y su devolución
 
         Prestamo p = new Prestamo(TipoLectura.DOMICILIO,
                 LocalDateTime.of(2002,10,15,14,34),
                 "Roberto", principito1, marcos, false);
-        Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34),
-                principito1, marcos,"Roberto", p);
+        //Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34),
+        //        principito1, marcos,"Roberto", p);
 
         System.out.println(biblioteca.getPrestamosEnCurso());
         WelcomeScreen ws = new WelcomeScreen();
