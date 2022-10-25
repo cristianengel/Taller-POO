@@ -66,11 +66,13 @@ public class Devolucion {
     }
 
     /**
-     * aplicarMulta aplica la multa al lector.
+     * aplicarMulta aplica la multa al lector y al lector lo agrega a la lista
+     * de lectores con multa.
      * @param multa
      */
     public void aplicarMulta(int multa) {
         this.lector.setMultas(multa);
+        this.ejemplar.getBilioteca().agregarLectorConMultas(this.lector);
     }
 
     /**

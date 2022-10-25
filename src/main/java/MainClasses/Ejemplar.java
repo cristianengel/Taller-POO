@@ -26,11 +26,12 @@ public class Ejemplar {
     private LocalDate fechaDeAdquisicion;
     private String formaDeAdquisicion;
     private Obra obra; //Relación con la clase Obra
-    private Edicion edicion;
     private Reserva reserva; //Relación con las clases Reserva y Lector
     private Prestamo prestamo; //Relación con las clases Prestamo y Lector
     private Condicion condicion; //Condición del ejemplar (Disponible / Prestado / Reservado)
     private int vecesSolicitado = 0;
+
+    private Biblioteca bilioteca;
 
     /**
      * Constructor de la clase Ejemplar.

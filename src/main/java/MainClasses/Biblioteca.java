@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Getter
 @Setter
@@ -242,7 +240,7 @@ public class Biblioteca {
 
     /**
      * identificarLugarEjemplar permite identificar el lugar físico donde se encuentra el ejemplar
-     * dentro de la bibliioteca con el identificador único de este.
+     * dentro de la biblioteca con el identificador único de este.
      * @param identUnico
      * @return ubicacion
      */
@@ -270,6 +268,47 @@ public class Biblioteca {
             }
         }
         return obrasEdi;
+    }
+
+    /**
+     * agregarLectorConMultas agrega un objeto de tipo lector a la lista de
+     * lectores con multas.
+     * @param lector
+     * @throws RuntimeException
+     */
+    public void agregarLectorConMultas(Lector lector) throws RuntimeException {
+        /* Si el el objeto de tipo Lector no se encuentra en la lista de lectoresConMultas */
+        if(!listaLectoresConMultas.contains(lector)){
+            listaLectoresConMultas.add(lector);
+        } else {
+            throw new RuntimeException("El lector ya se encuentra en la lista.");
+        }
+    }
+
+    /**
+     * mostrarLectoresConMultas devuelve la lista de los lectores con multas.
+     * @return listaLectoresConMultas
+     */
+    public List<Lector> mostrarLectoresConMultas() {
+        if(listaLectoresConMultas.size() > 0) {
+            ordenarLectoresConMultas();
+            return listaLectoresConMultas;
+        } else {
+            throw new RuntimeException("No hay lectores registrados.");
+        }
+    }
+
+    /**
+     * ordenarLectoresConMultas ordena la lista de lectores con multas
+     * de mayor a menor para obtner el ranking de lectores con más multas.
+     */
+    public void ordenarLectoresConMultas() {
+        Collections.sort(listaLectoresConMultas, new Comparator<Lector>() {
+            @Override
+            public int compare(Lector o1, Lector o2) {
+                return o1.getMultas().compareTo(o2.getMultas()); //Ni idea toavia porque no me anda... probé de todo
+            }
+        });
     }
 
     /**
