@@ -318,9 +318,9 @@ public class Biblioteca {
     public ArrayList<Lector> lectoresConMultasPeriodoTiempo(LocalDate inicio, LocalDate fin) {
         ArrayList<Lector> lectores = null;
         for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
-            //En fechaDevolucion guarda la fecha en el cual el ejemplar fue devuelto
+            //En fechaDevolucion se guarda la fecha en el cual el ejemplar fue devuelto
             LocalDate fechaDevolucion = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().toLocalDate();
-            //En diasDeMultas guarda la fecha en el cual el ejemplar fue devuelto más los días de multas
+            //En diasDeMultas se guarda la fecha en el cual el ejemplar fue devuelto más los días de multas
             LocalDate diasDeMultas = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().
                     toLocalDate().plusDays(listaLectoresConMultas.get(i).getMultas());
             if ((inicio.isEqual(fechaDevolucion) || inicio.isAfter(fechaDevolucion)) &&
@@ -329,6 +329,47 @@ public class Biblioteca {
             }
         }
         return lectores;
+    }
+
+    /**
+     * registrarReserva guarda en la lista de reservas la reserva ejecutada.
+     * @param r
+     */
+    public void registrarReserva(Reserva r) {
+        if(!reservas.contains(r)){
+            reservas.add(r);
+        }
+    }
+
+    /**
+     * mostrarReservas devuelve la lista de todas las reservas vigentes.
+     * @return reservas
+     * @throws RuntimeException
+     */
+    public ArrayList<Reserva> mostrarReservas() throws RuntimeException {
+        if(reservas.size() > 0) {
+            return reservas;
+        } else {
+            throw new RuntimeException("No hay reservas registradas.");
+        }
+    }
+
+    /**
+     * reservasAPartirFecha muestra las obras que se encuentran reservadas
+     * a partir de una fecha determinada.
+     * @param fecha
+     * @return reservasFecha
+     */
+    public ArrayList<Reserva> reservasAPartirFecha(LocalDate fecha) {
+        ArrayList<Reserva> reservasFecha = null;
+        for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
+            //En fechaReserva se guarda la fecha en el cual se inició la reserva de un ejemplar
+            LocalDate fechaReserva = reservas.get(i).getFechaHoraInicio().toLocalDate();
+            if (fecha.isEqual(fechaReserva) || fecha.isAfter(fechaReserva)) {
+                reservasFecha.add(reservas.get(i));
+            }
+        }
+        return reservasFecha;
     }
 
     /**

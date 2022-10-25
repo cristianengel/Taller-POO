@@ -18,6 +18,7 @@ public class Reserva {
     private LocalDateTime fechaHoraFin;
     private Ejemplar ejemplar; //Relación intermedia entre Lector y Ejemplar
     private Lector lector; //Relación intermedia entre Lector y Ejemplar
+    private Biblioteca biblioteca; //Relación con la clase Biblioteca
 
     /**
      * Constructor de la clase Reserva.
@@ -31,6 +32,8 @@ public class Reserva {
         this.fechaHoraFin = fechaHoraFin;
         this.ejemplar = ejemplar;
         this.lector = lector;
+
+        this.biblioteca.registrarReserva(this);
 
         this.ejemplar.agregarSolicitud();
         this.ejemplar.getObra().agregarSolicitud(this.lector.getProfesion());
