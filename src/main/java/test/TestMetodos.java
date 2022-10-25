@@ -85,6 +85,7 @@ public class TestMetodos {
         Prestamo p = new Prestamo(TipoLectura.DOMICILIO,
                 LocalDateTime.of(2002,10,15,14,34),
                 "Roberto", principito1, marcos, false);
+
         //Devolucion d = new Devolucion(LocalDateTime.of(2002,10,25,14,34),
         //        principito1, marcos,"Roberto", p);
 

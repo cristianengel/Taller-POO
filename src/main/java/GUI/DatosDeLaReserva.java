@@ -1,12 +1,12 @@
 package GUI;
 
+import Enum.Condicion;
 import MainClasses.Biblioteca;
 import MainClasses.Ejemplar;
 import MainClasses.Lector;
 import MainClasses.Reserva;
 import lombok.Getter;
 import lombok.Setter;
-import Enum.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -62,7 +62,7 @@ public class DatosDeLaReserva extends JFrame{
         comboBoxMinutos.setVisible(false);
 
 
-        for(int i = LocalDate.now().getYear(); i >= 1900; i--) {
+        for(int i = LocalDate.now().getYear(); i < LocalDate.now().plusYears(10).getYear(); i++) {
             comboBoxAnio.addItem(i);
         }
         for(int i = 1; i <= 12; i++) {
@@ -151,7 +151,8 @@ public class DatosDeLaReserva extends JFrame{
                         Integer.parseInt(Objects.requireNonNull(comboBoxMinutos.getSelectedItem()).toString()));
                 LocalDateTime fechaHoraFin = fechaHoraInicio.plusDays(Integer.parseInt(
                         Objects.requireNonNull(comboBoxPlazo.getSelectedItem()).toString()));
-                Reserva reserva = new Reserva(fechaHoraInicio, fechaHoraFin, ejemplarAReserva, lectorQueSolicita);
+                Reserva reserva = b.reservar(fechaHoraInicio, fechaHoraFin, ejemplarAReserva, lectorQueSolicita);
+                b.getReservasEnCurso().add(reserva);
                 for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
                     if(b.getListaDeEjemplares().get(i).equals(ejemplarAReserva)) {
                         b.getListaDeEjemplares().get(i).setCondicion(Condicion.RESERVADO);
