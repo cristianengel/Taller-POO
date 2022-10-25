@@ -30,8 +30,9 @@ public class Lector {
     private int codigoPostal;
     private String departamento;
     private String localidad;
-    private Reserva ejemplarReserva; //Relación con las clases Reserva y Ejemplar
-    private Prestamo ejemplarPrestamo; //Relación con las clases Prestamo y Ejemplar
+    private Reserva reserva; //Relación con la clase Reserva
+    private Prestamo prestamo; //Relación con la clase Prestamo
+    private Devolucion devolucion; //Relación con la clase Devolucion
     private int multas;
     private Profesion profesion;
 
@@ -94,15 +95,14 @@ public class Lector {
                 Objects.equals(nombre, lector.nombre) &&
                 Objects.equals(apellido, lector.apellido) &&
                 Objects.equals(tipoDoc, lector.tipoDoc) &&
+                Objects.equals(numDoc, lector.numDoc) &&
                 Objects.equals(correoElec, lector.correoElec) &&
                 Objects.equals(fechaNac, lector.fechaNac) &&
                 Objects.equals(sexo, lector.sexo) &&
                 Objects.equals(nacionalidad, lector.nacionalidad) &&
                 Objects.equals(domicilio, lector.domicilio) &&
                 Objects.equals(departamento, lector.departamento) &&
-                Objects.equals(localidad, lector.localidad) &&
-                Objects.equals(ejemplarReserva, lector.ejemplarReserva) &&
-                Objects.equals(ejemplarPrestamo, lector.ejemplarPrestamo);
+                Objects.equals(localidad, lector.localidad);
     }
 
     /**
@@ -125,8 +125,18 @@ public class Lector {
                 "   -Código postal=" + codigoPostal + "\n" +
                 "   -Departamento=" + departamento + "\n" +
                 "   -Localidad=" + localidad + "\n" +
-                "   -Reserva=" + ejemplarReserva + "\n" +
-                "   -Prestamo=" + ejemplarPrestamo + "\n" +
                 "   -Cantidad de multas=" + multas;
+    }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de un lector.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Lector:" + "\n" +
+                "   -Nombre=" + nombre + "\n" +
+                "   -Apellido=" + apellido + "\n" +
+                "   -Número de documento=" + numDoc + "\n" +
+                "   -Número de celular=" + numCel;
     }
 }

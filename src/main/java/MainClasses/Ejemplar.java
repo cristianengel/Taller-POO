@@ -26,8 +26,8 @@ public class Ejemplar {
     private LocalDate fechaDeAdquisicion;
     private String formaDeAdquisicion;
     private Obra obra; //Relación con la clase Obra
-    private Reserva reserva; //Relación con las clases Reserva y Lector
-    private Prestamo prestamo; //Relación con las clases Prestamo y Lector
+    private Reserva reserva; //Relación con las clases Reserva
+    private Prestamo prestamo; //Relación con las clases Prestamo
     private Condicion condicion; //Condición del ejemplar (Disponible / Prestado / Reservado)
     private int vecesSolicitado = 0;
 
@@ -87,10 +87,10 @@ public class Ejemplar {
     }
 
     /**
-     * stringSimplificado retorna un String con la información reducida de un ejemplar.
+     * toStringReducido retorna un String con la información reducida de un ejemplar.
      * @return string
      */
-    public String stringSimplificado() {
+    public String toStringReducido() {
         return "ID: " + identUnico + "  ||  " + "Título: " + obra.getTitulo();
     }
 
@@ -108,6 +108,6 @@ public class Ejemplar {
                 "   -Fecha de adquisición=" + fechaDeAdquisicion + "\n" +
                 "   -Fecha de dado de baja=" + fechaDadoDeBaja + "\n" +
                 "   -Motivo de dado de baja=" + motivoDadoDeBaja + "\n" +
-                "   -Forma de adquisición=" + formaDeAdquisicion + "\n";
+                "   -Forma de adquisición=" + formaDeAdquisicion;
     }
 }

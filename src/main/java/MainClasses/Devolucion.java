@@ -56,7 +56,7 @@ public class Devolucion {
      */
     public int controlFechaDevolucion() {
         /* Si la fecha y hora a la que se devuelve el ejemplar es posterior
-        a la hora y fecha que tenía que devolverse */
+        a la hora y fecha que tenía que devolverse... */
         if (this.fechaHoraDevolucion.isAfter(this.prestamo.getFechaHoraDevolucion())) {
             LocalDate f1 = this.fechaHoraDevolucion.toLocalDate();
             LocalDate f2 = prestamo.getFechaHoraDevolucion().toLocalDate();
@@ -88,5 +88,17 @@ public class Devolucion {
                 "   -Lector=" + lector + "\n" +
                 "   -Ejemplar=" + ejemplar + "\n" +
                 "   -Días atrasados=" + diasAtrasados;
+    }
+
+    /**
+     * toStringReducido retorna un String con la información reducida de una devolución.
+     * @return
+     */
+    public String toStringReducido() {
+        return "-Devolucion:" + "\n" +
+                "   -Fecha de la devolución=" + fechaHoraDevolucion + "\n" +
+                "   -Funcionario=" + funcionario + "\n" +
+                "   -Lector=" + lector + "\n" +
+                "   -Ejemplar=" + ejemplar + "\n";
     }
 }

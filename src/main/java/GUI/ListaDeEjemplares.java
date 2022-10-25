@@ -24,7 +24,7 @@ public class ListaDeEjemplares extends JFrame{
         setVisible(true);
         list1.setModel(listModel);
         for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-            listModel.addElement(b.getListaDeEjemplares().get(i).stringSimplificado());
+            listModel.addElement(b.getListaDeEjemplares().get(i).toStringReducido());
         }
         atrasButton.addActionListener(new ActionListener() {
             @Override

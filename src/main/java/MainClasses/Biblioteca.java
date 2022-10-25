@@ -4,6 +4,7 @@ import Enum.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -304,12 +305,30 @@ public class Biblioteca {
      * de mayor a menor para obtner el ranking de lectores con más multas.
      */
     public void ordenarLectoresConMultas() {
-        Collections.sort(listaLectoresConMultas, new Comparator<Lector>() {
-            @Override
-            public int compare(Lector o1, Lector o2) {
-                return o1.getMultas().compareTo(o2.getMultas()); //Ni idea toavia porque no me anda... probé de todo
+        listaLectoresConMultas.sort(Comparator.comparing(Lector::getMultas).reversed());
+    }
+
+    /**
+     * lectoresConMultasPeriodoTiempo devuelve un listado de lectores que tuvieron multas en
+     * cierto periodo de tiempo.
+     * @param inicio
+     * @param fin
+     * @return lectores
+     */
+    public ArrayList<Lector> lectoresConMultasPeriodoTiempo(LocalDate inicio, LocalDate fin) {
+        ArrayList<Lector> lectores = null;
+        for(int i = 0; i < listaLectoresConMultas.toArray().length; i++) {
+            //En fechaDevolucion guarda la fecha en el cual el ejemplar fue devuelto
+            LocalDate fechaDevolucion = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().toLocalDate();
+            //En diasDeMultas guarda la fecha en el cual el ejemplar fue devuelto más los días de multas
+            LocalDate diasDeMultas = listaLectoresConMultas.get(i).getDevolucion().getFechaHoraDevolucion().
+                    toLocalDate().plusDays(listaLectoresConMultas.get(i).getMultas());
+            if ((inicio.isEqual(fechaDevolucion) || inicio.isAfter(fechaDevolucion)) &&
+                    (fin.isEqual(diasDeMultas) || fin.isBefore(diasDeMultas))) {
+                lectores.add(listaLectoresConMultas.get(i));
             }
-        });
+        }
+        return lectores;
     }
 
     /**
