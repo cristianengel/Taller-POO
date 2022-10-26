@@ -17,7 +17,6 @@ import java.util.Objects;
  */
 public class Ejemplar {
     private String identUnico;
-    private int codBarra;
     private String observaciones;
     private ArrayList<String> lugarFisico; // Ubicación (Pasillo, Estantería, Estante)
     private LocalDate fechaDadoDeBaja;
@@ -34,18 +33,16 @@ public class Ejemplar {
     /**
      * Constructor de la clase Ejemplar.
      * @param identUnico
-     * @param codBarra
      * @param observaciones
      * @param lugarFisico
      * @param fechaDeAdquisicion
      * @param formaDeAdquisicion
      * @param obra
      */
-    public Ejemplar(String identUnico, int codBarra, String observaciones,
+    public Ejemplar(String identUnico, String observaciones,
                     ArrayList<String> lugarFisico, LocalDate fechaDeAdquisicion,
                     String formaDeAdquisicion, Obra obra) {
         this.identUnico = identUnico;
-        this.codBarra = codBarra;
         this.lugarFisico = lugarFisico;
         this.observaciones = observaciones;
         this.fechaDeAdquisicion = fechaDeAdquisicion;
@@ -70,8 +67,7 @@ public class Ejemplar {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Ejemplar ejemplar)) return false;
-        return codBarra == ejemplar.codBarra &&
-                Objects.equals(identUnico, ejemplar.identUnico) &&
+        return Objects.equals(identUnico, ejemplar.identUnico) &&
                 Objects.equals(observaciones, ejemplar.observaciones) &&
                 Objects.equals(fechaDadoDeBaja, ejemplar.fechaDadoDeBaja) &&
                 Objects.equals(motivoDadoDeBaja, ejemplar.motivoDadoDeBaja) &&
@@ -100,7 +96,6 @@ public class Ejemplar {
     public String toString() {
         return "-Ejemplar: " + "\n" +
                 "   -Identificador único=" + identUnico + "\n " + obra + "\n" +
-                "   -Código de barra=" + codBarra + "\n" +
                 "   -Observaciones=" + observaciones + "\n" +
                 "   -Ubicación física de dado de baja=" + ubicacionFisicaDadoDeBaja + "\n" +
                 "   -Fecha de adquisición=" + fechaDeAdquisicion + "\n" +

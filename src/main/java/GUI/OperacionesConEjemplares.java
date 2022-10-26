@@ -1,7 +1,5 @@
 package GUI;
 
-import test.Main;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,7 +20,7 @@ public class OperacionesConEjemplares extends JFrame {
         agregarEjemplarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                AgregarEjemplar ae = new AgregarEjemplar();
+                AgregarEjemplar ae = AgregarEjemplar.getInstance();
                 dispose();
             }
 

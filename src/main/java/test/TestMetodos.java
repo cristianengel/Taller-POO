@@ -17,24 +17,33 @@ public class TestMetodos {
     public static void main(String[] args) {
         Biblioteca biblioteca = Biblioteca.getInstance();
 
+        Edicion santillanacuartaedicion = new Edicion("Santillana", "Argentina", "4",
+                2022, 7, 400, "Español",
+                "Libro", false, "1234567891234");
+        Edicion normaEdicionAniversario = new Edicion("Norma", "Argentina", "7",
+                2022, 6, 562, "Español",
+                "Libro", false, "3248743783343");
         //Obras de Prueba
         Obra elPrincipito = new Obra("Literatura infantil", "El Principito", "",
                 "Antoine de Saint-Exupery", "","", "Fabula",
                 "El principito es una narración corta del escritor francés Antoine de Saint-Exupéry, " +
                         "que trata de la historia de un pequeño príncipe que parte de su asteroide a una travesía " +
                         "por el universo, en la cual descubre la extraña forma en que los adultos ven la vida y " +
-                        "comprende el valor del amor y la amistad.", "27 capítulos");
+                        "comprende el valor del amor y la amistad.", "23784327",
+                "27 capítulos", santillanacuartaedicion);
 
         Obra bibliaDeJava = new Obra("Informatica", "La Biblia de Java 2", "",
                 "Steven Holzner","", "", "Didactico",
                 "La biblia de Java 2 está diseñado para mostrarle toda la historia del lenguaje de" +
                         " programación Java, contiene no sólo toda la sintaxis de Java, desde la declaración de" +
                         " variables hasta temas de orientación a objetos avanzada, sino también el lenguaje Java" +
-                        " en el mundo real.",  "Introduccion + 22 Capitulos + Apendice + Indice alfabetico");
+                        " en el mundo real.", "23443278",
+                "Introduccion + 22 Capitulos + Apendice + Indice alfabetico", normaEdicionAniversario);
+
 
 
         //Ejemplares de Prueba
-        Ejemplar principito1 = new Ejemplar("jkhdLgH", 6985422,
+        Ejemplar principito1 = new Ejemplar("jkhdLgH",
                 "Se trata de un niño que vivía en un planeta con una rosa de compañía. " +
                         "El planeta era muy pequeño y los días pasaban muy rápido. El Principito tiene la " +
                         "amenaza de los baobas que pueden estallar el planeta si los deja crecer. \n" +
@@ -44,7 +53,7 @@ public class TestMetodos {
                 new ArrayList<String>(Arrays.asList("34", "1", "32")), LocalDate.of(2022, 7, 21),
                 "Compra por Internet", elPrincipito);
 
-        Ejemplar bibliaJava1 = new Ejemplar("gf34t3t", 9817442,
+        Ejemplar bibliaJava1 = new Ejemplar("gf34t3t",
                 " La biblia de Java 2 está diseñado para mostrarle toda la historia del " +
                         "lenguaje de programación Java, contiene no sólo toda la sintaxis de Java, desde la" +
                         " declaración de variables hasta temas de orientación a objetos avanzada, sino también " +

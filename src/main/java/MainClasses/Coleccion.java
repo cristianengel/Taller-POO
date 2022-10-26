@@ -14,7 +14,8 @@ import java.util.ArrayList;
  */
 public class Coleccion extends Obra {
     private String nombre;
-    private int isbn;
+    private String isbn;
+    private String codBarra;
     private ArrayList<Obra> obras;
 
     /**
@@ -34,12 +35,13 @@ public class Coleccion extends Obra {
      */
     public Coleccion(String areaTematica, String titulo, String subtitulo,
                      String primerAutor, String segundoAutor, String tercerAutor,
-                     String genero, String caracteristica, int isbn, String indice,
-                     Biblioteca biblioteca, String nombre) {
+                     String genero, String caracteristica, String codBarra, String indice,
+                     Biblioteca biblioteca, String nombre, Edicion edicion, String isbn) {
         super(areaTematica, titulo, subtitulo, primerAutor, segundoAutor,
-                tercerAutor, genero, caracteristica, indice);
+                tercerAutor, genero, caracteristica, codBarra, indice, edicion);
         this.nombre = nombre;
         this.isbn = isbn;
+        this.codBarra = codBarra;
     }
 
     /**
