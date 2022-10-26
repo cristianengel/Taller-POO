@@ -10,7 +10,6 @@ public class MainMenuScreen extends JFrame {
     private JButton indicesButton;
     private JButton prestamosButton;
     private JButton salirButton;
-    private JButton otrasFuncionesButton;
 
     public MainMenuScreen(){
         setContentPane(mainMenuPanel);
