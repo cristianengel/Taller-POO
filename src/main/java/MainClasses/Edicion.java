@@ -35,7 +35,6 @@ public class Edicion {
      * @param formato
      * @param esColeccion
      * @param isbn
-     * @param obra
      */
     public Edicion(String editorial, String paisDeEdicion, String numeroDeEdicion,
                    int anio, int volumenes, int paginas, String idioma, String formato,
