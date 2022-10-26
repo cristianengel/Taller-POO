@@ -282,28 +282,35 @@
       <option name="project" value="LOCAL" />
       <updated>1666720670017</updated>
     </task>
-    <task id="LOCAL-00031" summary="Varios avances en la UI de Reservas + pequeñas modificaciones">
-      <created>1666733361217</created>
+    <task id="LOCAL-00031" summary="Creación del método para saber los lectores con multas en cierto periodo de tiempo.">
+      <created>1666723810358</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1666733361217</updated>
+      <updated>1666723810358</updated>
     </task>
-    <task id="LOCAL-00032" summary="Avances en la reserva y correccion de errores.">
-      <created>1666736097656</created>
+    <task id="LOCAL-00032" summary="Creación de métodos para la operación reserva.">
+      <created>1666726156901</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1666736097656</updated>
+      <updated>1666726156901</updated>
     </task>
-    <task id="LOCAL-00033" summary="Se hicieron avances importantes en la UI">
-      <created>1666741678752</created>
+    <task id="LOCAL-00033" summary="Creación de un método para saber los ejemplares disponibles a partir de un área temática.&#10;Algunos retoques en la clase Reserva.">
+      <created>1666727091564</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1666741678752</updated>
+      <updated>1666727091564</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Reducción del toString de la Biblioteca.">
+      <created>1666727180984</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1666727180984</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,6 +354,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Creación de las clases Enum.&#10;Cambios en los toString.&#10;Cambios en los constructores y variables ya que se crearon las clases Enum.&#10;Y demás modificaciones." />
+
     <MESSAGE value="Se agrega un espacio." />
     <MESSAGE value="Modificaciones y correcciones&#10;&#10;- Se corrigió un error que arrojaba NullPointerException&#10;- Se agregó la enumeración Condicion&#10;- Se agregaron algunos métodos de los préstamos&#10;- Otros ligeros cambios" />
     <MESSAGE value="Se agrega documentación." />
