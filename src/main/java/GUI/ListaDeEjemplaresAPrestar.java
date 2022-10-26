@@ -54,7 +54,9 @@ public class ListaDeEjemplaresAPrestar extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 listModel.removeAllElements();
                 for(int i = 0; i < b.getListaDeEjemplares().size(); i++) {
-                    listModel.addElement(b.getListaDeEjemplares().get(i).toString());
+                    if(b.getListaDeEjemplares().get(i).getCondicion() == Condicion.DISPONIBLE) {
+                        listModel.addElement(b.getListaDeEjemplares().get(i).toString());
+                    }
                 }
             }
         });

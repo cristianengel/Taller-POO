@@ -1,11 +1,10 @@
 package GUI;
 
 
-
 import MainClasses.Biblioteca;
+import MainClasses.Edicion;
 import MainClasses.Ejemplar;
 import MainClasses.Obra;
-import test.Main;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +16,7 @@ import java.util.Objects;
 
 public class AgregarEjemplar extends JFrame{
     Biblioteca b = Biblioteca.getInstance();
+    private static AgregarEjemplar instance;
     private JTextField pasillo;
     private JTextField estanteria;
     private JTextField estante;
@@ -35,8 +35,19 @@ public class AgregarEjemplar extends JFrame{
     private JPanel agregarEjemplarPanel;
     private JComboBox<String> comboBox1;
     private JButton atrasButton;
+    private JTextField codBarra;
+    private JLabel edicionLabel;
+    private JButton ingresarEdicionButton;
+    private Edicion edicion;
 
-    public AgregarEjemplar() {
+    public static AgregarEjemplar getInstance() {
+        if(instance == null) {
+            instance = new AgregarEjemplar();
+        }
+        return instance;
+    }
+
+    private AgregarEjemplar() {
         comboBox1.addItem("Compra por Internet");
         comboBox1.addItem("Compra a Biblioteca");
         comboBox1.addItem("Compra Particular");
@@ -57,11 +68,24 @@ public class AgregarEjemplar extends JFrame{
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                b.agregarEjemplar(new Ejemplar(generarIdentUnico(7), generarCodBarra(7), observaciones.getText(), new ArrayList<String>(Arrays.asList(pasillo.toString(), estanteria.toString(), estante.toString())), LocalDate.now(), Objects.requireNonNull(comboBox1.getSelectedItem()).toString(), new Obra(areaTematica.getText(), titulo.getText(), subtitulo.getText(), primerAutor.getText(), segundoAutor.getText(), tercerAutor.getText(), genero.getText(), caracteristica.getText(), indice.getText())));
+                b.agregarEjemplar(new Ejemplar(generarIdentUnico(7), observaciones.getText(), new ArrayList<String>(Arrays.asList(pasillo.toString(), estanteria.toString(), estante.toString())), LocalDate.now(), Objects.requireNonNull(comboBox1.getSelectedItem()).toString(), new Obra(areaTematica.getText(), titulo.getText(), subtitulo.getText(), primerAutor.getText(), segundoAutor.getText(), tercerAutor.getText(), genero.getText(), caracteristica.getText(), codBarra.getText(), indice.getText(), edicion)));
                 MainMenuScreen mm = new MainMenuScreen();
                 dispose();
             }
         });
+        ingresarEdicionButton.addActionListener(new ActionListener() {
+            /**
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresarDatosEdicion ide = new IngresarDatosEdicion();
+            }
+        });
+    }
+
+    public void obtenerEdicion(Edicion edicion) {
+        this.edicion = edicion;
     }
 
     /**
@@ -70,15 +94,6 @@ public class AgregarEjemplar extends JFrame{
      * @param size
      * @return int
      */
-    public int generarCodBarra(int size) {
-        int codBarra = Integer.parseInt(getNumericString(size));
-        for(int i = 0; i < b.getListaDeEjemplares().size(); i++){
-            if(Objects.equals(b.getListaDeEjemplares().get(i).getCodBarra(), codBarra)) {
-                generarCodBarra(size);
-            }
-        }
-        return codBarra;
-    }
 
     /**
      * Devuelve un string para utilización como identificador único, chequeando antes

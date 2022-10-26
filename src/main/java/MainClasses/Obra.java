@@ -24,11 +24,12 @@ public class Obra {
     private String tercerAutor;
     private String genero;
     private String caracteristica;
+    private String codBarra;
     private String indice;
     private int vecesSolicitadaAluDoc = 0;
     private int vecesSolicitadaPublico = 0;
-    private Edicion edicion; //Relación con la clase Edición
-    private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>(); //Relación con la clase Ejemplar
+    private Edicion edicion;
+    private ArrayList<Ejemplar> ejemplares = new ArrayList<Ejemplar>();
 
     /**
      * Constructor de la clase Obra.
@@ -44,7 +45,7 @@ public class Obra {
      */
     public Obra(String areaTematica, String titulo, String subtitulo,
                 String primerAutor, String segundoAutor, String tercerAutor,
-                String genero, String caracteristica, String indice) {
+                String genero, String caracteristica, String codBarra, String indice, Edicion edicion) {
         this.areaTematica = areaTematica;
         this.titulo = titulo;
         this.subtitulo = subtitulo;
@@ -53,7 +54,9 @@ public class Obra {
         this.tercerAutor = tercerAutor;
         this.genero = genero;
         this.caracteristica = caracteristica;
+        this.codBarra = codBarra;
         this.indice = indice;
+        this.edicion = edicion;
     }
 
     /**

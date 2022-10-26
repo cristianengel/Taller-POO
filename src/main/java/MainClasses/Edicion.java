@@ -14,15 +14,14 @@ import java.util.Objects;
 public class Edicion {
     private String editorial;
     private String paisDeEdicion;
-    private int numeroDeEdicion;
+    private String numeroDeEdicion;
     private int anio;
     private int volumenes;
     private int paginas;
     private String idioma;
     private String formato;
     private boolean esColeccion;
-    private int isbn;
-    private Obra obra; //Relación con la clase Obra
+    private String isbn;
 
     /**
      * Constructor de la clase Edicion.
@@ -38,9 +37,9 @@ public class Edicion {
      * @param isbn
      * @param obra
      */
-    public Edicion(String editorial, String paisDeEdicion, int numeroDeEdicion,
+    public Edicion(String editorial, String paisDeEdicion, String numeroDeEdicion,
                    int anio, int volumenes, int paginas, String idioma, String formato,
-                   boolean esColeccion, int isbn, Obra obra) {
+                   boolean esColeccion, String isbn) {
         this.editorial = editorial;
         this.paisDeEdicion = paisDeEdicion;
         this.numeroDeEdicion = numeroDeEdicion;
@@ -51,7 +50,6 @@ public class Edicion {
         this.formato = formato;
         this.esColeccion = esColeccion;
         this.isbn = isbn;
-        this.obra = obra;
     }
 
     /**
@@ -71,8 +69,7 @@ public class Edicion {
                 Objects.equals(paisDeEdicion, edicion.paisDeEdicion) &&
                 Objects.equals(idioma, edicion.idioma) &&
                 Objects.equals(formato, edicion.formato) &&
-                Objects.equals(isbn, edicion.isbn) &&
-                Objects.equals(obra, edicion.obra);
+                Objects.equals(isbn, edicion.isbn);
     }
 
     /**
@@ -91,8 +88,7 @@ public class Edicion {
                 "   -Idioma=" + idioma + "\n" +
                 "   -Formato=" + formato + "\n" +
                 "   -¿Es colección?=" + esColeccion + "\n" +
-                "   -ISBN=" + isbn + "\n" +
-                "   -Obra=" + obra;
+                "   -ISBN=" + isbn + "\n";
     }
 
     /**
