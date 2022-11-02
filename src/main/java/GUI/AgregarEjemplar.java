@@ -70,7 +70,6 @@ public class AgregarEjemplar extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 b.agregarEjemplar(new Ejemplar(generarIdentUnico(7), observaciones.getText(), new ArrayList<String>(Arrays.asList(pasillo.toString(), estanteria.toString(), estante.toString())), LocalDate.now(), Objects.requireNonNull(comboBox1.getSelectedItem()).toString(), new Obra(areaTematica.getText(), titulo.getText(), subtitulo.getText(), primerAutor.getText(), segundoAutor.getText(), tercerAutor.getText(), genero.getText(), caracteristica.getText(), codBarra.getText(), indice.getText(), edicion)));
                 MainMenuScreen mm = new MainMenuScreen();
-                instance = null;
                 dispose();
             }
         });
